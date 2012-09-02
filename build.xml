@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="test">
+    <property name="phantomjs" value="phantomjs.exe"/>
+    <property name="qunit.runner" location="test/qunit/addons/phantomjs/runner.js"/>
+
+    <target name="test" depends="reg, min" />
+
+    <target name="reg">
+        <exec executable="${phantomjs}">
+            <arg value="${qunit.runner}" />
+            <arg value="test/index.html" />
+        </exec>
+    </target>
+
+    <target name="min">
+        <exec executable="${phantomjs}">
+            <arg value="${qunit.runner}" />
+            <arg value="test/minified.html" />
+        </exec>
+    </target>
+
+</project>

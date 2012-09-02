@@ -1,0 +1,32 @@
+{
+    "name": "jsphp",
+    "title": "JSPHP",
+    "description": "JSPHP - PHP Standard Library in JavaScript.",
+    "version": "0.1b",
+    "homepage": "https://github.com/jsiciarek/jsphp",
+    "author": {
+        "name": "Jacek Siciarek",
+        "email": "siciarek@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/jsiciarek/jsphp.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jsiciarek/jsphp/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/mit-license.php"
+        },
+        {
+            "type": "GPL",
+            "url": "http://www.opensource.org/licenses/GPL-2.0"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">= 1.6"
+    },
+    "keywords": []
+}
