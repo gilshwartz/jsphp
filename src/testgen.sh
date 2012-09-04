@@ -1,1 +1,0 @@
-for f in `ls -1 *.js | grep -v 'jsphp\.bootstrap\.js'`; do f=`echo $f | perl -ne '$_=~ s/\.js$//;print $_'`; ./testgen.bat $f; done
