@@ -16,7 +16,7 @@ test("preg_match ($pattern, $subject, $matches, $flags, $offset) ", function(){
     var expected;
     var result;
     var match = [];
-    var expectedmatch
+    var expectedmatch = []
 
     phrase = 'Abracadabra';
     expected = 1;
@@ -39,13 +39,13 @@ test("preg_match ($pattern, $subject, $matches, $flags, $offset) ", function(){
     strictEqual(result, expected, 'case insensitive match all - different boderchar');
 
     phrase = 'Abracadabra';
-    expected = 5;
     expectedmatch = ["A","a","a","a","a"];
-    result = preg_match('/a/ig', phrase, match);
-    strictEqual(result, expected, 'case insensitive match all');
+    preg_match('/a/ig', phrase, match);
+
+    strictEqual(match.length, expectedmatch.length, 'match reference test (length)');
 
     for(i = 0; i < match.length; i++) {
-        strictEqual(match[i], expectedmatch[i], 'match test');
+        strictEqual(match[i], expectedmatch[i], 'match reference test (values)');
     }
 });
 
