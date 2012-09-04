@@ -2,59 +2,71 @@
 
 // Start of standard v.5.3.2-0.dotdeb.1
 
-//class __PHP_Incomplete_Class  {
-//}
-//
-//class php_user_filter  {
-//        public $filtername;
-//        public $params;
-//
-//
-//        /**
-//         * @param $in
-//         * @param $out
-//         * @param $consumed
-//         * @param $closing
-//         */
-//        public function filter ($in, $out, &$consumed, $closing) {}
-//
-//        public function onCreate () {}
-//
-//        public function onClose () {}
-//
-//}
-//
-///**
-// * Instances of Directory are created by calling the dir() function, not by the new operator.
-// */
-//class Directory  {
-//
-//    /**
-//     * Close directory handle.
-//     * Same as closedir(), only dir_handle defaults to $this.
-//     * @param resource $dir_handle [optional]
-//     * @link http://www.php.net/manual/en/directory.close.php
-//     */
-//    public function close ( $dir_handle ) {}
-//
-//    /**
-//     *  Rewind directory handle.
-//     * Same as rewinddir(), only dir_handle defaults to $this.
-//     * @param resource $dir_handle [optional]
-//     * @link http://www.php.net/manual/en/directory.rewind.php
-//     */
-//    public function rewind ( $dir_handle ) {}
-//
-//    /**
-//     * Read entry from directory handle.
-//     * Same as readdir(), only dir_handle defaults to $this.
-//     * @param resource $dir_handle [optional]
-//     * @return string
-//     * @link http://www.php.net/manual/en/directory.read.php
-//     */
-//    public function read ( $dir_handle) { }
-//
-//}
+// class __PHP_Incomplete_Class  {
+
+function __PHP_Incomplete_Class()  {
+}
+
+// class php_user_filter  {
+
+function php_user_filter()  {
+        var $filtername;
+        var $params;
+
+
+        /**
+         * @param $in
+         * @param $out
+         * @param $consumed
+         * @param $closing
+         */
+        // function filter ($in, $out, &$consumed, $closing) {}
+        function filter ($in, $out, $consumed, $closing) {}
+
+        // function onCreate () {}
+        function onCreate () {}
+
+        // function onClose () {}
+        function onClose () {}
+
+}
+
+/**
+ * Instances of Directory are created by calling the dir() function, not by the new operator.
+ */
+// class Directory  {
+
+function Directory()  {
+
+    /**
+     * Close directory handle.
+     * Same as closedir(), only dir_handle defaults to $this.
+     * @param resource $dir_handle [optional]
+     * @link http://www.php.net/manual/en/directory.close.php
+     */
+    // function close ( $dir_handle ) {}
+    function close ($dir_handle) {}
+
+    /**
+     *  Rewind directory handle.
+     * Same as rewinddir(), only dir_handle defaults to $this.
+     * @param resource $dir_handle [optional]
+     * @link http://www.php.net/manual/en/directory.rewind.php
+     */
+    // function rewind ( $dir_handle ) {}
+    function rewind ($dir_handle) {}
+
+    /**
+     * Read entry from directory handle.
+     * Same as readdir(), only dir_handle defaults to $this.
+     * @param resource $dir_handle [optional]
+     * @return string
+     * @link http://www.php.net/manual/en/directory.read.php
+     */
+    // function read ( $dir_handle) { }
+    function read ($dir_handle) { }
+
+}
 
 /**
  * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
