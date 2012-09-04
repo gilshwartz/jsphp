@@ -83,9 +83,9 @@
  */
 // function preg_match ($pattern, $subject, array &$matches = null, $flags = 0, $offset = 0) {}
 function preg_match($pattern, $subject, $matches, $flags, $offset) {
-    $matches = $matches || [];
-    $flags = $flags || null;
-    $offset = $offset || null;
+    $matches = $matches || null;
+    $flags = $flags || 0;
+    $offset = $offset || 0;
 
     var temp = $pattern;
     var sep = temp.substring(0, 1);
@@ -100,8 +100,10 @@ function preg_match($pattern, $subject, $matches, $flags, $offset) {
 
     var matches = $subject.match(rx);
 
-    for (i = 0; i < matches.length; i++) {
-        $matches[i] = matches[i];
+    if ($matches !== null) {
+        for (i = 0; i < matches.length; i++) {
+            $matches[i] = matches[i];
+        }
     }
 
     return matches.length;
