@@ -12,7 +12,41 @@ module("pcre.php", {
 });
 
 test("preg_match ($pattern, $subject, $matches, $flags, $offset) ", function(){
-    ok(false, "Not implemented yet.");
+    var phrase;
+    var expected;
+    var result;
+    var match = [];
+    var expectedmatch
+
+    phrase = 'Abracadabra';
+    expected = 1;
+    result = preg_match('/a/', phrase);
+    strictEqual(result, expected, 'case sensitive match once');
+
+    phrase = 'Abracadabra';
+    expected = 4;
+    result = preg_match('/a/g', phrase);
+    strictEqual(result, expected, 'case sensitive match all');
+
+    phrase = 'Abracadabra';
+    expected = 5;
+    result = preg_match('/a/ig', phrase);
+    strictEqual(result, expected, 'case insensitive match all');
+
+    phrase = 'Abracadabra';
+    expected = 5;
+    result = preg_match('#a#ig', phrase);
+    strictEqual(result, expected, 'case insensitive match all - different boderchar');
+
+    phrase = 'Abracadabra';
+    expected = 5;
+    expectedmatch = ["A","a","a","a","a"];
+    result = preg_match('/a/ig', phrase, match);
+    strictEqual(result, expected, 'case insensitive match all');
+
+    for(i = 0; i < match.length; i++) {
+        strictEqual(match[i], expectedmatch[i], 'match test');
+    }
 });
 
 test("preg_match_all ($pattern, $subject, $matches, $flags, $offset) ", function(){
