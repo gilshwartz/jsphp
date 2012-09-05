@@ -18,43 +18,104 @@ test("preg_match ($pattern, $subject, $matches, $flags, $offset) ", function(){
     var match = [];
     var expectedmatch = []
 
-    phrase = 'Abracadabra';
-    expected = 1;
-    result = preg_match('/a/', phrase);
+    phrase = 'Abb';
+    expected = 0;
+    result = preg_match(/a/, phrase);
     strictEqual(result, expected, 'case sensitive match once');
 
-    phrase = 'Abracadabra';
-    expected = 4;
-    result = preg_match('/a/g', phrase);
-    strictEqual(result, expected, 'case sensitive match all');
+    phrase = 'Abb';
+    expected = 1;
+    result = preg_match('/a/i', phrase);
+    strictEqual(result, expected, 'case insensitive match');
 
-    phrase = 'Abracadabra';
-    expected = 5;
-    result = preg_match('/a/ig', phrase);
-    strictEqual(result, expected, 'case insensitive match all');
+    phrase = 'Abb';
+    expected = 1;
+    result = preg_match('#a#i', phrase);
+    strictEqual(result, expected, 'case insensitive match - different boderchar');
 
-    phrase = 'Abracadabra';
-    expected = 5;
-    result = preg_match('#a#ig', phrase);
-    strictEqual(result, expected, 'case insensitive match all - different boderchar');
-
-    phrase = 'Abracadabra';
-    expectedmatch = ["A","a","a","a","a"];
-    preg_match('/a/ig', phrase, match);
+    phrase = 'Abb';
+    expectedmatch = ["A"];
+    preg_match('/a/i', phrase, match);
 
     strictEqual(match.length, expectedmatch.length, 'match reference test (length)');
+    deepEqual(match, expectedmatch);
 
-    for(i = 0; i < match.length; i++) {
-        strictEqual(match[i], expectedmatch[i], 'match reference test (values)');
-    }
+    match = [];
+    phrase = 'Abb';
+    expectedmatch = [];
+    preg_match('/a/', phrase, match);
+
+    strictEqual(match.length, expectedmatch.length, 'match reference test (length)');
+    deepEqual(match, expectedmatch);
 });
 
 test("preg_match_all ($pattern, $subject, $matches, $flags, $offset) ", function(){
-    ok(false, "Not implemented yet.");
+    var phrase;
+    var expected;
+    var result;
+    var match = [];
+    var expectedmatch = []
+
+    match = [];
+    phrase = 'Abbabba';
+    expectedmatch = ["a","a"];
+    preg_match_all('/a/', phrase, match);
+
+    strictEqual(match.length, expectedmatch.length, 'match reference test (length)');
+    deepEqual(match, expectedmatch);
+
+    match = [];
+    phrase = 'Abbabba';
+    expectedmatch = ["A", "a", "a"];
+    preg_match_all('/a/i', phrase, match);
+
+    strictEqual(match.length, expectedmatch.length, 'match reference test (length)');
+    deepEqual(match, expectedmatch);
 });
 
 test("preg_replace ($pattern, $replacement, $subject, $limit, $count) ", function(){
-    ok(false, "Not implemented yet.");
+    var phrase;
+    var expected;
+    var result;
+    var expectedcount = [];
+    var count = [];
+
+    phrase = 'Abbabba';
+    expected = 'Abbbb';
+    result = preg_replace('/a/', '', phrase);
+    strictEqual(result, expected, 'simple removal case sensitive');
+
+    phrase = 'Abbabba';
+    expected = 'bbbb';
+    result = preg_replace('/a/i', '', phrase);
+    strictEqual(result, expected, 'simple removal case insensitive');
+
+    phrase = 'Abbabba';
+    expected = 'xbbxbbx';
+    result = preg_replace('/a/i', 'x', phrase);
+    strictEqual(result, expected, 'replacement');
+
+    phrase = 'Abbabba';
+    expected = 'Abx';
+    result = preg_replace('/^(\\w\\w).*?$/', '$1x', phrase);
+    strictEqual(result, expected, 'capture string rx');
+
+    phrase = 'Abbabba';
+    expected = 'Abx';
+    result = preg_replace(/^(\w\w).*?$/, '$1x', phrase);
+    strictEqual(result, expected, 'capture object rx');
+
+    phrase = 'Abbabba';
+    expectedcount = [3];
+    preg_replace('/a/i', 'x', phrase, null, count);
+    deepEqual(count, expectedcount, 'count parameter');
+
+// TODO: implement following
+//    phrase = 'Abbabba';
+//    expected = 'Axxaxba';
+//    var limit = 3;
+//    result = preg_replace('/b/i', 'x', phrase, limit);
+//    strictEqual(result, expected, 'limit parameter');
 });
 
 test("preg_replace_callback ($pattern, $callback, $subject, $limit, $count) ", function(){

@@ -178,7 +178,12 @@ function hebrevc ($hebrew_text, $max_chars_per_line) {}
  * @return string the altered string.
  */
 // function nl2br ($string, $is_xhtml = null) {}
-function nl2br ($string, $is_xhtml) {}
+function nl2br ($string, $is_xhtml) {
+    $is_xhtml = $is_xhtml || true;
+
+    var br = $is_xhtml === true ? '<br />' : '<br>';
+    return $string.replace(/\n/g, br + "\n");
+}
 
 /**
  * (PHP 4, PHP 5)<br/>

@@ -2,179 +2,179 @@
 
 // Start of standard v.5.3.1-0.dotdeb.1
 
-define ('CONNECTION_ABORTED', 1);
-define ('CONNECTION_NORMAL', 0);
-define ('CONNECTION_TIMEOUT', 2);
-define ('INI_USER', 1);
-define ('INI_PERDIR', 2);
-define ('INI_SYSTEM', 4);
-define ('INI_ALL', 7);
+var CONNECTION_ABORTED = 1;
+var CONNECTION_NORMAL = 0;
+var CONNECTION_TIMEOUT = 2;
+var INI_USER = 1;
+var INI_PERDIR = 2;
+var INI_SYSTEM = 4;
+var INI_ALL = 7;
 
 /**
  * Normal INI scanner mode (since PHP 5.3).
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('INI_SCANNER_NORMAL', 0);
+var INI_SCANNER_NORMAL = 0;
 
 /**
  * Raw INI scanner mode (since PHP 5.3).
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('INI_SCANNER_RAW', 1);
-define ('PHP_URL_SCHEME', 0);
-define ('PHP_URL_HOST', 1);
-define ('PHP_URL_PORT', 2);
-define ('PHP_URL_USER', 3);
-define ('PHP_URL_PASS', 4);
-define ('PHP_URL_PATH', 5);
-define ('PHP_URL_QUERY', 6);
-define ('PHP_URL_FRAGMENT', 7);
+var INI_SCANNER_RAW = 1;
+var PHP_URL_SCHEME = 0;
+var PHP_URL_HOST = 1;
+var PHP_URL_PORT = 2;
+var PHP_URL_USER = 3;
+var PHP_URL_PASS = 4;
+var PHP_URL_PATH = 5;
+var PHP_URL_QUERY = 6;
+var PHP_URL_FRAGMENT = 7;
 
 /**
  * <i>e</i> constant
  */
-define ('M_E', 2.718281828459);
+var M_E = 2.718281828459;
 
 /**
  * {@link log}<sub>2</sub><i>e</i> constant
  */
-define ('M_LOG2E', 1.442695040889);
+var M_LOG2E = 1.442695040889;
 
 /**
  * {@link log}<sub>10</sub><i>e</i> constant
  */
-define ('M_LOG10E', 0.43429448190325);
+var M_LOG10E = 0.43429448190325;
 
 /**
  * {@link log}<sub><i>e</i></sub>2 constant
  */
-define ('M_LN2', 0.69314718055995);
+var M_LN2 = 0.69314718055995;
 
 /**
  * {@link log}<sub><i>e</i></sub>10 constant
  */
-define ('M_LN10', 2.302585092994);
+var M_LN10 = 2.302585092994;
 
 /**
  * &pi; constant
  */
-define ('M_PI', 3.1415926535898);
+var M_PI = 3.1415926535898;
 
 /**
  * &pi;/2 constant
  */
-define ('M_PI_2', 1.5707963267949);
+var M_PI_2 = 1.5707963267949;
 
 /**
  * &pi;/4 constant
  */
-define ('M_PI_4', 0.78539816339745);
+var M_PI_4 = 0.78539816339745;
 
 /**
  * 1/&pi; constant
  */
-define ('M_1_PI', 0.31830988618379);
+var M_1_PI = 0.31830988618379;
 
 /**
  * 2/&pi; constant
  */
-define ('M_2_PI', 0.63661977236758);
+var M_2_PI = 0.63661977236758;
 
 /**
  * {@link sqrt}(&pi;) constant
  */
-define ('M_SQRTPI', 1.7724538509055);
+var M_SQRTPI = 1.7724538509055;
 
 /**
  * 2/{@link sqrt}(&pi;) constant
  */
-define ('M_2_SQRTPI', 1.1283791670955);
+var M_2_SQRTPI = 1.1283791670955;
 
 /**
  * {@link log}<sub><i>e</i></sub>&pi; constant
  */
-define ('M_LNPI', 1.1447298858494);
+var M_LNPI = 1.1447298858494;
 
 /**
  * Euler constant
  */
-define ('M_EULER', 0.57721566490153);
+var M_EULER = 0.57721566490153;
 
 /**
  * {@link sqrt}(2) constant
  */
-define ('M_SQRT2', 1.4142135623731);
+var M_SQRT2 = 1.4142135623731;
 
 /**
  * 1/{@link sqrt}(2) constant
  */
-define ('M_SQRT1_2', 0.70710678118655);
+var M_SQRT1_2 = 0.70710678118655;
 
 /**
  * {@link sqrt}(3) constant
  */
-define ('M_SQRT3', 1.7320508075689);
+var M_SQRT3 = 1.7320508075689;
 
 /**
  * The infinite
  */
-define ('INF', INF);
+var INF = INF;
 
 /**
  * Not A Number
  */
-define ('NAN', NAN);
+var NAN = NAN;
 
 /**
  * Round halves up [5.3.0]
  * @link http://php.net/manual/en/math.constants.php
  */
-define ('PHP_ROUND_HALF_UP', 1);
+var PHP_ROUND_HALF_UP = 1;
 
 /**
  * Round halves down [5.3.0]
  * @link http://php.net/manual/en/math.constants.php
  */
-define ('PHP_ROUND_HALF_DOWN', 2);
+var PHP_ROUND_HALF_DOWN = 2;
 
 /**
  * Round halves to even numbers [5.3.0]
  * @link http://php.net/manual/en/math.constants.php
  */
-define ('PHP_ROUND_HALF_EVEN', 3);
+var PHP_ROUND_HALF_EVEN = 3;
 
 /**
  * Round halves to odd numbers [5.3.0]
  * @link http://php.net/manual/en/math.constants.php
  */
-define ('PHP_ROUND_HALF_ODD', 4);
-define ('INFO_GENERAL', 1);
+var PHP_ROUND_HALF_ODD = 4;
+var INFO_GENERAL = 1;
 
 /**
  * PHP Credits. See also phpcredits.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('INFO_CREDITS', 2);
+var INFO_CREDITS = 2;
 
 /**
  * Current Local and Master values for PHP directives. See
  * also ini_get.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('INFO_CONFIGURATION', 4);
+var INFO_CONFIGURATION = 4;
 
 /**
  * Loaded modules and their respective settings.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('INFO_MODULES', 8);
+var INFO_MODULES = 8;
 
 /**
  * Environment Variable information that's also available in
  * $_ENV.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('INFO_ENVIRONMENT', 16);
+var INFO_ENVIRONMENT = 16;
 
 /**
  * Shows all 
@@ -182,45 +182,45 @@ define ('INFO_ENVIRONMENT', 16);
  * POST, Cookie, Server).
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('INFO_VARIABLES', 32);
+var INFO_VARIABLES = 32;
 
 /**
  * PHP License information. See also the license faq.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('INFO_LICENSE', 64);
-define ('INFO_ALL', 4294967295);
+var INFO_LICENSE = 64;
+var INFO_ALL = 4294967295;
 
 /**
  * A list of the core developers
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('CREDITS_GROUP', 1);
+var CREDITS_GROUP = 1;
 
 /**
  * General credits: Language design and concept, PHP
  * authors and SAPI module.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('CREDITS_GENERAL', 2);
+var CREDITS_GENERAL = 2;
 
 /**
  * A list of the server API modules for PHP, and their authors.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('CREDITS_SAPI', 4);
+var CREDITS_SAPI = 4;
 
 /**
  * A list of the extension modules for PHP, and their authors.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('CREDITS_MODULES', 8);
+var CREDITS_MODULES = 8;
 
 /**
  * The credits for the documentation team.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('CREDITS_DOCS', 16);
+var CREDITS_DOCS = 16;
 
 /**
  * Usually used in combination with the other flags. Indicates
@@ -229,59 +229,59 @@ define ('CREDITS_DOCS', 16);
  * flags.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('CREDITS_FULLPAGE', 32);
+var CREDITS_FULLPAGE = 32;
 
 /**
  * The credits for the quality assurance team.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('CREDITS_QA', 64);
+var CREDITS_QA = 64;
 
 /**
  * The configuration line, &php.ini; location, build date, Web
  * Server, System and more.
  * @link http://php.net/manual/en/info.constants.php
  */
-define ('CREDITS_ALL', 4294967295);
-define ('HTML_SPECIALCHARS', 0);
-define ('HTML_ENTITIES', 1);
-define ('ENT_COMPAT', 2);
-define ('ENT_QUOTES', 3);
-define ('ENT_NOQUOTES', 0);
-define ('ENT_IGNORE', 4);
-define ('STR_PAD_LEFT', 0);
-define ('STR_PAD_RIGHT', 1);
-define ('STR_PAD_BOTH', 2);
-define ('PATHINFO_DIRNAME', 1);
-define ('PATHINFO_BASENAME', 2);
-define ('PATHINFO_EXTENSION', 4);
+var CREDITS_ALL = 4294967295;
+var HTML_SPECIALCHARS = 0;
+var HTML_ENTITIES = 1;
+var ENT_COMPAT = 2;
+var ENT_QUOTES = 3;
+var ENT_NOQUOTES = 0;
+var ENT_IGNORE = 4;
+var STR_PAD_LEFT = 0;
+var STR_PAD_RIGHT = 1;
+var STR_PAD_BOTH = 2;
+var PATHINFO_DIRNAME = 1;
+var PATHINFO_BASENAME = 2;
+var PATHINFO_EXTENSION = 4;
 
 /**
  * Since PHP 5.2.0.
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('PATHINFO_FILENAME', 8);
-define ('CHAR_MAX', 127);
-define ('LC_CTYPE', 0);
-define ('LC_NUMERIC', 1);
-define ('LC_TIME', 2);
-define ('LC_COLLATE', 3);
-define ('LC_MONETARY', 4);
-define ('LC_ALL', 6);
-define ('LC_MESSAGES', 5);
-define ('SEEK_SET', 0);
-define ('SEEK_CUR', 1);
-define ('SEEK_END', 2);
-define ('LOCK_SH', 1);
-define ('LOCK_EX', 2);
-define ('LOCK_UN', 3);
-define ('LOCK_NB', 4);
+var PATHINFO_FILENAME = 8;
+var CHAR_MAX = 127;
+var LC_CTYPE = 0;
+var LC_NUMERIC = 1;
+var LC_TIME = 2;
+var LC_COLLATE = 3;
+var LC_MONETARY = 4;
+var LC_ALL = 6;
+var LC_MESSAGES = 5;
+var SEEK_SET = 0;
+var SEEK_CUR = 1;
+var SEEK_END = 2;
+var LOCK_SH = 1;
+var LOCK_EX = 2;
+var LOCK_UN = 3;
+var LOCK_NB = 4;
 
 /**
  * A connection with an external resource has been established.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_CONNECT', 2);
+var STREAM_NOTIFY_CONNECT = 2;
 
 /**
  * Additional authorization is required to access the specified resource.
@@ -289,13 +289,13 @@ define ('STREAM_NOTIFY_CONNECT', 2);
  * STREAM_NOTIFY_SEVERITY_ERR.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_AUTH_REQUIRED', 3);
+var STREAM_NOTIFY_AUTH_REQUIRED = 3;
 
 /**
  * Authorization has been completed (with or without success).
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_AUTH_RESULT', 10);
+var STREAM_NOTIFY_AUTH_RESULT = 10;
 
 /**
  * The mime-type of resource has been identified,
@@ -303,20 +303,20 @@ define ('STREAM_NOTIFY_AUTH_RESULT', 10);
  * discovered type.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_MIME_TYPE_IS', 4);
+var STREAM_NOTIFY_MIME_TYPE_IS = 4;
 
 /**
  * The size of the resource has been discovered.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_FILE_SIZE_IS', 5);
+var STREAM_NOTIFY_FILE_SIZE_IS = 5;
 
 /**
  * The external resource has redirected the stream to an alternate
  * location. Refer to message.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_REDIRECTED', 6);
+var STREAM_NOTIFY_REDIRECTED = 6;
 
 /**
  * Indicates current progress of the stream transfer in
@@ -324,7 +324,7 @@ define ('STREAM_NOTIFY_REDIRECTED', 6);
  * bytes_max as well.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_PROGRESS', 7);
+var STREAM_NOTIFY_PROGRESS = 7;
 
 /**
  * A generic error occurred on the stream, consult
@@ -332,38 +332,38 @@ define ('STREAM_NOTIFY_PROGRESS', 7);
  * for details.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_FAILURE', 9);
+var STREAM_NOTIFY_FAILURE = 9;
 
 /**
  * There is no more data available on the stream.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_COMPLETED', 8);
+var STREAM_NOTIFY_COMPLETED = 8;
 
 /**
  * A remote address required for this stream has been resolved, or the resolution
  * failed. See severity for an indication of which happened.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_RESOLVE', 1);
+var STREAM_NOTIFY_RESOLVE = 1;
 
 /**
  * Normal, non-error related, notification.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_SEVERITY_INFO', 0);
+var STREAM_NOTIFY_SEVERITY_INFO = 0;
 
 /**
  * Non critical error condition. Processing may continue.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_SEVERITY_WARN', 1);
+var STREAM_NOTIFY_SEVERITY_WARN = 1;
 
 /**
  * A critical error occurred. Processing cannot continue.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_NOTIFY_SEVERITY_ERR', 2);
+var STREAM_NOTIFY_SEVERITY_ERR = 2;
 
 /**
  * Used with stream_filter_append and
@@ -372,7 +372,7 @@ define ('STREAM_NOTIFY_SEVERITY_ERR', 2);
  * reading
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_FILTER_READ', 1);
+var STREAM_FILTER_READ = 1;
 
 /**
  * Used with stream_filter_append and
@@ -381,21 +381,21 @@ define ('STREAM_FILTER_READ', 1);
  * writing
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_FILTER_WRITE', 2);
+var STREAM_FILTER_WRITE = 2;
 
 /**
  * This constant is equivalent to 
  * STREAM_FILTER_READ | STREAM_FILTER_WRITE
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_FILTER_ALL', 3);
+var STREAM_FILTER_ALL = 3;
 
 /**
  * Client socket opened with stream_socket_client
  * should remain persistent between page loads.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_CLIENT_PERSISTENT', 1);
+var STREAM_CLIENT_PERSISTENT = 1;
 
 /**
  * Open client socket asynchronously. This option must be used
@@ -403,105 +403,105 @@ define ('STREAM_CLIENT_PERSISTENT', 1);
  * Used with stream_socket_client.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_CLIENT_ASYNC_CONNECT', 2);
+var STREAM_CLIENT_ASYNC_CONNECT = 2;
 
 /**
  * Open client socket connection. Client sockets should always
  * include this flag. Used with stream_socket_client.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_CLIENT_CONNECT', 4);
-define ('STREAM_CRYPTO_METHOD_SSLv2_CLIENT', 0);
-define ('STREAM_CRYPTO_METHOD_SSLv3_CLIENT', 1);
-define ('STREAM_CRYPTO_METHOD_SSLv23_CLIENT', 2);
-define ('STREAM_CRYPTO_METHOD_TLS_CLIENT', 3);
-define ('STREAM_CRYPTO_METHOD_SSLv2_SERVER', 4);
-define ('STREAM_CRYPTO_METHOD_SSLv3_SERVER', 5);
-define ('STREAM_CRYPTO_METHOD_SSLv23_SERVER', 6);
-define ('STREAM_CRYPTO_METHOD_TLS_SERVER', 7);
+var STREAM_CLIENT_CONNECT = 4;
+var STREAM_CRYPTO_METHOD_SSLv2_CLIENT = 0;
+var STREAM_CRYPTO_METHOD_SSLv3_CLIENT = 1;
+var STREAM_CRYPTO_METHOD_SSLv23_CLIENT = 2;
+var STREAM_CRYPTO_METHOD_TLS_CLIENT = 3;
+var STREAM_CRYPTO_METHOD_SSLv2_SERVER = 4;
+var STREAM_CRYPTO_METHOD_SSLv3_SERVER = 5;
+var STREAM_CRYPTO_METHOD_SSLv23_SERVER = 6;
+var STREAM_CRYPTO_METHOD_TLS_SERVER = 7;
 
 /**
  * Used with stream_socket_shutdown to disable
  * further receptions. Added in PHP 5.2.1.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_SHUT_RD', 0);
+var STREAM_SHUT_RD = 0;
 
 /**
  * Used with stream_socket_shutdown to disable
  * further transmissions. Added in PHP 5.2.1.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_SHUT_WR', 1);
+var STREAM_SHUT_WR = 1;
 
 /**
  * Used with stream_socket_shutdown to disable
  * further receptions and transmissions. Added in PHP 5.2.1.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_SHUT_RDWR', 2);
+var STREAM_SHUT_RDWR = 2;
 
 /**
  * Internet Protocol Version 4 (IPv4).
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_PF_INET', 2);
+var STREAM_PF_INET = 2;
 
 /**
  * Internet Protocol Version 6 (IPv6).
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_PF_INET6', 10);
+var STREAM_PF_INET6 = 10;
 
 /**
  * Unix system internal protocols.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_PF_UNIX', 1);
+var STREAM_PF_UNIX = 1;
 
 /**
  * Provides a IP socket.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_IPPROTO_IP', 0);
+var STREAM_IPPROTO_IP = 0;
 
 /**
  * Provides a TCP socket.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_IPPROTO_TCP', 6);
+var STREAM_IPPROTO_TCP = 6;
 
 /**
  * Provides a UDP socket.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_IPPROTO_UDP', 17);
+var STREAM_IPPROTO_UDP = 17;
 
 /**
  * Provides a ICMP socket.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_IPPROTO_ICMP', 1);
+var STREAM_IPPROTO_ICMP = 1;
 
 /**
  * Provides a RAW socket.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_IPPROTO_RAW', 255);
+var STREAM_IPPROTO_RAW = 255;
 
 /**
  * Provides sequenced, two-way byte streams with a transmission mechanism
  * for out-of-band data (TCP, for example).
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_SOCK_STREAM', 1);
+var STREAM_SOCK_STREAM = 1;
 
 /**
  * Provides datagrams, which are connectionless messages (UDP, for
  * example).
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_SOCK_DGRAM', 2);
+var STREAM_SOCK_DGRAM = 2;
 
 /**
  * Provides a raw socket, which provides access to internal network
@@ -509,28 +509,28 @@ define ('STREAM_SOCK_DGRAM', 2);
  * to the root user.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_SOCK_RAW', 3);
+var STREAM_SOCK_RAW = 3;
 
 /**
  * Provides a sequenced packet stream socket.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_SOCK_SEQPACKET', 5);
+var STREAM_SOCK_SEQPACKET = 5;
 
 /**
  * Provides a RDM (Reliably-delivered messages) socket.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_SOCK_RDM', 4);
-define ('STREAM_PEEK', 2);
-define ('STREAM_OOB', 1);
+var STREAM_SOCK_RDM = 4;
+var STREAM_PEEK = 2;
+var STREAM_OOB = 1;
 
 /**
  * Tells a stream created with stream_socket_server
  * to bind to the specified target. Server sockets should always include this flag.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_SERVER_BIND', 4);
+var STREAM_SERVER_BIND = 4;
 
 /**
  * Tells a stream created with stream_socket_server
@@ -540,33 +540,33 @@ define ('STREAM_SERVER_BIND', 4);
  * Using this flag for connect-less transports (such as UDP) is an error.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_SERVER_LISTEN', 8);
+var STREAM_SERVER_LISTEN = 8;
 
 /**
  * Search for filename in
  * include_path (since PHP 5).
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('FILE_USE_INCLUDE_PATH', 1);
+var FILE_USE_INCLUDE_PATH = 1;
 
 /**
  * Strip EOL characters (since PHP 5).
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('FILE_IGNORE_NEW_LINES', 2);
+var FILE_IGNORE_NEW_LINES = 2;
 
 /**
  * Skip empty lines (since PHP 5).
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('FILE_SKIP_EMPTY_LINES', 4);
+var FILE_SKIP_EMPTY_LINES = 4;
 
 /**
  * Append content to existing file.
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('FILE_APPEND', 8);
-define ('FILE_NO_DEFAULT_CONTEXT', 16);
+var FILE_APPEND = 8;
+var FILE_NO_DEFAULT_CONTEXT = 16;
 
 /**
  * <p>
@@ -578,7 +578,7 @@ define ('FILE_NO_DEFAULT_CONTEXT', 16);
  * </p>
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('FILE_TEXT', 0);
+var FILE_TEXT = 0;
 
 /**
  * <p>
@@ -590,38 +590,38 @@ define ('FILE_TEXT', 0);
  * </p>
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('FILE_BINARY', 0);
+var FILE_BINARY = 0;
 
 /**
  * Disable backslash escaping.
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('FNM_NOESCAPE', 2);
+var FNM_NOESCAPE = 2;
 
 /**
  * Slash in string only matches slash in the given pattern.
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('FNM_PATHNAME', 1);
+var FNM_PATHNAME = 1;
 
 /**
  * Leading period in string must be exactly matched by period in the given pattern.
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('FNM_PERIOD', 4);
+var FNM_PERIOD = 4;
 
 /**
  * Caseless match. Part of the GNU extension.
  * @link http://php.net/manual/en/filesystem.constants.php
  */
-define ('FNM_CASEFOLD', 16);
+var FNM_CASEFOLD = 16;
 
 /**
  * Return Code indicating that the
  * userspace filter returned buckets in $out.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('PSFS_PASS_ON', 2);
+var PSFS_PASS_ON = 2;
 
 /**
  * Return Code indicating that the
@@ -629,7 +629,7 @@ define ('PSFS_PASS_ON', 2);
  * (i.e. No data available).
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('PSFS_FEED_ME', 1);
+var PSFS_FEED_ME = 1;
 
 /**
  * Return Code indicating that the
@@ -637,144 +637,144 @@ define ('PSFS_FEED_ME', 1);
  * (i.e. Invalid data received).
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('PSFS_ERR_FATAL', 0);
+var PSFS_ERR_FATAL = 0;
 
 /**
  * Regular read/write.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('PSFS_FLAG_NORMAL', 0);
+var PSFS_FLAG_NORMAL = 0;
 
 /**
  * An incremental flush.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('PSFS_FLAG_FLUSH_INC', 1);
+var PSFS_FLAG_FLUSH_INC = 1;
 
 /**
  * Final flush prior to closing.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('PSFS_FLAG_FLUSH_CLOSE', 2);
-define ('ABDAY_1', 131072);
-define ('ABDAY_2', 131073);
-define ('ABDAY_3', 131074);
-define ('ABDAY_4', 131075);
-define ('ABDAY_5', 131076);
-define ('ABDAY_6', 131077);
-define ('ABDAY_7', 131078);
-define ('DAY_1', 131079);
-define ('DAY_2', 131080);
-define ('DAY_3', 131081);
-define ('DAY_4', 131082);
-define ('DAY_5', 131083);
-define ('DAY_6', 131084);
-define ('DAY_7', 131085);
-define ('ABMON_1', 131086);
-define ('ABMON_2', 131087);
-define ('ABMON_3', 131088);
-define ('ABMON_4', 131089);
-define ('ABMON_5', 131090);
-define ('ABMON_6', 131091);
-define ('ABMON_7', 131092);
-define ('ABMON_8', 131093);
-define ('ABMON_9', 131094);
-define ('ABMON_10', 131095);
-define ('ABMON_11', 131096);
-define ('ABMON_12', 131097);
-define ('MON_1', 131098);
-define ('MON_2', 131099);
-define ('MON_3', 131100);
-define ('MON_4', 131101);
-define ('MON_5', 131102);
-define ('MON_6', 131103);
-define ('MON_7', 131104);
-define ('MON_8', 131105);
-define ('MON_9', 131106);
-define ('MON_10', 131107);
-define ('MON_11', 131108);
-define ('MON_12', 131109);
-define ('AM_STR', 131110);
-define ('PM_STR', 131111);
-define ('D_T_FMT', 131112);
-define ('D_FMT', 131113);
-define ('T_FMT', 131114);
-define ('T_FMT_AMPM', 131115);
-define ('ERA', 131116);
-define ('ERA_D_T_FMT', 131120);
-define ('ERA_D_FMT', 131118);
-define ('ERA_T_FMT', 131121);
-define ('ALT_DIGITS', 131119);
-define ('CRNCYSTR', 262159);
-define ('RADIXCHAR', 65536);
-define ('THOUSEP', 65537);
-define ('YESEXPR', 327680);
-define ('NOEXPR', 327681);
-define ('CODESET', 14);
-define ('CRYPT_SALT_LENGTH', 123);
-define ('CRYPT_STD_DES', 1);
-define ('CRYPT_EXT_DES', 1);
-define ('CRYPT_MD5', 1);
-define ('CRYPT_BLOWFISH', 1);
-define ('CRYPT_SHA256', 1);
-define ('CRYPT_SHA512', 1);
-define ('DIRECTORY_SEPARATOR', "/");
-define ('PATH_SEPARATOR', ":");
-define ('GLOB_BRACE', 1024);
-define ('GLOB_MARK', 2);
-define ('GLOB_NOSORT', 4);
-define ('GLOB_NOCHECK', 16);
-define ('GLOB_NOESCAPE', 64);
-define ('GLOB_ERR', 1);
-define ('GLOB_ONLYDIR', 8192);
-define ('GLOB_AVAILABLE_FLAGS', 9303);
-define ('EXTR_OVERWRITE', 0);
-define ('EXTR_SKIP', 1);
-define ('EXTR_PREFIX_SAME', 2);
-define ('EXTR_PREFIX_ALL', 3);
-define ('EXTR_PREFIX_INVALID', 4);
-define ('EXTR_PREFIX_IF_EXISTS', 5);
-define ('EXTR_IF_EXISTS', 6);
-define ('EXTR_REFS', 256);
+var PSFS_FLAG_FLUSH_CLOSE = 2;
+var ABDAY_1 = 131072;
+var ABDAY_2 = 131073;
+var ABDAY_3 = 131074;
+var ABDAY_4 = 131075;
+var ABDAY_5 = 131076;
+var ABDAY_6 = 131077;
+var ABDAY_7 = 131078;
+var DAY_1 = 131079;
+var DAY_2 = 131080;
+var DAY_3 = 131081;
+var DAY_4 = 131082;
+var DAY_5 = 131083;
+var DAY_6 = 131084;
+var DAY_7 = 131085;
+var ABMON_1 = 131086;
+var ABMON_2 = 131087;
+var ABMON_3 = 131088;
+var ABMON_4 = 131089;
+var ABMON_5 = 131090;
+var ABMON_6 = 131091;
+var ABMON_7 = 131092;
+var ABMON_8 = 131093;
+var ABMON_9 = 131094;
+var ABMON_10 = 131095;
+var ABMON_11 = 131096;
+var ABMON_12 = 131097;
+var MON_1 = 131098;
+var MON_2 = 131099;
+var MON_3 = 131100;
+var MON_4 = 131101;
+var MON_5 = 131102;
+var MON_6 = 131103;
+var MON_7 = 131104;
+var MON_8 = 131105;
+var MON_9 = 131106;
+var MON_10 = 131107;
+var MON_11 = 131108;
+var MON_12 = 131109;
+var AM_STR = 131110;
+var PM_STR = 131111;
+var D_T_FMT = 131112;
+var D_FMT = 131113;
+var T_FMT = 131114;
+var T_FMT_AMPM = 131115;
+var ERA = 131116;
+var ERA_D_T_FMT = 131120;
+var ERA_D_FMT = 131118;
+var ERA_T_FMT = 131121;
+var ALT_DIGITS = 131119;
+var CRNCYSTR = 262159;
+var RADIXCHAR = 65536;
+var THOUSEP = 65537;
+var YESEXPR = 327680;
+var NOEXPR = 327681;
+var CODESET = 14;
+var CRYPT_SALT_LENGTH = 123;
+var CRYPT_STD_DES = 1;
+var CRYPT_EXT_DES = 1;
+var CRYPT_MD5 = 1;
+var CRYPT_BLOWFISH = 1;
+var CRYPT_SHA256 = 1;
+var CRYPT_SHA512 = 1;
+var DIRECTORY_SEPARATOR = "/";
+var PATH_SEPARATOR = ":";
+var GLOB_BRACE = 1024;
+var GLOB_MARK = 2;
+var GLOB_NOSORT = 4;
+var GLOB_NOCHECK = 16;
+var GLOB_NOESCAPE = 64;
+var GLOB_ERR = 1;
+var GLOB_ONLYDIR = 8192;
+var GLOB_AVAILABLE_FLAGS = 9303;
+var EXTR_OVERWRITE = 0;
+var EXTR_SKIP = 1;
+var EXTR_PREFIX_SAME = 2;
+var EXTR_PREFIX_ALL = 3;
+var EXTR_PREFIX_INVALID = 4;
+var EXTR_PREFIX_IF_EXISTS = 5;
+var EXTR_IF_EXISTS = 6;
+var EXTR_REFS = 256;
 
 /**
  * SORT_ASC is used with
  * array_multisort to sort in ascending order.
  * @link http://php.net/manual/en/array.constants.php
  */
-define ('SORT_ASC', 4);
+var SORT_ASC = 4;
 
 /**
  * SORT_DESC is used with
  * array_multisort to sort in descending order.
  * @link http://php.net/manual/en/array.constants.php
  */
-define ('SORT_DESC', 3);
+var SORT_DESC = 3;
 
 /**
  * SORT_REGULAR is used to compare items normally.
  * @link http://php.net/manual/en/array.constants.php
  */
-define ('SORT_REGULAR', 0);
+var SORT_REGULAR = 0;
 
 /**
  * SORT_NUMERIC is used to compare items numerically.
  * @link http://php.net/manual/en/array.constants.php
  */
-define ('SORT_NUMERIC', 1);
+var SORT_NUMERIC = 1;
 
 /**
  * SORT_STRING is used to compare items as strings.
  * @link http://php.net/manual/en/array.constants.php
  */
-define ('SORT_STRING', 2);
+var SORT_STRING = 2;
 
 /**
  * SORT_LOCALE_STRING is used to compare items as
  * strings, based on the current locale. Added in PHP 4.4.0 and 5.0.2.
  * @link http://php.net/manual/en/array.constants.php
  */
-define ('SORT_LOCALE_STRING', 5);
+var SORT_LOCALE_STRING = 5;
 
 /**
  * CASE_LOWER is used with
@@ -783,7 +783,7 @@ define ('SORT_LOCALE_STRING', 5);
  * array_change_key_case.
  * @link http://php.net/manual/en/array.constants.php
  */
-define ('CASE_LOWER', 0);
+var CASE_LOWER = 0;
 
 /**
  * CASE_UPPER is used with
@@ -791,23 +791,23 @@ define ('CASE_LOWER', 0);
  * keys to upper case.
  * @link http://php.net/manual/en/array.constants.php
  */
-define ('CASE_UPPER', 1);
-define ('COUNT_NORMAL', 0);
-define ('COUNT_RECURSIVE', 1);
-define ('ASSERT_ACTIVE', 1);
-define ('ASSERT_CALLBACK', 2);
-define ('ASSERT_BAIL', 3);
-define ('ASSERT_WARNING', 4);
-define ('ASSERT_QUIET_EVAL', 5);
+var CASE_UPPER = 1;
+var COUNT_NORMAL = 0;
+var COUNT_RECURSIVE = 1;
+var ASSERT_ACTIVE = 1;
+var ASSERT_CALLBACK = 2;
+var ASSERT_BAIL = 3;
+var ASSERT_WARNING = 4;
+var ASSERT_QUIET_EVAL = 5;
 
 /**
  * Flag indicating if the stream
  * used the include path.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_USE_PATH', 1);
-define ('STREAM_IGNORE_URL', 2);
-define ('STREAM_ENFORCE_SAFE_MODE', 4);
+var STREAM_USE_PATH = 1;
+var STREAM_IGNORE_URL = 2;
+var STREAM_ENFORCE_SAFE_MODE = 4;
 
 /**
  * Flag indicating if the wrapper
@@ -816,7 +816,7 @@ define ('STREAM_ENFORCE_SAFE_MODE', 4);
  * should not raise any errors.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_REPORT_ERRORS', 8);
+var STREAM_REPORT_ERRORS = 8;
 
 /**
  * This flag is useful when your extension really must be able to randomly
@@ -832,32 +832,32 @@ define ('STREAM_REPORT_ERRORS', 8);
  * opener to block until the whole contents have been downloaded.
  * @link http://php.net/manual/en/internals2.ze1.streams.constants.php
  */
-define ('STREAM_MUST_SEEK', 16);
-define ('STREAM_URL_STAT_LINK', 1);
-define ('STREAM_URL_STAT_QUIET', 2);
-define ('STREAM_MKDIR_RECURSIVE', 1);
-define ('STREAM_IS_URL', 1);
-define ('STREAM_OPTION_BLOCKING', 1);
-define ('STREAM_OPTION_READ_TIMEOUT', 4);
-define ('STREAM_OPTION_READ_BUFFER', 2);
-define ('STREAM_OPTION_WRITE_BUFFER', 3);
-define ('STREAM_BUFFER_NONE', 0);
-define ('STREAM_BUFFER_LINE', 1);
-define ('STREAM_BUFFER_FULL', 2);
+var STREAM_MUST_SEEK = 16;
+var STREAM_URL_STAT_LINK = 1;
+var STREAM_URL_STAT_QUIET = 2;
+var STREAM_MKDIR_RECURSIVE = 1;
+var STREAM_IS_URL = 1;
+var STREAM_OPTION_BLOCKING = 1;
+var STREAM_OPTION_READ_TIMEOUT = 4;
+var STREAM_OPTION_READ_BUFFER = 2;
+var STREAM_OPTION_WRITE_BUFFER = 3;
+var STREAM_BUFFER_NONE = 0;
+var STREAM_BUFFER_LINE = 1;
+var STREAM_BUFFER_FULL = 2;
 
 /**
  * Stream casting, when stream_cast is called 
  * otherwise (see above).
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_CAST_AS_STREAM', 0);
+var STREAM_CAST_AS_STREAM = 0;
 
 /**
  * Stream casting, for when stream_select is 
  * calling stream_cast.
  * @link http://php.net/manual/en/stream.constants.php
  */
-define ('STREAM_CAST_FOR_SELECT', 3);
+var STREAM_CAST_FOR_SELECT = 3;
 
 /**
  * Image type constant used by the
@@ -865,7 +865,7 @@ define ('STREAM_CAST_FOR_SELECT', 3);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_GIF', 1);
+var IMAGETYPE_GIF = 1;
 
 /**
  * Image type constant used by the
@@ -873,7 +873,7 @@ define ('IMAGETYPE_GIF', 1);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_JPEG', 2);
+var IMAGETYPE_JPEG = 2;
 
 /**
  * Image type constant used by the
@@ -881,7 +881,7 @@ define ('IMAGETYPE_JPEG', 2);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_PNG', 3);
+var IMAGETYPE_PNG = 3;
 
 /**
  * Image type constant used by the
@@ -889,7 +889,7 @@ define ('IMAGETYPE_PNG', 3);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_SWF', 4);
+var IMAGETYPE_SWF = 4;
 
 /**
  * Image type constant used by the
@@ -897,7 +897,7 @@ define ('IMAGETYPE_SWF', 4);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_PSD', 5);
+var IMAGETYPE_PSD = 5;
 
 /**
  * Image type constant used by the
@@ -905,7 +905,7 @@ define ('IMAGETYPE_PSD', 5);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_BMP', 6);
+var IMAGETYPE_BMP = 6;
 
 /**
  * Image type constant used by the
@@ -913,7 +913,7 @@ define ('IMAGETYPE_BMP', 6);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_TIFF_II', 7);
+var IMAGETYPE_TIFF_II = 7;
 
 /**
  * Image type constant used by the
@@ -921,7 +921,7 @@ define ('IMAGETYPE_TIFF_II', 7);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_TIFF_MM', 8);
+var IMAGETYPE_TIFF_MM = 8;
 
 /**
  * Image type constant used by the
@@ -929,7 +929,7 @@ define ('IMAGETYPE_TIFF_MM', 8);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_JPC', 9);
+var IMAGETYPE_JPC = 9;
 
 /**
  * Image type constant used by the
@@ -937,7 +937,7 @@ define ('IMAGETYPE_JPC', 9);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_JP2', 10);
+var IMAGETYPE_JP2 = 10;
 
 /**
  * Image type constant used by the
@@ -945,7 +945,7 @@ define ('IMAGETYPE_JP2', 10);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_JPX', 11);
+var IMAGETYPE_JPX = 11;
 
 /**
  * Image type constant used by the
@@ -953,7 +953,7 @@ define ('IMAGETYPE_JPX', 11);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_JB2', 12);
+var IMAGETYPE_JB2 = 12;
 
 /**
  * Image type constant used by the
@@ -961,7 +961,7 @@ define ('IMAGETYPE_JB2', 12);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_SWC', 13);
+var IMAGETYPE_SWC = 13;
 
 /**
  * Image type constant used by the
@@ -969,7 +969,7 @@ define ('IMAGETYPE_SWC', 13);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_IFF', 14);
+var IMAGETYPE_IFF = 14;
 
 /**
  * Image type constant used by the
@@ -977,7 +977,7 @@ define ('IMAGETYPE_IFF', 14);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_WBMP', 15);
+var IMAGETYPE_WBMP = 15;
 
 /**
  * Image type constant used by the
@@ -985,7 +985,7 @@ define ('IMAGETYPE_WBMP', 15);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_JPEG2000', 9);
+var IMAGETYPE_JPEG2000 = 9;
 
 /**
  * Image type constant used by the
@@ -993,7 +993,7 @@ define ('IMAGETYPE_JPEG2000', 9);
  * image_type_to_extension functions.
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_XBM', 16);
+var IMAGETYPE_XBM = 16;
 
 /**
  * Image type constant used by the
@@ -1002,39 +1002,39 @@ define ('IMAGETYPE_XBM', 16);
  * (Available as of PHP 5.3.0)
  * @link http://php.net/manual/en/image.constants.php
  */
-define ('IMAGETYPE_ICO', 17);
-define ('IMAGETYPE_UNKNOWN', 0);
-define ('IMAGETYPE_COUNT', 18);
+var IMAGETYPE_ICO = 17;
+var IMAGETYPE_UNKNOWN = 0;
+var IMAGETYPE_COUNT = 18;
 
 /**
  * IPv4 Address Resource
  * @link http://php.net/manual/en/network.constants.php
  */
-define ('DNS_A', 1);
+var DNS_A = 1;
 
 /**
  * Authoritative Name Server Resource
  * @link http://php.net/manual/en/network.constants.php
  */
-define ('DNS_NS', 2);
+var DNS_NS = 2;
 
 /**
  * Alias (Canonical Name) Resource
  * @link http://php.net/manual/en/network.constants.php
  */
-define ('DNS_CNAME', 16);
+var DNS_CNAME = 16;
 
 /**
  * Start of Authority Resource
  * @link http://php.net/manual/en/network.constants.php
  */
-define ('DNS_SOA', 32);
+var DNS_SOA = 32;
 
 /**
  * Pointer Resource
  * @link http://php.net/manual/en/network.constants.php
  */
-define ('DNS_PTR', 2048);
+var DNS_PTR = 2048;
 
 /**
  * Host Info Resource (See IANA's
@@ -1042,28 +1042,28 @@ define ('DNS_PTR', 2048);
  * for the meaning of these values)
  * @link http://php.net/manual/en/network.constants.php
  */
-define ('DNS_HINFO', 4096);
+var DNS_HINFO = 4096;
 
 /**
  * Mail Exchanger Resource
  * @link http://php.net/manual/en/network.constants.php
  */
-define ('DNS_MX', 16384);
+var DNS_MX = 16384;
 
 /**
  * Text Resource
  * @link http://php.net/manual/en/network.constants.php
  */
-define ('DNS_TXT', 32768);
-define ('DNS_SRV', 33554432);
-define ('DNS_NAPTR', 67108864);
+var DNS_TXT = 32768;
+var DNS_SRV = 33554432;
+var DNS_NAPTR = 67108864;
 
 /**
  * IPv6 Address Resource
  * @link http://php.net/manual/en/network.constants.php
  */
-define ('DNS_AAAA', 134217728);
-define ('DNS_A6', 16777216);
+var DNS_AAAA = 134217728;
+var DNS_A6 = 16777216;
 
 /**
  * Any Resource Record. On most systems
@@ -1072,14 +1072,14 @@ define ('DNS_A6', 16777216);
  * uses. Try DNS_ALL instead.
  * @link http://php.net/manual/en/network.constants.php
  */
-define ('DNS_ANY', 268435456);
+var DNS_ANY = 268435456;
 
 /**
  * Iteratively query the name server for
  * each available record type.
  * @link http://php.net/manual/en/network.constants.php
  */
-define ('DNS_ALL', 251713587);
+var DNS_ALL = 251713587;
 
 // End of standard v.5.3.1-0.dotdeb.1
 
@@ -1091,12 +1091,12 @@ define ('DNS_ALL', 251713587);
  * which implies that spaces are encoded as plus (+) signs.
  * @link http://php.net/manual/en/function.http-build-query.php
  */
-define('PHP_QUERY_RFC1738', 1);
+var PHP_QUERY_RFC1738 = 1;
 /**
  * Encoding is performed according to RFC 3986, and spaces will be percent encoded (%20).
  * @link http://php.net/manual/en/function.http-build-query.php
  */
-define('PHP_QUERY_RFC3986', 2);
+var PHP_QUERY_RFC3986 = 2;
 
 
 //WI-11254 Stubs for missing constants from PHP 5.4
@@ -1105,50 +1105,50 @@ define('PHP_QUERY_RFC3986', 2);
  * Specifies where the manpages were installed into. Available since PHP 5.3.7.
  * @link http://php.net/manual/en/reserved.constants.php
  */
-define('PHP_MANDIR', '/usr/local/php/php/man');
+var PHP_MANDIR = '/usr/local/php/php/man';
 /**
  * Specifies where the binaries were installed into.
  * @link http://php.net/manual/en/reserved.constants.php
  */
-define('PHP_BINARY', '/usr/local/php/bin/php');
+var PHP_BINARY = '/usr/local/php/bin/php';
 
 
 
 /** @link http://php.net/manual/en/outcontrol.constants.php */
-define('PHP_OUTPUT_HANDLER_WRITE', 0);
+var PHP_OUTPUT_HANDLER_WRITE = 0;
 /** @link http://php.net/manual/en/outcontrol.constants.php */
-define('PHP_OUTPUT_HANDLER_FLUSH', 4);
+var PHP_OUTPUT_HANDLER_FLUSH = 4;
 /** @link http://php.net/manual/en/outcontrol.constants.php */
-define('PHP_OUTPUT_HANDLER_CLEAN', 2);
+var PHP_OUTPUT_HANDLER_CLEAN = 2;
 /** @link http://php.net/manual/en/outcontrol.constants.php */
-define('PHP_OUTPUT_HANDLER_FINAL', 8);
+var PHP_OUTPUT_HANDLER_FINAL = 8;
 /** @link http://php.net/manual/en/outcontrol.constants.php */
-define('PHP_OUTPUT_HANDLER_CLEANABLE', 16);
+var PHP_OUTPUT_HANDLER_CLEANABLE = 16;
 /** @link http://php.net/manual/en/outcontrol.constants.php */
-define('PHP_OUTPUT_HANDLER_FLUSHABLE', 32);
+var PHP_OUTPUT_HANDLER_FLUSHABLE = 32;
 /** @link http://php.net/manual/en/outcontrol.constants.php */
-define('PHP_OUTPUT_HANDLER_REMOVABLE', 64);
+var PHP_OUTPUT_HANDLER_REMOVABLE = 64;
 /** @link http://php.net/manual/en/outcontrol.constants.php */
-define('PHP_OUTPUT_HANDLER_STDFLAGS', 112);
+var PHP_OUTPUT_HANDLER_STDFLAGS = 112;
 /** @link http://php.net/manual/en/outcontrol.constants.php */
-define('PHP_OUTPUT_HANDLER_STARTED', 4096);
+var PHP_OUTPUT_HANDLER_STARTED = 4096;
 /** @link http://php.net/manual/en/outcontrol.constants.php */
-define('PHP_OUTPUT_HANDLER_DISABLED', 8192);
+var PHP_OUTPUT_HANDLER_DISABLED = 8192;
 
 
 
 /** @link http://php.net/manual/en/libxml.constants.php */
-define('LIBXML_PEDANTIC', 128);
+var LIBXML_PEDANTIC = 128;
 
 
 
 
 /** @link http://php.net/manual/en/zlib.constants.php */
-define('ZLIB_ENCODING_RAW', -15);
+var ZLIB_ENCODING_RAW = -15;
 /** @link http://php.net/manual/en/zlib.constants.php */
-define('ZLIB_ENCODING_GZIP', 31);
+var ZLIB_ENCODING_GZIP = 31;
 /** @link http://php.net/manual/en/zlib.constants.php */
-define('ZLIB_ENCODING_DEFLATE', 15);
+var ZLIB_ENCODING_DEFLATE = 15;
 
 
 
@@ -1161,7 +1161,7 @@ define('ZLIB_ENCODING_DEFLATE', 15);
  * a 0-length string.
  * @link http://php.net/manual/en/filter.filters.sanitize.php
  */
-define('FILTER_SANITIZE_FULL_SPECIAL_CHARS', 515);
+var FILTER_SANITIZE_FULL_SPECIAL_CHARS = 515;
 
 
 
@@ -1171,17 +1171,17 @@ define('FILTER_SANITIZE_FULL_SPECIAL_CHARS', 515);
  * Return value of session_status() if sessions are disabled. Since PHP 5.4.0.
  * @link http://php.net/manual/en/function.session-status.php
  */
-define('PHP_SESSION_DISABLED', 0);
+var PHP_SESSION_DISABLED = 0;
 /**
  * Return value of session_status() if sessions are enabled, but no session exists. Since PHP 5.4.0.
  * @link http://php.net/manual/en/function.session-status.php
  */
-define('PHP_SESSION_NONE', 1);
+var PHP_SESSION_NONE = 1;
 /**
  * Return value of session_status() if sessions are enabled, and a session exists. Since PHP 5.4.0.
  * @link http://php.net/manual/en/function.session-status.php
  */
-define('PHP_SESSION_ACTIVE', 2);
+var PHP_SESSION_ACTIVE = 2;
 
 
 
@@ -1189,47 +1189,47 @@ define('PHP_SESSION_ACTIVE', 2);
  * Joins a multicast group. (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('MCAST_JOIN_GROUP', 42);
+var MCAST_JOIN_GROUP = 42;
 /**
  * Leaves a multicast group. (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('MCAST_LEAVE_GROUP', 45);
+var MCAST_LEAVE_GROUP = 45;
 /**
  * Blocks packets arriving from a specific source to a specific multicast group,
  * which must have been previously joined. (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('MCAST_BLOCK_SOURCE', 43);
+var MCAST_BLOCK_SOURCE = 43;
 /**
  * Unblocks (start receiving again) packets arriving from
  * a specific source address to a specific multicast group,
  * which must have been previously joined. (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('MCAST_UNBLOCK_SOURCE', 44);
+var MCAST_UNBLOCK_SOURCE = 44;
 /**
  * Receive packets destined to a specific multicast group
  * whose source address matches a specific value. (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('MCAST_JOIN_SOURCE_GROUP', 46);
+var MCAST_JOIN_SOURCE_GROUP = 46;
 /**
  * Stop receiving packets destined to a specific multicast group
  * whose soure address matches a specific value. (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('MCAST_LEAVE_SOURCE_GROUP', 47);
+var MCAST_LEAVE_SOURCE_GROUP = 47;
 /**
  * The outgoing interface for IPv4 multicast packets. (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('IP_MULTICAST_IF', 32);
+var IP_MULTICAST_IF = 32;
 /**
  * The outgoing interface for IPv6 multicast packets. (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('IP_MULTICAST_TTL', 33);
+var IP_MULTICAST_TTL = 33;
 /**
  * The multicast loopback policy for IPv4 packets,
  * which determines whether multicast packets sent by this socket
@@ -1237,30 +1237,30 @@ define('IP_MULTICAST_TTL', 33);
  * on the outgoing interface used by this socket. This is the case by default. (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('IP_MULTICAST_LOOP', 34);
+var IP_MULTICAST_LOOP = 34;
 /**
  * Analogous to IP_MULTICAST_LOOP, but for IPv6. (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('IPV6_MULTICAST_IF', 17);
+var IPV6_MULTICAST_IF = 17;
 /**
  * The time-to-live of outgoing IPv4 multicast packets.
  * This should be a value between 0 (don't leave the interface) and 255.
  * The default value is 1 (only the local network is reached). (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('IPV6_MULTICAST_HOPS', 18);
+var IPV6_MULTICAST_HOPS = 18;
 /**
  * Analogous to IP_MULTICAST_TTL, but for IPv6 packets.
  * The value -1 is also accepted, meaning the route default should be used. (added in PHP 5.4)
  * @link http://php.net/manual/en/function.socket-get-option.php
  */
-define('IPV6_MULTICAST_LOOP', 19);
+var IPV6_MULTICAST_LOOP = 19;
 
 
 
-define('IPPROTO_IP', 0);
-define('IPPROTO_IPV6', 41);
+var IPPROTO_IP = 0;
+var IPPROTO_IPV6 = 41;
 
 
 
@@ -1269,7 +1269,7 @@ define('IPPROTO_IPV6', 41);
  * U+FFFD (UTF-8) or &#FFFD; (otherwise) instead of returning an empty string.
  * @link http://php.net/manual/en/function.htmlspecialchars.php
  */
-define('ENT_SUBSTITUTE', 8);
+var ENT_SUBSTITUTE = 8;
 /**
  * Replace invalid code points for the given document type with
  * a Unicode Replacement Character U+FFFD (UTF-8) or &#FFFD;
@@ -1278,35 +1278,35 @@ define('ENT_SUBSTITUTE', 8);
  * with embedded external content.
  * @link http://php.net/manual/en/function.htmlspecialchars.php
  */
-define('ENT_DISALLOWED', 128);
+var ENT_DISALLOWED = 128;
 /**
  * Handle code as HTML 4.01.
  * @link http://php.net/manual/en/function.htmlspecialchars.php
  */
-define('ENT_HTML401', 0);
+var ENT_HTML401 = 0;
 /**
  * Handle code as XML 1.
  * @link http://php.net/manual/en/function.htmlspecialchars.php
  */
-define('ENT_XML1', 16);
+var ENT_XML1 = 16;
 /**
  * Handle code as XHTML.
  * @link http://php.net/manual/en/function.htmlspecialchars.php
  */
-define('ENT_XHTML', 32);
+var ENT_XHTML = 32;
 /**
  * Handle code as HTML 5.
  * @link http://php.net/manual/en/function.htmlspecialchars.php
  */
-define('ENT_HTML5', 48);
+var ENT_HTML5 = 48;
 
 
 /** @link http://php.net/manual/en/function.scandir.php */
-define('SCANDIR_SORT_ASCENDING', 0);
+var SCANDIR_SORT_ASCENDING = 0;
 /** @link http://php.net/manual/en/function.scandir.php */
-define('SCANDIR_SORT_DESCENDING', 1);
+var SCANDIR_SORT_DESCENDING = 1;
 /** @link http://php.net/manual/en/function.scandir.php */
-define('SCANDIR_SORT_NONE', 2);
+var SCANDIR_SORT_NONE = 2;
 
 
 
@@ -1314,27 +1314,27 @@ define('SCANDIR_SORT_NONE', 2);
  * SORT_NATURAL is used to compare items as strings using "natural ordering" like natsort(). Added in PHP 5.4.0.
  * @link http://php.net/manual/en/array.constants.php
  */
-define('SORT_NATURAL', 6);
+var SORT_NATURAL = 6;
 /**
  * SORT_FLAG_CASE can be combined (bitwise OR) with SORT_STRING or SORT_NATURAL to sort strings case-insensitively. Added in PHP 5.4.0.
  * @link http://php.net/manual/en/array.constants.php
  */
-define('SORT_FLAG_CASE', 8);
+var SORT_FLAG_CASE = 8;
 
 
 
 /** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
-define('STREAM_META_TOUCH', 1);
+var STREAM_META_TOUCH = 1;
 /** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
-define('STREAM_META_OWNER', 3);
+var STREAM_META_OWNER = 3;
 /** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
-define('STREAM_META_OWNER_NAME', 2);
+var STREAM_META_OWNER_NAME = 2;
 /** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
-define('STREAM_META_GROUP', 5);
+var STREAM_META_GROUP = 5;
 /** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
-define('STREAM_META_GROUP_NAME', 4);
+var STREAM_META_GROUP_NAME = 4;
 /** @link http://php.net/manual/en/streamwrapper.stream-metadata.php */
-define('STREAM_META_ACCESS', 6);
+var STREAM_META_ACCESS = 6;
 
 
 

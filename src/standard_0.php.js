@@ -1,33 +1,34 @@
-
-
 // Start of standard v.5.3.2-0.dotdeb.1
 
 // class __PHP_Incomplete_Class  {
 
-function __PHP_Incomplete_Class()  {
+function __PHP_Incomplete_Class() {
 }
 
 // class php_user_filter  {
 
-function php_user_filter()  {
-        var $filtername;
-        var $params;
+function php_user_filter() {
+    var $filtername;
+    var $params;
 
 
-        /**
-         * @param $in
-         * @param $out
-         * @param $consumed
-         * @param $closing
-         */
+    /**
+     * @param $in
+     * @param $out
+     * @param $consumed
+     * @param $closing
+     */
         // function filter ($in, $out, &$consumed, $closing) {}
-        function filter ($in, $out, $consumed, $closing) {}
+    function filter($in, $out, $consumed, $closing) {
+    }
 
-        // function onCreate () {}
-        function onCreate () {}
+    // function onCreate () {}
+    function onCreate() {
+    }
 
-        // function onClose () {}
-        function onClose () {}
+    // function onClose () {}
+    function onClose() {
+    }
 
 }
 
@@ -36,7 +37,7 @@ function php_user_filter()  {
  */
 // class Directory  {
 
-function Directory()  {
+function Directory() {
 
     /**
      * Close directory handle.
@@ -44,8 +45,9 @@ function Directory()  {
      * @param resource $dir_handle [optional]
      * @link http://www.php.net/manual/en/directory.close.php
      */
-    // function close ( $dir_handle ) {}
-    function close ($dir_handle) {}
+        // function close ( $dir_handle ) {}
+    function close($dir_handle) {
+    }
 
     /**
      *  Rewind directory handle.
@@ -53,8 +55,9 @@ function Directory()  {
      * @param resource $dir_handle [optional]
      * @link http://www.php.net/manual/en/directory.rewind.php
      */
-    // function rewind ( $dir_handle ) {}
-    function rewind ($dir_handle) {}
+        // function rewind ( $dir_handle ) {}
+    function rewind($dir_handle) {
+    }
 
     /**
      * Read entry from directory handle.
@@ -63,8 +66,9 @@ function Directory()  {
      * @return string
      * @link http://www.php.net/manual/en/directory.read.php
      */
-    // function read ( $dir_handle) { }
-    function read ($dir_handle) { }
+        // function read ( $dir_handle) { }
+    function read($dir_handle) {
+    }
 
 }
 
@@ -79,7 +83,8 @@ function Directory()  {
  * defined.
  */
 // function constant ($name) {}
-function constant ($name) {}
+function constant($name) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -91,7 +96,8 @@ function constant ($name) {}
  * @return string the hexadecimal representation of the given string.
  */
 // function bin2hex ($str) {}
-function bin2hex ($str) {}
+function bin2hex($str) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -105,7 +111,8 @@ function bin2hex ($str) {}
  * to sleep.
  */
 // function sleep ($seconds) {}
-function sleep ($seconds) {}
+function sleep($seconds) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -115,10 +122,11 @@ function sleep ($seconds) {}
  * Halt time in micro seconds. A micro second is one millionth of a
  * second.
  * </p>
- * @return void 
+ * @return void
  */
 // function usleep ($micro_seconds) {}
-function usleep ($micro_seconds) {}
+function usleep($micro_seconds) {
+}
 
 /**
  * (PHP 5)<br/>
@@ -141,7 +149,8 @@ function usleep ($micro_seconds) {}
  * remaining in the delay
  */
 // function time_nanosleep ($seconds, $nanoseconds) {}
-function time_nanosleep ($seconds, $nanoseconds) {}
+function time_nanosleep($seconds, $nanoseconds) {
+}
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -153,7 +162,8 @@ function time_nanosleep ($seconds, $nanoseconds) {}
  * @return bool true on success or false on failure.
  */
 // function time_sleep_until ($timestamp) {}
-function time_sleep_until ($timestamp) {}
+function time_sleep_until($timestamp) {
+}
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -219,16 +229,18 @@ function time_sleep_until ($timestamp) {}
  * </table>
  */
 // function strptime ($date, $format) {}
-function strptime ($date, $format) {}
+function strptime($date, $format) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
  * Flush the output buffer
  * @link http://php.net/manual/en/function.flush.php
- * @return void 
+ * @return void
  */
 // function flush () {}
-function flush () {}
+function flush() {
+}
 
 /**
  * (PHP 4 &gt;= 4.0.2, PHP 5)<br/>
@@ -253,7 +265,8 @@ function flush () {}
  * @return string the given string wrapped at the specified column.
  */
 // function wordwrap ($str, $width = 75, $break = "\n", $cut = false) {}
-function wordwrap ($str, $width, $break, $cut) {}
+function wordwrap($str, $width, $break, $cut) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -292,7 +305,8 @@ function wordwrap ($str, $width, $break, $cut) {}
  * @return string The converted string.
  */
 // function htmlspecialchars ($string, $quote_style = null, $charset = null, $double_encode = null) {}
-function htmlspecialchars ($string, $quote_style, $charset, $double_encode) {}
+function htmlspecialchars($string, $quote_style, $charset, $double_encode) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -340,7 +354,54 @@ function htmlspecialchars ($string, $quote_style, $charset, $double_encode) {}
  * @return string the encoded string.
  */
 // function htmlentities ($string, $quote_style = null, $charset = null, $double_encode = null) {}
-function htmlentities ($string, $quote_style, $charset, $double_encode) {}
+function htmlentities($string, $quote_style, $charset, $double_encode) {
+
+    if (typeof $quote_style === 'undefined') {
+        $quote_style = ENT_QUOTES;
+    }
+
+    if (typeof $double_encode === 'undefined') {
+        $double_encode = true;
+    }
+
+    var pfx = Math.floor(Math.random() * 10000);
+    var sfx = '_' + pfx;
+
+    if ($double_encode === false) {
+        $string = $string.replace(/&(.+?);/g, pfx + '$1' + sfx);
+    }
+
+    $charset = $charset || 'ISO-8859-1';
+
+    var rx = /[(<>"'&]/g;
+
+    var replacechar = function (match, quote_style) {
+
+        switch (match) {
+            case "<":
+                return "&lt;";
+            case ">":
+                return "&gt;";
+            case "\"":
+                return quote_style === ENT_NOQUOTES ? match : "&quot;";
+            case "'":
+                return quote_style === ENT_NOQUOTES || quote_style === ENT_COMPAT ? match : "&#039;";
+            case "&":
+                return "&amp;"
+        }
+    };
+
+    var output = $string.replace(rx, function (m) {
+        return replacechar(m, $quote_style);
+    });
+
+
+    if ($double_encode === false) {
+        output = output.replace(new RegExp(pfx + '(.+?)' + sfx, 'g'), '&$1;');
+    }
+
+    return output;
+}
 
 /**
  * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
@@ -383,7 +444,8 @@ function htmlentities ($string, $quote_style, $charset, $double_encode) {}
  * @return string the decoded string.
  */
 // function html_entity_decode ($string, $quote_style = null, $charset = null) {}
-function html_entity_decode ($string, $quote_style, $charset) {}
+function html_entity_decode($string, $quote_style, $charset) {
+}
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -418,7 +480,8 @@ function html_entity_decode ($string, $quote_style, $charset) {}
  * @return string the decoded string.
  */
 // function htmlspecialchars_decode ($string, $quote_style = null) {}
-function htmlspecialchars_decode ($string, $quote_style) {}
+function htmlspecialchars_decode($string, $quote_style) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -439,7 +502,8 @@ function htmlspecialchars_decode ($string, $quote_style) {}
  * @return array the translation table as an array.
  */
 // function get_html_translation_table ($table = null, $quote_style = null) {}
-function get_html_translation_table ($table, $quote_style) {}
+function get_html_translation_table($table, $quote_style) {
+}
 
 /**
  * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
@@ -457,7 +521,8 @@ function get_html_translation_table ($table, $quote_style) {}
  * @return string the sha1 hash as a string.
  */
 // function sha1 ($str, $raw_output = null) {}
-function sha1 ($str, $raw_output) {}
+function sha1($str, $raw_output) {
+}
 
 /**
  * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
@@ -473,7 +538,8 @@ function sha1 ($str, $raw_output) {}
  * @return string a string on success, false otherwise.
  */
 // function sha1_file ($filename, $raw_output = null) {}
-function sha1_file ($filename, $raw_output) {}
+function sha1_file($filename, $raw_output) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -490,7 +556,8 @@ function sha1_file ($filename, $raw_output) {}
  * @return string the hash as a 32-character hexadecimal number.
  */
 // function md5 ($str, $raw_output = null) {}
-function md5 ($str, $raw_output) {}
+function md5($str, $raw_output) {
+}
 
 /**
  * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
@@ -506,7 +573,8 @@ function md5 ($str, $raw_output) {}
  * @return string a string on success, false otherwise.
  */
 // function md5_file ($filename, $raw_output = null) {}
-function md5_file ($filename, $raw_output) {}
+function md5_file($filename, $raw_output) {
+}
 
 /**
  * (PHP 4 &gt;= 4.0.1, PHP 5)<br/>
@@ -518,7 +586,8 @@ function md5_file ($filename, $raw_output) {}
  * @return int the crc32 checksum of str as an integer.
  */
 // function crc32 ($str) {}
-function crc32 ($str) {}
+function crc32($str) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -531,7 +600,8 @@ function crc32 ($str) {}
  * value. It returns false on error or if no IPTC data was found.
  */
 // function iptcparse ($iptcblock) {}
-function iptcparse ($iptcblock) {}
+function iptcparse($iptcblock) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -544,14 +614,15 @@ function iptcparse ($iptcblock) {}
  * Path to the JPEG image.
  * </p>
  * @param int $spool [optional] <p>
- * Spool flag. If the spool flag is over 2 then the JPEG will be 
+ * Spool flag. If the spool flag is over 2 then the JPEG will be
  * returned as a string.
  * </p>
- * @return mixed If success and spool flag is lower than 2 then the JPEG will not be 
+ * @return mixed If success and spool flag is lower than 2 then the JPEG will not be
  * returned as a string, false on errors.
  */
 // function iptcembed ($iptcdata, $jpeg_file_name, $spool = null) {}
-function iptcembed ($iptcdata, $jpeg_file_name, $spool) {}
+function iptcembed($iptcdata, $jpeg_file_name, $spool) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -560,14 +631,14 @@ function iptcembed ($iptcdata, $jpeg_file_name, $spool) {}
  * @param string $filename <p>
  * This parameter specifies the file you wish to retrieve information
  * about. It can reference a local file or (configuration permitting) a
- * remote file using one of the supported streams. 
+ * remote file using one of the supported streams.
  * </p>
  * @param array $imageinfo [optional] <p>
  * This optional parameter allows you to extract some extended
  * information from the image file. Currently, this will return the
  * different JPG APP markers as an associative array.
- * Some programs use these APP markers to embed text information in 
- * images. A very common one is to embed 
+ * Some programs use these APP markers to embed text information in
+ * images. A very common one is to embed
  * IPTC information in the APP13 marker.
  * You can use the iptcparse function to parse the
  * binary APP13 marker into something readable.
@@ -584,17 +655,17 @@ function iptcembed ($iptcdata, $jpeg_file_name, $spool) {}
  * zero for width and height in these cases.
  * </p>
  * <p>
- * Index 2 is one of the IMAGETYPE_XXX constants indicating 
+ * Index 2 is one of the IMAGETYPE_XXX constants indicating
  * the type of the image.
  * </p>
  * <p>
- * Index 3 is a text string with the correct 
+ * Index 3 is a text string with the correct
  * height="yyy" width="xxx" string that can be used
  * directly in an IMG tag.
  * </p>
  * <p>
  * mime is the correspondant MIME type of the image.
- * This information can be used to deliver images with correct the HTTP 
+ * This information can be used to deliver images with correct the HTTP
  * Content-type header:
  * getimagesize and MIME types
  * ]]>
@@ -617,12 +688,13 @@ function iptcembed ($iptcdata, $jpeg_file_name, $spool) {}
  * On failure, false is returned.
  */
 // function getimagesize ($filename, array &$imageinfo = null) {}
-function getimagesize ($filename, $imageinfo) {}
+function getimagesize($filename, $imageinfo) {
+}
 
 /**
  * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
  * Get Mime-Type for image-type returned by getimagesize,
-   exif_read_data, exif_thumbnail, exif_imagetype
+ exif_read_data, exif_thumbnail, exif_imagetype
  * @link http://php.net/manual/en/function.image-type-to-mime-type.php
  * @param int $imagetype <p>
  * One of the IMAGETYPE_XXX constants.
@@ -707,7 +779,8 @@ function getimagesize ($filename, $imageinfo) {}
  * </table>
  */
 // function image_type_to_mime_type ($imagetype) {}
-function image_type_to_mime_type ($imagetype) {}
+function image_type_to_mime_type($imagetype) {
+}
 
 /**
  * (PHP 5)<br/>
@@ -722,7 +795,8 @@ function image_type_to_mime_type ($imagetype) {}
  * @return string A string with the extension corresponding to the given image type.
  */
 // function image_type_to_extension ($imagetype, $include_dot = null) {}
-function image_type_to_extension ($imagetype, $include_dot) {}
+function image_type_to_extension($imagetype, $include_dot) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -786,7 +860,7 @@ function image_type_to_extension ($imagetype, $include_dot) {}
  * <td>INFO_VARIABLES</td>
  * <td>32</td>
  * <td>
- * Shows all 
+ * Shows all
  * predefined variables from EGPCS (Environment, GET,
  * POST, Cookie, Server).
  * </td>
@@ -810,7 +884,8 @@ function image_type_to_extension ($imagetype, $include_dot) {}
  * @return bool true on success or false on failure.
  */
 // function phpinfo ($what = null) {}
-function phpinfo ($what) {}
+function phpinfo($what) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -825,7 +900,8 @@ function phpinfo ($what) {}
  * the extension isn't enabled.
  */
 // function phpversion ($extension = null) {}
-function phpversion ($extension) {}
+function phpversion($extension) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -892,7 +968,8 @@ function phpversion ($extension) {}
  * @return bool true on success or false on failure.
  */
 // function phpcredits ($flag = null) {}
-function phpcredits ($flag) {}
+function phpcredits($flag) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -901,13 +978,16 @@ function phpcredits ($flag) {}
  * @return string PHPE9568F34-D428-11d2-A769-00AA001ACF42.
  */
 // function php_logo_guid () {}
-function php_logo_guid () {}
+function php_logo_guid() {
+}
 
 // function php_real_logo_guid () {}
-function php_real_logo_guid () {}
+function php_real_logo_guid() {
+}
 
 // function php_egg_logo_guid () {}
-function php_egg_logo_guid () {}
+function php_egg_logo_guid() {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -916,7 +996,8 @@ function php_egg_logo_guid () {}
  * @return string PHPE9568F35-D428-11d2-A769-00AA001ACF42.
  */
 // function zend_logo_guid () {}
-function zend_logo_guid () {}
+function zend_logo_guid() {
+}
 
 /**
  * (PHP 4 &gt;= 4.0.1, PHP 5)<br/>
@@ -925,19 +1006,20 @@ function zend_logo_guid () {}
  * @return string the interface type, as a lowercase string.
  * </p>
  * <p>
- * Although not exhaustive, the possible return values include 
- * aolserver, apache, 
- * apache2filter, apache2handler, 
- * caudium, cgi (until PHP 5.3), 
- * cgi-fcgi, cli, 
+ * Although not exhaustive, the possible return values include
+ * aolserver, apache,
+ * apache2filter, apache2handler,
+ * caudium, cgi (until PHP 5.3),
+ * cgi-fcgi, cli,
  * continuity, embed,
- * isapi, litespeed, 
- * milter, nsapi, 
+ * isapi, litespeed,
+ * milter, nsapi,
  * phttpd, pi3web, roxen,
  * thttpd, tux, and webjames.
  */
 // function php_sapi_name () {}
-function php_sapi_name () {}
+function php_sapi_name() {
+}
 
 /**
  * (PHP 4 &gt;= 4.0.2, PHP 5)<br/>
@@ -951,7 +1033,8 @@ function php_sapi_name () {}
  * @return string the description, as a string.
  */
 // function php_uname ($mode = null) {}
-function php_uname ($mode) {}
+function php_uname($mode) {
+}
 
 /**
  * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
@@ -966,7 +1049,8 @@ function php_uname ($mode) {}
  * php_ini_scanned_files.
  */
 // function php_ini_scanned_files () {}
-function php_ini_scanned_files () {}
+function php_ini_scanned_files() {
+}
 
 /**
  * (PHP 5 &gt;= 5.2.4)<br/>
@@ -975,7 +1059,8 @@ function php_ini_scanned_files () {}
  * @return string The loaded &php.ini; path, or false if one is not loaded.
  */
 // function php_ini_loaded_file () {}
-function php_ini_loaded_file () {}
+function php_ini_loaded_file() {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -993,7 +1078,8 @@ function php_ini_loaded_file () {}
  * str2, and 0 if they are equal.
  */
 // function strnatcmp ($str1, $str2) {}
-function strnatcmp ($str1, $str2) {}
+function strnatcmp($str1, $str2) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -1011,7 +1097,8 @@ function strnatcmp ($str1, $str2) {}
  * str2, and 0 if they are equal.
  */
 // function strnatcasecmp ($str1, $str2) {}
-function strnatcasecmp ($str1, $str2) {}
+function strnatcasecmp($str1, $str2) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -1034,12 +1121,13 @@ function strnatcasecmp ($str1, $str2) {}
  * @return int This functions returns an integer.
  */
 // function substr_count ($haystack, $needle, $offset = null, $length = null) {}
-function substr_count ($haystack, $needle, $offset, $length) {}
+function substr_count($haystack, $needle, $offset, $length) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
  * Finds the length of the first segment of a string consisting
-   entirely of characters contained within a given mask.
+ entirely of characters contained within a given mask.
  * @link http://php.net/manual/en/function.strspn.php
  * @param string $subject <p>
  * The string to examine.
@@ -1070,7 +1158,7 @@ function substr_count ($haystack, $needle, $offset, $length) {}
  * </p>
  * @param int $length [optional] <p>
  * The length of the segment from subject
- * to examine. 
+ * to examine.
  * </p>
  * <p>
  * If length is given and is non-negative,
@@ -1088,7 +1176,8 @@ function substr_count ($haystack, $needle, $offset, $length) {}
  * which consists entirely of characters in str2.
  */
 // function strspn ($subject, $mask, $start = null, $length = null) {}
-function strspn ($subject, $mask, $start, $length) {}
+function strspn($subject, $mask, $start, $length) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -1109,7 +1198,8 @@ function strspn ($subject, $mask, $start, $length) {}
  * @return int the length of the segment as an integer.
  */
 // function strcspn ($str1, $str2, $start = null, $length = null) {}
-function strcspn ($str1, $str2, $start, $length) {}
+function strcspn($str1, $str2, $start, $length) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -1129,7 +1219,8 @@ function strcspn ($str1, $str2, $start, $length) {}
  * @return string A string token.
  */
 // function strtok ($str = null, $token) {}
-function strtok ($str, $token) {}
+function strtok($str, $token) {
+}
 
 
 // End of standard v.5.3.1-0.dotdeb.1

@@ -26,7 +26,10 @@ function getlastmod () {}
  * binary.
  */
 // function base64_decode ($data, $strict = null) {}
-function base64_decode ($data, $strict) {}
+function base64_decode ($data, $strict) {
+    $strict = $strict || null;
+    return atob($data);
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -38,7 +41,9 @@ function base64_decode ($data, $strict) {}
  * @return string The encoded data, as a string.
  */
 // function base64_encode ($data) {}
-function base64_encode ($data) {}
+function base64_encode ($data) {
+    return btoa($data);
+}
 
 /**
  * (PHP 5)<br/>
