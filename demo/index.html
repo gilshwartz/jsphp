@@ -9,38 +9,105 @@
 
     <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="jquery.terminal.js"></script>
-    <script type="text/javascript" src="php.pack.js"></script>
-    <!--<script type="text/javascript" src="../addons/jsphp.bootstrap.js"></script>-->
-    <!--<script type="text/javascript" src="../src/standard_defines.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/standard_0.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/standard_1.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/standard_2.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/standard_3.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/standard_4.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/standard_5.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/standard_6.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/standard_7.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/standard_8.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/standard_9.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/pcre.php.js"></script>-->
-    <!--<script type="text/javascript" src="../src/date.php.js"></script>-->
-
-    <script type="text/javascript">
-
-        try {
-            var p = abs({});
-            alert(p);
-        }catch(e) {
-            alert(e);
-        }
-    </script>
-
+    <script type="text/javascript" src="../addons/jsphp.bootstrap.js"></script>
+    <script type="text/javascript" src="../src/standard_defines.php.js"></script>
+    <script type="text/javascript" src="../src/standard_0.php.js"></script>
+    <script type="text/javascript" src="../src/standard_1.php.js"></script>
+    <script type="text/javascript" src="../src/standard_2.php.js"></script>
+    <script type="text/javascript" src="../src/standard_3.php.js"></script>
+    <script type="text/javascript" src="../src/standard_4.php.js"></script>
+    <script type="text/javascript" src="../src/standard_5.php.js"></script>
+    <script type="text/javascript" src="../src/standard_6.php.js"></script>
+    <script type="text/javascript" src="../src/standard_7.php.js"></script>
+    <script type="text/javascript" src="../src/standard_8.php.js"></script>
+    <script type="text/javascript" src="../src/standard_9.php.js"></script>
+    <script type="text/javascript" src="../src/pcre.php.js"></script>
+    <script type="text/javascript" src="../src/date.php.js"></script>
 </head>
 <body>
 
 <h1>JSPHP - PHP Standard Library in JavaScript</h1>
 
+<script type="text/javascript">
 
+    $(document).ready(function () {
+
+        var phrase = null;
+        var before = null;
+        var after = null;
+        var encoded = null;
+        var decoded = null;
+
+        cout('pi()' + endl + endl);
+
+        cout(pi());
+
+        sep();
+
+        cout('base64_encode(), base64_decode()' + endl + endl);
+
+        phrase = 'Moose';
+        cout(' phrase: ' + phrase + endl);
+        encoded = base64_encode(phrase);
+        cout('encoded: ' + encoded + endl);
+        decoded = base64_decode(encoded);
+        cout('decoded: ' + decoded + endl);
+
+        sep();
+
+        cout('str_repeat(string, multiplier)' + endl + endl);
+
+        before = 'Foo';
+        after = str_repeat(before, 16);
+        cout(before + endl);
+        cout(after + endl);
+        sep();
+
+        cout('strtoupper(string)' + endl + endl);
+
+        before = 'Foo Baz Bar';
+        after = strtoupper(before);
+        cout(before + endl);
+        cout(after + endl);
+
+        sep();
+
+        cout('strtolower(string)' + endl + endl);
+
+        before = 'Foo Baz Bar';
+        after = strtolower(before);
+        cout(before + endl);
+        cout(after + endl);
+
+        sep();
+
+        cout('strrev(string)' + endl + endl);
+
+        before = 'Foo Baz Bar';
+        after = strrev(before);
+        cout(before + endl);
+        cout(after + endl);
+
+        sep();
+
+        cout('nl2br(string, is_xhtml)' + endl);
+
+        var string = "Foo\nBaz\nBar";
+        var is_xhtml = false;
+
+        cout(endl + endl + ' * BEFORE: ' + endl + endl);
+
+        before = string;
+
+        cout(before);
+
+        after = nl2br(string, is_xhtml);
+
+        cout(endl + endl + ' * AFTER: ' + endl + endl);
+        cout(after);
+    });
+
+</script>
 
 </body>
 </html>
