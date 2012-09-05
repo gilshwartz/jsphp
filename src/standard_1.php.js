@@ -1,6 +1,3 @@
-
-
-
 /**
  * (PHP 4, PHP 5)<br/>
  * Make a string uppercase
@@ -11,7 +8,9 @@
  * @return string the uppercased string.
  */
 // function strtoupper ($string) {}
-function strtoupper ($string) {}
+function strtoupper($string) {
+    return $string.toUpperCase();
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -23,7 +22,9 @@ function strtoupper ($string) {}
  * @return string the lowercased string.
  */
 // function strtolower ($str) {}
-function strtolower ($str) {}
+function strtolower($str) {
+    return $str.toLowerCase();
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -47,7 +48,8 @@ function strtolower ($str) {}
  * false.
  */
 // function strpos ($haystack, $needle, $offset = null) {}
-function strpos ($haystack, $needle, $offset) {}
+function strpos($haystack, $needle, $offset) {
+}
 
 /**
  * (PHP 5)<br/>
@@ -74,7 +76,8 @@ function strpos ($haystack, $needle, $offset) {}
  * stripos will return boolean false.
  */
 // function stripos ($haystack, $needle, $offset = null) {}
-function stripos ($haystack, $needle, $offset) {}
+function stripos($haystack, $needle, $offset) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -86,10 +89,11 @@ function stripos ($haystack, $needle, $offset) {}
  * </p>
  * @param int $offset [optional] <p>
  * </p>
- * @return int 
+ * @return int
  */
 // function strrpos ($haystack, $needle, $offset = null) {}
-function strrpos ($haystack, $needle, $offset) {}
+function strrpos($haystack, $needle, $offset) {
+}
 
 /**
  * (PHP 5)<br/>
@@ -119,7 +123,8 @@ function strrpos ($haystack, $needle, $offset) {}
  * If needle is not found, false is returned.
  */
 // function strripos ($haystack, $needle, $offset = null) {}
-function strripos ($haystack, $needle, $offset) {}
+function strripos($haystack, $needle, $offset) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -131,7 +136,15 @@ function strripos ($haystack, $needle, $offset) {}
  * @return string the reversed string.
  */
 // function strrev ($string) {}
-function strrev ($string) {}
+function strrev($string) {
+    var temp = [];
+
+    for(i = 0; i < $string.length; i++) {
+        temp.unshift($string.charAt(i));
+    }
+
+    return temp.join('');
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -147,7 +160,8 @@ function strrev ($string) {}
  * @return string the visual string.
  */
 // function hebrev ($hebrew_text, $max_chars_per_line = null) {}
-function hebrev ($hebrew_text, $max_chars_per_line) {}
+function hebrev($hebrew_text, $max_chars_per_line) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -163,7 +177,8 @@ function hebrev ($hebrew_text, $max_chars_per_line) {}
  * @return string the visual string.
  */
 // function hebrevc ($hebrew_text, $max_chars_per_line = null) {}
-function hebrevc ($hebrew_text, $max_chars_per_line) {}
+function hebrevc($hebrew_text, $max_chars_per_line) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -178,7 +193,7 @@ function hebrevc ($hebrew_text, $max_chars_per_line) {}
  * @return string the altered string.
  */
 // function nl2br ($string, $is_xhtml = null) {}
-function nl2br ($string, $is_xhtml) {
+function nl2br($string, $is_xhtml) {
     $is_xhtml = $is_xhtml || true;
 
     var br = $is_xhtml === true ? '<br />' : '<br>';
@@ -204,7 +219,8 @@ function nl2br ($string, $is_xhtml) {
  * @return string the base name of the given path.
  */
 // function basename ($path, $suffix = null) {}
-function basename ($path, $suffix) {}
+function basename($path, $suffix) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -225,7 +241,8 @@ function basename ($path, $suffix) {}
  * /component removed.
  */
 // function dirname ($path) {}
-function dirname ($path) {}
+function dirname($path) {
+}
 
 /**
  * (PHP 4 &gt;= 4.0.3, PHP 5)<br/>
@@ -248,11 +265,12 @@ function dirname ($path) {}
  * extension (if any), and filename.
  * </p>
  * <p>
- * If options is used, this function will return a 
+ * If options is used, this function will return a
  * string if not all elements are requested.
  */
 // function pathinfo ($path, $options = null) {}
-function pathinfo ($path, $options) {}
+function pathinfo($path, $options) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -267,7 +285,8 @@ function pathinfo ($path, $options) {}
  * backslash (\).
  */
 // function stripslashes ($str) {}
-function stripslashes ($str) {}
+function stripslashes($str) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -279,7 +298,8 @@ function stripslashes ($str) {}
  * @return string the unescaped string.
  */
 // function stripcslashes ($str) {}
-function stripcslashes ($str) {}
+function stripcslashes($str) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -301,7 +321,8 @@ function stripcslashes ($str) {}
  * is not found.
  */
 // function strstr ($haystack, $needle, $before_needle = null) {}
-function strstr ($haystack, $needle, $before_needle) {}
+function strstr($haystack, $needle, $before_needle) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -323,7 +344,8 @@ function strstr ($haystack, $needle, $before_needle) {}
  * found, returns false.
  */
 // function stristr ($haystack, $needle, $before_needle = null) {}
-function stristr ($haystack, $needle, $before_needle) {}
+function stristr($haystack, $needle, $before_needle) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -345,7 +367,8 @@ function stristr ($haystack, $needle, $before_needle) {}
  * needle is not found.
  */
 // function strrchr ($haystack, $needle) {}
-function strrchr ($haystack, $needle) {}
+function strrchr($haystack, $needle) {
+}
 
 /**
  * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
@@ -357,7 +380,8 @@ function strrchr ($haystack, $needle) {}
  * @return string the shuffled string.
  */
 // function str_shuffle ($str) {}
-function str_shuffle ($str) {}
+function str_shuffle($str) {
+}
 
 /**
  * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
@@ -377,7 +401,8 @@ function str_shuffle ($str) {}
  * format chosen.
  */
 // function str_word_count ($string, $format = null, $charlist = null) {}
-function str_word_count ($string, $format, $charlist) {}
+function str_word_count($string, $format, $charlist) {
+}
 
 /**
  * (PHP 5)<br/>
@@ -401,7 +426,8 @@ function str_word_count ($string, $format, $charlist) {}
  * (and only) array element.
  */
 // function str_split ($string, $split_length = 1) {}
-function str_split ($string, $split_length) {}
+function str_split($string, $split_length) {
+}
 
 /**
  * (PHP 5)<br/>
@@ -417,7 +443,8 @@ function str_split ($string, $split_length) {}
  * not found.
  */
 // function strpbrk ($haystack, $char_list) {}
-function strpbrk ($haystack, $char_list) {}
+function strpbrk($haystack, $char_list) {
+}
 
 /**
  * (PHP 5)<br/>
@@ -449,7 +476,8 @@ function strpbrk ($haystack, $char_list) {}
  * false.
  */
 // function substr_compare ($main_str, $str, $offset, $length = null, $case_insensitivity = null) {}
-function substr_compare ($main_str, $str, $offset, $length, $case_insensitivity) {}
+function substr_compare($main_str, $str, $offset, $length, $case_insensitivity) {
+}
 
 /**
  * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
@@ -467,7 +495,8 @@ function substr_compare ($main_str, $str, $offset, $length, $case_insensitivity)
  * str2, and 0 if they are equal.
  */
 // function strcoll ($str1, $str2) {}
-function strcoll ($str1, $str2) {}
+function strcoll($str1, $str2) {
+}
 
 /**
  * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
@@ -485,7 +514,8 @@ function strcoll ($str1, $str2) {}
  * emitting E_WARNING.
  */
 // function money_format ($format, $number) {}
-function money_format ($format, $number) {}
+function money_format($format, $number) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -539,7 +569,8 @@ function money_format ($format, $number) {}
  * @return string the extracted part of string or false on failure.
  */
 // function substr ($string, $start, $length = null) {}
-function substr ($string, $start, $length) {}
+function substr($string, $start, $length) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -578,7 +609,8 @@ function substr ($string, $start, $length) {}
  * array then array is returned.
  */
 // function substr_replace ($string, $replacement, $start, $length = null) {}
-function substr_replace ($string, $replacement, $start, $length) {}
+function substr_replace($string, $replacement, $start, $length) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -590,7 +622,8 @@ function substr_replace ($string, $replacement, $start, $length) {}
  * @return string the string with meta characters quoted.
  */
 // function quotemeta ($str) {}
-function quotemeta ($str) {}
+function quotemeta($str) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -602,7 +635,8 @@ function quotemeta ($str) {}
  * @return string the resulting string.
  */
 // function ucfirst ($str) {}
-function ucfirst ($str) {}
+function ucfirst($str) {
+}
 
 /**
  * (PHP 5 &gt;= 5.3.0)<br/>
@@ -614,7 +648,8 @@ function ucfirst ($str) {}
  * @return string the resulting string.
  */
 // function lcfirst ($str) {}
-function lcfirst ($str) {}
+function lcfirst($str) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -626,7 +661,8 @@ function lcfirst ($str) {}
  * @return string the modified string.
  */
 // function ucwords ($str) {}
-function ucwords ($str) {}
+function ucwords($str) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -647,7 +683,8 @@ function ucwords ($str) {}
  * to.
  */
 // function strtr ($str, $from, $to) {}
-function strtr ($str, $from, $to) {}
+function strtr($str, $from, $to) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -659,7 +696,8 @@ function strtr ($str, $from, $to) {}
  * @return string the escaped string.
  */
 // function addslashes ($str) {}
-function addslashes ($str) {}
+function addslashes($str) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -693,13 +731,14 @@ function addslashes ($str) {}
  * t and v. They will be converted to \0, \a, \b, \f, \n, \r, \t
  * and \v.
  * In PHP \0 (NULL), \r (carriage return), \n (newline), \f (form feed),
- * \v (vertical tab) and \t (tab) are predefined escape sequences, 
+ * \v (vertical tab) and \t (tab) are predefined escape sequences,
  * while in C all of these are predefined escape sequences.
  * </p>
  * @return string the escaped string.
  */
 // function addcslashes ($str, $charlist) {}
-function addcslashes ($str, $charlist) {}
+function addcslashes($str, $charlist) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -726,7 +765,8 @@ function addcslashes ($str, $charlist) {}
  * @return string the modified string.
  */
 // function rtrim ($str, $charlist = null) {}
-function rtrim ($str, $charlist) {}
+function rtrim($str, $charlist) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -754,7 +794,8 @@ function rtrim ($str, $charlist) {}
  * @return mixed This function returns a string or an array with the replaced values.
  */
 // function str_replace ($search, $replace, $subject, &$count = null) {}
-function str_replace ($search, $replace, $subject, $count) {}
+function str_replace($search, $replace, $subject, $count) {
+}
 
 /**
  * (PHP 5)<br/>
@@ -768,7 +809,7 @@ function str_replace ($search, $replace, $subject, $count) {}
  * </p>
  * @param mixed $subject <p>
  * If subject is an array, then the search and
- * replace is performed with every entry of 
+ * replace is performed with every entry of
  * subject, and the return value is an array as
  * well.
  * </p>
@@ -780,7 +821,8 @@ function str_replace ($search, $replace, $subject, $count) {}
  * @return mixed a string or an array of replacements.
  */
 // function str_ireplace ($search, $replace, $subject, &$count = null) {}
-function str_ireplace ($search, $replace, $subject, $count) {}
+function str_ireplace($search, $replace, $subject, $count) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -801,7 +843,53 @@ function str_ireplace ($search, $replace, $subject, $count) {}
  * @return string the repeated string.
  */
 // function str_repeat ($input, $multiplier) {}
-function str_repeat ($input, $multiplier) {}
+function str_repeat($input, $multiplier) {
+    var argc = 0;
+    var output = '';
+    var typeof_multiplier = typeof $multiplier;
+    var typeof_input = typeof $input;
+
+    if (typeof_multiplier !== 'undefined') {
+        argc++;
+    }
+
+    if (typeof_input !== 'undefined') {
+        argc++;
+    }
+
+    if (argc < 2) {
+        throw 'JSPHP Warning:  str_repeat() expects exactly 2 parameters, ' + argc + ' given';
+    }
+
+    if ($input === false || $input === null) {
+        return output;
+    }
+
+    if ($input === true) {
+        $input = 1;
+    }
+
+
+    if (typeof_multiplier !== 'number') {
+        throw 'PHP Warning:  str_repeat() expects parameter 2 to be long, ' + typeof_multiplier + ' given';
+    }
+
+    if (typeof_input === 'object' || typeof_input === 'array') {
+        throw 'PHP Warning:  str_repeat() expects parameter 2 to be long, ' + typeof_multiplier + ' given';
+    }
+
+    if (typeof_input === 'number') {
+        $input = $input.toString();
+    }
+
+    $multiplier = Math.floor($multiplier);
+
+    for (i = 0; i < $multiplier; i++) {
+        output += $input;
+    }
+
+    return output;
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -825,7 +913,8 @@ function str_repeat ($input, $multiplier) {}
  * 4 - a string containing all not used characters is returned.
  */
 // function count_chars ($string, $mode = null) {}
-function count_chars ($string, $mode) {}
+function count_chars($string, $mode) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -843,7 +932,8 @@ function count_chars ($string, $mode) {}
  * @return string the chunked string.
  */
 // function chunk_split ($body, $chunklen = null, $end = null) {}
-function chunk_split ($body, $chunklen, $end) {}
+function chunk_split($body, $chunklen, $end) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -861,7 +951,8 @@ function chunk_split ($body, $chunklen, $end) {}
  * @return string The trimmed string.
  */
 // function trim ($str, $charlist = null) {}
-function trim ($str, $charlist) {}
+function trim($str, $charlist) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -894,7 +985,8 @@ function trim ($str, $charlist) {}
  * (0x0B)), a vertical tab.
  */
 // function ltrim ($str, $charlist = null) {}
-function ltrim ($str, $charlist) {}
+function ltrim($str, $charlist) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -914,7 +1006,8 @@ function ltrim ($str, $charlist) {}
  * @return string the stripped string.
  */
 // function strip_tags ($str, $allowable_tags = null) {}
-function strip_tags ($str, $allowable_tags) {}
+function strip_tags($str, $allowable_tags) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -929,12 +1022,13 @@ function strip_tags ($str, $allowable_tags) {}
  * @param float $percent [optional] <p>
  * By passing a reference as third argument,
  * similar_text will calculate the similarity in
- * percent for you. 
+ * percent for you.
  * </p>
  * @return int the number of matching chars in both strings.
  */
 // function similar_text ($first, $second, &$percent = null) {}
-function similar_text ($first, $second, $percent) {}
+function similar_text($first, $second, $percent) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -967,7 +1061,8 @@ function similar_text ($first, $second, $percent) {}
  * string will be returned.
  */
 // function explode ($delimiter, $string, $limit = null) {}
-function explode ($delimiter, $string, $limit) {}
+function explode($delimiter, $string, $limit) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -985,7 +1080,8 @@ function explode ($delimiter, $string, $limit) {}
  * elements in the same order, with the glue string between each element.
  */
 // function implode ($glue, array $pieces) {}
-function implode ($glue, $pieces) {}
+function implode($glue, $pieces) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -1003,7 +1099,8 @@ function implode ($glue, $pieces) {}
  * elements in the same order, with the glue string between each element.
  */
 // function join ($glue, $pieces) {}
-function join ($glue, $pieces) {}
+function join($glue, $pieces) {
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -1030,7 +1127,7 @@ function join ($glue, $pieces) {}
  * different names on different systems or for providing a fallback
  * for a possibly not available locale.
  * </p>
- * @param string $_ [optional] 
+ * @param string $_ [optional]
  * @return string the new current locale, or false if the locale functionality is
  * not implemented on your platform, the specified locale does not exist or
  * the category name is invalid.
@@ -1047,7 +1144,8 @@ function join ($glue, $pieces) {}
  * what the system setlocale function returns.
  */
 // function setlocale ($category, $locale, $_ = null) {}
-function setlocale ($category, $locale, $_) {}
+function setlocale($category, $locale, $_) {
+}
 
 /**
  * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
@@ -1169,6 +1267,7 @@ function setlocale ($category, $locale, $_) {}
  * element should be used.
  */
 // function localeconv () {}
-function localeconv () {}
+function localeconv() {
+}
 
 

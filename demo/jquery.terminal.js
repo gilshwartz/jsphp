@@ -9,8 +9,12 @@ function cout(string) {
 }
 
 function print(string) {
-    if (typeof string == 'undefined') {
+    if (typeof string === 'undefined') {
         string = '';
+    }
+
+    if (typeof string !== 'string') {
+        string += '';
     }
 
     string = string.replace(/</g, '&lt;');

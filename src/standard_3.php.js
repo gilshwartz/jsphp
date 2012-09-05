@@ -332,7 +332,9 @@ function log1p ($number) {}
  * @return float The value of pi as float.
  */
 // function pi () {}
-function pi () {}
+function pi () {
+    return M_PI;
+}
 
 /**
  * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>

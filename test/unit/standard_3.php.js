@@ -108,7 +108,7 @@ test("log1p ($number) ", function(){
 });
 
 test("pi () ", function(){
-    ok(false, "Not implemented yet.");
+    strictEqual(pi(), M_PI);
 });
 
 test("is_finite ($val) ", function(){
