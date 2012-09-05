@@ -138,8 +138,17 @@ function strripos($haystack, $needle, $offset) {
 // function strrev ($string) {}
 function strrev($string) {
     var temp = [];
+    var parc = 0;
 
-    for(i = 0; i < $string.length; i++) {
+    if(typeof $string !== 'undefined') {
+        parc++;
+    }
+
+    if (parc !== 1) {
+        throw 'JSPHP Warning:  strrev() expects exactly 1 parameter, ' + parc + ' given';
+    }
+
+    for (i = 0; i < $string.length; i++) {
         temp.unshift($string.charAt(i));
     }
 
@@ -844,20 +853,20 @@ function str_ireplace($search, $replace, $subject, $count) {
  */
 // function str_repeat ($input, $multiplier) {}
 function str_repeat($input, $multiplier) {
-    var argc = 0;
+    var parc = 0;
     var output = '';
     var typeof_multiplier = typeof $multiplier;
     var typeof_input = typeof $input;
 
     if (typeof_multiplier !== 'undefined') {
-        argc++;
+        parc++;
     }
 
     if (typeof_input !== 'undefined') {
-        argc++;
+        parc++;
     }
 
-    if (argc < 2) {
+    if (parc < 2) {
         throw 'JSPHP Warning:  str_repeat() expects exactly 2 parameters, ' + argc + ' given';
     }
 
@@ -868,7 +877,6 @@ function str_repeat($input, $multiplier) {
     if ($input === true) {
         $input = 1;
     }
-
 
     if (typeof_multiplier !== 'number') {
         throw 'PHP Warning:  str_repeat() expects parameter 2 to be long, ' + typeof_multiplier + ' given';
