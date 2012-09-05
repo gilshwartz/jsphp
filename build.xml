@@ -5,6 +5,24 @@
 
     <target name="test" depends="reg, min" />
 
+    <target name="doc">
+        <delete verbose="true" includeemptydirs="true">
+            <fileset dir="docs" includes="**/*" />
+        </delete>
+        <exec executable="phpdoc.bat">
+            <arg value="--target" />
+            <arg value="docs" />
+            <arg value="--directory" />
+            <arg value="phpsrc" />
+        </exec>
+        <exec executable="phpdoc.bat">
+            <arg value="--target" />
+            <arg value="docs" />
+            <arg value="--directory" />
+            <arg value="phpsrc" />
+        </exec>
+    </target>
+
     <target name="reg">
         <exec executable="${phantomjs}">
             <arg value="${qunit.runner}" />

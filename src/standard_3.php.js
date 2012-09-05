@@ -1,5 +1,3 @@
-
-
 /**
  * (PHP 4, PHP 5)<br/>
  * Gets time of last page modification
@@ -9,7 +7,7 @@
  * feeding to date. Returns false on error.
  */
 // function getlastmod () {}
-function getlastmod () {}
+function getlastmod() {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -26,7 +24,7 @@ function getlastmod () {}
  * binary.
  */
 // function base64_decode ($data, $strict = null) {}
-function base64_decode ($data, $strict) {
+function base64_decode($data, $strict) {
     $strict = $strict || null;
     return atob($data);
 }
@@ -41,7 +39,7 @@ function base64_decode ($data, $strict) {
  * @return string The encoded data, as a string.
  */
 // function base64_encode ($data) {}
-function base64_encode ($data) {
+function base64_encode($data) {
     return btoa($data);
 }
 
@@ -55,7 +53,7 @@ function base64_encode ($data) {
  * @return string the uuencoded data.
  */
 // function convert_uuencode ($data) {}
-function convert_uuencode ($data) {}
+function convert_uuencode($data) {}
 
 /**
  * (PHP 5)<br/>
@@ -67,7 +65,7 @@ function convert_uuencode ($data) {}
  * @return string the decoded data as a string.
  */
 // function convert_uudecode ($data) {}
-function convert_uudecode ($data) {}
+function convert_uudecode($data) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -83,7 +81,33 @@ function convert_uudecode ($data) {}
  * bigger value range than integer).
  */
 // function abs ($number) {}
-function abs ($number) {}
+function abs($number) {
+
+    var ntype = typeof $number;
+    var parc = 0;
+
+    if (ntype !== 'undefined') {
+        parc++;
+    }
+
+    if (parc != 1) {
+        throw 'abs() expects exactly 1 parameter, 0 given';
+    }
+
+    if (ntype === 'object') {
+        if ($number === null) {
+            $number = 0;
+        }
+        else if(Object.prototype.toString.call($number) === '[object Array]') {
+            return false;
+        }
+        else {
+            throw 'Object of class stdClass could not be converted to int';
+        }
+    }
+
+    return  Math.abs($number);
+}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -95,11 +119,11 @@ function abs ($number) {}
  * @return float value rounded up to the next highest
  * integer.
  * The return value of ceil is still of type
- * float as the value range of float is 
+ * float as the value range of float is
  * usually bigger than that of integer.
  */
 // function ceil ($value) {}
-function ceil ($value) {}
+function ceil($value) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -110,11 +134,11 @@ function ceil ($value) {}
  * </p>
  * @return float value rounded to the next lowest integer.
  * The return value of floor is still of type
- * float because the value range of float is 
+ * float because the value range of float is
  * usually bigger than that of integer.
  */
 // function floor ($value) {}
-function floor ($value) {}
+function floor($value) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -137,7 +161,7 @@ function floor ($value) {}
  * @return float The rounded value
  */
 // function round ($val, $precision = 0, $mode = PHP_ROUND_HALF_UP) {}
-function round ($val, $precision, $mode) {}
+function round($val, $precision, $mode) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -149,31 +173,31 @@ function round ($val, $precision, $mode) {}
  * @return float The sine of arg
  */
 // function sin ($arg) {}
-function sin ($arg) {}
+function sin($arg) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
  * Cosine
  * @link http://php.net/manual/en/function.cos.php
  * @param float $arg <p>
- * An angle in radians 
+ * An angle in radians
  * </p>
  * @return float The cosine of arg
  */
 // function cos ($arg) {}
-function cos ($arg) {}
+function cos($arg) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
  * Tangent
  * @link http://php.net/manual/en/function.tan.php
  * @param float $arg <p>
- * The argument to process in radians 
+ * The argument to process in radians
  * </p>
  * @return float The tangent of arg
  */
 // function tan ($arg) {}
-function tan ($arg) {}
+function tan($arg) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -185,7 +209,7 @@ function tan ($arg) {}
  * @return float The arc sine of arg in radians
  */
 // function asin ($arg) {}
-function asin ($arg) {}
+function asin($arg) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -197,7 +221,7 @@ function asin ($arg) {}
  * @return float The arc cosine of arg in radians.
  */
 // function acos ($arg) {}
-function acos ($arg) {}
+function acos($arg) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -209,7 +233,7 @@ function acos ($arg) {}
  * @return float The arc tangent of arg in radians.
  */
 // function atan ($arg) {}
-function atan ($arg) {}
+function atan($arg) {}
 
 /**
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
@@ -221,7 +245,7 @@ function atan ($arg) {}
  * @return float Inverse hyperbolic tangent of arg
  */
 // function atanh ($arg) {}
-function atanh ($arg) {}
+function atanh($arg) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -233,11 +257,11 @@ function atanh ($arg) {}
  * @param float $x <p>
  * Divisor parameter
  * </p>
- * @return float The arc tangent of y/x 
+ * @return float The arc tangent of y/x
  * in radians.
  */
 // function atan2 ($y, $x) {}
-function atan2 ($y, $x) {}
+function atan2($y, $x) {}
 
 /**
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
@@ -249,7 +273,7 @@ function atan2 ($y, $x) {}
  * @return float The hyperbolic sine of arg
  */
 // function sinh ($arg) {}
-function sinh ($arg) {}
+function sinh($arg) {}
 
 /**
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
@@ -261,7 +285,7 @@ function sinh ($arg) {}
  * @return float The hyperbolic cosine of arg
  */
 // function cosh ($arg) {}
-function cosh ($arg) {}
+function cosh($arg) {}
 
 /**
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
@@ -273,7 +297,7 @@ function cosh ($arg) {}
  * @return float The hyperbolic tangent of arg
  */
 // function tanh ($arg) {}
-function tanh ($arg) {}
+function tanh($arg) {}
 
 /**
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
@@ -285,7 +309,7 @@ function tanh ($arg) {}
  * @return float The inverse hyperbolic sine of arg
  */
 // function asinh ($arg) {}
-function asinh ($arg) {}
+function asinh($arg) {}
 
 /**
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
@@ -297,12 +321,12 @@ function asinh ($arg) {}
  * @return float The inverse hyperbolic cosine of arg
  */
 // function acosh ($arg) {}
-function acosh ($arg) {}
+function acosh($arg) {}
 
 /**
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
  * Returns exp(number) - 1, computed in a way that is accurate even
-   when the value of number is close to zero
+ when the value of number is close to zero
  * @link http://php.net/manual/en/function.expm1.php
  * @param float $arg <p>
  * The argument to process
@@ -310,12 +334,12 @@ function acosh ($arg) {}
  * @return float 'e' to the power of arg minus one
  */
 // function expm1 ($arg) {}
-function expm1 ($arg) {}
+function expm1($arg) {}
 
 /**
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
  * Returns log(1 + number), computed in a way that is accurate even when
-   the value of number is close to zero
+ the value of number is close to zero
  * @link http://php.net/manual/en/function.log1p.php
  * @param float $number <p>
  * The argument to process
@@ -323,7 +347,7 @@ function expm1 ($arg) {}
  * @return float log(1 + number)
  */
 // function log1p ($number) {}
-function log1p ($number) {}
+function log1p($number) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -332,7 +356,7 @@ function log1p ($number) {}
  * @return float The value of pi as float.
  */
 // function pi () {}
-function pi () {
+function pi() {
     return M_PI;
 }
 
@@ -348,7 +372,7 @@ function pi () {
  * else false.
  */
 // function is_finite ($val) {}
-function is_finite ($val) {}
+function is_finite($val) {}
 
 /**
  * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
@@ -361,7 +385,7 @@ function is_finite ($val) {}
  * else false.
  */
 // function is_nan ($val) {}
-function is_nan ($val) {}
+function is_nan($val) {}
 
 /**
  * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
@@ -373,7 +397,7 @@ function is_nan ($val) {}
  * @return bool true if val is infinite, else false.
  */
 // function is_infinite ($val) {}
-function is_infinite ($val) {}
+function is_infinite($val) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -391,7 +415,7 @@ function is_infinite ($val) {}
  * If the power cannot be computed false will be returned instead.
  */
 // function pow ($base, $exp) {}
-function pow ($base, $exp) {}
+function pow($base, $exp) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -403,7 +427,7 @@ function pow ($base, $exp) {}
  * @return float 'e' raised to the power of arg
  */
 // function exp ($arg) {}
-function exp ($arg) {}
+function exp($arg) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -413,15 +437,15 @@ function exp ($arg) {}
  * The value to calculate the logarithm for
  * </p>
  * @param float $base [optional] <p>
- * The optional logarithmic base to use 
+ * The optional logarithmic base to use
  * (defaults to 'e' and so to the natural logarithm).
  * </p>
- * @return float The logarithm of arg to 
+ * @return float The logarithm of arg to
  * base, if given, or the
  * natural logarithm.
  */
 // function log ($arg, $base = null) {}
-function log ($arg, $base) {}
+function log($arg, $base) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -433,7 +457,7 @@ function log ($arg, $base) {}
  * @return float The base-10 logarithm of arg
  */
 // function log10 ($arg) {}
-function log10 ($arg) {}
+function log10($arg) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -446,7 +470,7 @@ function log10 ($arg) {}
  * or the special value NAN for negative numbers.
  */
 // function sqrt ($arg) {}
-function sqrt ($arg) {}
+function sqrt($arg) {}
 
 /**
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
@@ -461,19 +485,19 @@ function sqrt ($arg) {}
  * @return float Calculated length of the hypotenuse
  */
 // function hypot ($x, $y) {}
-function hypot ($x, $y) {}
+function hypot($x, $y) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
  * Converts the number in degrees to the radian equivalent
  * @link http://php.net/manual/en/function.deg2rad.php
  * @param float $number <p>
- * Angular value in degrees 
+ * Angular value in degrees
  * </p>
  * @return float The radian equivalent of number
  */
 // function deg2rad ($number) {}
-function deg2rad ($number) {}
+function deg2rad($number) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -485,7 +509,7 @@ function deg2rad ($number) {}
  * @return float The equivalent of number in degrees
  */
 // function rad2deg ($number) {}
-function rad2deg ($number) {}
+function rad2deg($number) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -497,7 +521,7 @@ function rad2deg ($number) {}
  * @return number The decimal value of binary_string
  */
 // function bindec ($binary_string) {}
-function bindec ($binary_string) {}
+function bindec($binary_string) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -509,7 +533,7 @@ function bindec ($binary_string) {}
  * @return number The decimal representation of hex_string
  */
 // function hexdec ($hex_string) {}
-function hexdec ($hex_string) {}
+function hexdec($hex_string) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -521,7 +545,7 @@ function hexdec ($hex_string) {}
  * @return number The decimal representation of octal_string
  */
 // function octdec ($octal_string) {}
-function octdec ($octal_string) {}
+function octdec($octal_string) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -641,7 +665,7 @@ function octdec ($octal_string) {}
  * @return string Binary string representation of number
  */
 // function decbin ($number) {}
-function decbin ($number) {}
+function decbin($number) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -653,7 +677,7 @@ function decbin ($number) {}
  * @return string Octal string representation of number
  */
 // function decoct ($number) {}
-function decoct ($number) {}
+function decoct($number) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -665,7 +689,7 @@ function decoct ($number) {}
  * @return string Hexadecimal string representation of number
  */
 // function dechex ($number) {}
-function dechex ($number) {}
+function dechex($number) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -683,7 +707,7 @@ function dechex ($number) {}
  * @return string number converted to base tobase
  */
 // function base_convert ($number, $frombase, $tobase) {}
-function base_convert ($number, $frombase, $tobase) {}
+function base_convert($number, $frombase, $tobase) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -700,12 +724,12 @@ function base_convert ($number, $frombase, $tobase) {}
  * @return string A formatted version of number.
  */
 // function number_format ($number , $decimals = 0 , $dec_point = '.' , $thousands_sep = ',' ) {}
-function number_format ($number, $decimals, $dec_point, $thousands_sep) {}
+function number_format($number, $decimals, $dec_point, $thousands_sep) {}
 
 /**
  * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
  * Returns the floating point remainder (modulo) of the division
-  of the arguments
+ of the arguments
  * @link http://php.net/manual/en/function.fmod.php
  * @param float $x <p>
  * The dividend
@@ -713,11 +737,11 @@ function number_format ($number, $decimals, $dec_point, $thousands_sep) {}
  * @param float $y <p>
  * The divisor
  * </p>
- * @return float The floating point remainder of 
+ * @return float The floating point remainder of
  * x/y
  */
 // function fmod ($x, $y) {}
-function fmod ($x, $y) {}
+function fmod($x, $y) {}
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -729,7 +753,7 @@ function fmod ($x, $y) {}
  * @return string a string representation of the address or false on failure.
  */
 // function inet_ntop ($in_addr) {}
-function inet_ntop ($in_addr) {}
+function inet_ntop($in_addr) {}
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -742,7 +766,7 @@ function inet_ntop ($in_addr) {}
  * address
  */
 // function inet_pton ($address) {}
-function inet_pton ($address) {}
+function inet_pton($address) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -755,7 +779,7 @@ function inet_pton ($address) {}
  * is invalid.
  */
 // function ip2long ($ip_address) {}
-function ip2long ($ip_address) {}
+function ip2long($ip_address) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -767,7 +791,7 @@ function ip2long ($ip_address) {}
  * @return string the Internet IP address as a string.
  */
 // function long2ip ($proper_address) {}
-function long2ip ($proper_address) {}
+function long2ip($proper_address) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -780,7 +804,7 @@ function long2ip ($proper_address) {}
  * varname, or false on an error.
  */
 // function getenv ($varname) {}
-function getenv ($varname) {}
+function getenv($varname) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -792,7 +816,7 @@ function getenv ($varname) {}
  * @return bool true on success or false on failure.
  */
 // function putenv ($setting) {}
-function putenv ($setting) {}
+function putenv($setting) {}
 
 /**
  * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
@@ -814,7 +838,7 @@ function putenv ($setting) {}
  * failure.
  */
 // function getopt ($options, array $longopts = null) {}
-function getopt ($options, $longopts) {}
+function getopt($options, $longopts) {}
 
 /**
  * (PHP 5 &gt;= 5.1.3)<br/>
@@ -824,7 +848,7 @@ function getopt ($options, $longopts) {}
  * minutes).
  */
 // function sys_getloadavg () {}
-function sys_getloadavg () {}
+function sys_getloadavg() {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -841,10 +865,10 @@ function sys_getloadavg () {}
  * If the optional get_as_float is set to
  * true then a float (in seconds) is returned.
  * </p>
- * @return mixed 
+ * @return mixed
  */
 // function microtime ($get_as_float = null) {}
-function microtime ($get_as_float) {}
+function microtime($get_as_float) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -864,7 +888,7 @@ function microtime ($get_as_float) {}
  * "dsttime" - type of dst correction
  */
 // function gettimeofday ($return_float = null) {}
-function gettimeofday ($return_float) {}
+function gettimeofday($return_float) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -878,7 +902,7 @@ function gettimeofday ($return_float) {}
  * call. All entries are accessible by using their documented field names.
  */
 // function getrusage ($who = null) {}
-function getrusage ($who) {}
+function getrusage($who) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -902,7 +926,7 @@ function getrusage ($who) {}
  * @return string the unique identifier, as a string.
  */
 // function uniqid ($prefix = "", $more_entropy = false) {}
-function uniqid ($prefix, $more_entropy) {}
+function uniqid($prefix, $more_entropy) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -914,7 +938,7 @@ function uniqid ($prefix, $more_entropy) {}
  * @return string the 8-bit binary string.
  */
 // function quoted_printable_decode ($str) {}
-function quoted_printable_decode ($str) {}
+function quoted_printable_decode($str) {}
 
 /**
  * (PHP 5 &gt;= 5.3.0)<br/>
@@ -926,7 +950,7 @@ function quoted_printable_decode ($str) {}
  * @return string the encoded string.
  */
 // function quoted_printable_encode ($str) {}
-function quoted_printable_encode ($str) {}
+function quoted_printable_encode($str) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -944,7 +968,7 @@ function quoted_printable_encode ($str) {}
  * @return string the converted string.
  */
 // function convert_cyr_string ($str, $from, $to) {}
-function convert_cyr_string ($str, $from, $to) {}
+function convert_cyr_string($str, $from, $to) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -953,7 +977,7 @@ function convert_cyr_string ($str, $from, $to) {}
  * @return string the username as a string.
  */
 // function get_current_user () {}
-function get_current_user () {}
+function get_current_user() {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -963,10 +987,10 @@ function get_current_user () {}
  * The maximum execution time, in seconds. If set to zero, no time limit
  * is imposed.
  * </p>
- * @return void 
+ * @return void
  */
 // function set_time_limit ($seconds) {}
-function set_time_limit ($seconds) {}
+function set_time_limit($seconds) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -979,7 +1003,7 @@ function set_time_limit ($seconds) {}
  * option, or false if an error occurs.
  */
 // function get_cfg_var ($option) {}
-function get_cfg_var ($option) {}
+function get_cfg_var($option) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -989,7 +1013,7 @@ function get_cfg_var ($option) {}
  * @param $new_setting
  */
 // function magic_quotes_runtime ($new_setting) {}
-function magic_quotes_runtime ($new_setting) {}
+function magic_quotes_runtime($new_setting) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -1002,7 +1026,7 @@ function magic_quotes_runtime ($new_setting) {}
  * @return bool true on success or false on failure.
  */
 // function set_magic_quotes_runtime ($new_setting) {}
-function set_magic_quotes_runtime ($new_setting) {}
+function set_magic_quotes_runtime($new_setting) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -1011,7 +1035,7 @@ function set_magic_quotes_runtime ($new_setting) {}
  * @return int 0 if magic quotes gpc are off, 1 otherwise.
  */
 // function get_magic_quotes_gpc () {}
-function get_magic_quotes_gpc () {}
+function get_magic_quotes_gpc() {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -1020,7 +1044,7 @@ function get_magic_quotes_gpc () {}
  * @return int 0 if magic quotes runtime is off, 1 otherwise.
  */
 // function get_magic_quotes_runtime () {}
-function get_magic_quotes_runtime () {}
+function get_magic_quotes_runtime() {}
 
 /**
  * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
@@ -1028,7 +1052,7 @@ function get_magic_quotes_runtime () {}
  * @link http://php.net/manual/en/function.import-request-variables.php
  * @param string $types <p>
  * Using the types parameter, you can specify
- * which request variables to import. You can use 'G', 'P' and 'C' 
+ * which request variables to import. You can use 'G', 'P' and 'C'
  * characters respectively for GET, POST and Cookie. These characters are
  * not case sensitive, so you can also use any combination of 'g', 'p'
  * and 'c'. POST includes the POST uploaded file information.
@@ -1056,7 +1080,7 @@ function get_magic_quotes_runtime () {}
  * @return bool true on success or false on failure.
  */
 // function import_request_variables ($types, $prefix = null) {}
-function import_request_variables ($types, $prefix) {}
+function import_request_variables($types, $prefix) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
@@ -1066,7 +1090,7 @@ function import_request_variables ($types, $prefix) {}
  * The error message that should be logged.
  * </p>
  * @param int $message_type [optional] <p>
- * Says where the error should go. The possible message types are as 
+ * Says where the error should go. The possible message types are as
  * follows:
  * </p>
  * <p>
@@ -1100,7 +1124,7 @@ function import_request_variables ($types, $prefix) {}
  * <td>3</td>
  * <td>
  * message is appended to the file
- * destination. A newline is not automatically 
+ * destination. A newline is not automatically
  * added to the end of the message string.
  * </td>
  * </tr>
@@ -1114,17 +1138,17 @@ function import_request_variables ($types, $prefix) {}
  * </table>
  * </p>
  * @param string $destination [optional] <p>
- * The destination. Its meaning depends on the 
+ * The destination. Its meaning depends on the
  * message_type parameter as described above.
  * </p>
  * @param string $extra_headers [optional] <p>
  * The extra headers. It's used when the message_type
  * parameter is set to 1.
- * This message type uses the same internal function as 
+ * This message type uses the same internal function as
  * mail does.
  * </p>
  * @return bool true on success or false on failure.
  */
 // function error_log ($message, $message_type = null, $destination = null, $extra_headers = null) {}
-function error_log ($message, $message_type, $destination, $extra_headers) {}
+function error_log($message, $message_type, $destination, $extra_headers) {}
 

@@ -32,7 +32,46 @@ test("convert_uudecode ($data) ", function(){
 });
 
 test("abs ($number) ", function(){
-    ok(false, "Not implemented yet.");
+    var expected;
+    var key;
+    var input;
+
+    throws(
+        function () {
+            abs();
+        },
+        /^abs\(\) expects exactly 1 parameter, 0 given$/,
+        'call with no parameters should throw an exception'
+    );
+
+    throws(
+        function () {
+            abs({});
+        },
+        /^Object of class stdClass could not be converted to int$/,
+        'call with object as a parameter should throw an exception'
+    );
+
+    expected = {
+        'float': {
+            input: [-0.1, 0.1, -0.234, 0.5, -1.0],
+            expected: [0.1, 0.1, 0.234, 0.5, 1.0]
+        },
+        'integer': {
+            input: [-2, 2],
+            expected: [2, 2]
+        },
+        'others': {
+            input: [null, new Array(),  [], [1,3,4]],
+            expected: [0, false, false, false]
+        }
+    }
+
+    for(key in expected) {
+        for(i = 0; i < expected[key]['input'].length; i++) {
+            strictEqual(abs(expected[key]['input'][i]), expected[key]['expected'][i], key + ': ' + i);
+        }
+    }
 });
 
 test("ceil ($value) ", function(){
