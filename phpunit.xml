@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE phpunit>
+
+<phpunit
+    bootstrap="testphp/bootstrap.php"
+    strict="true"
+    verbose="true"
+    fork="true"
+    stopOnFailure="false"
+    syntaxCheck="true"
+    backupGlobals="false"
+    backupStaticAttributes="false"
+    convertErrorsToExceptions="true"
+    convertFailuresToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="true"
+>
+
+   <logging>
+<!--        <log type="coverage-html" highlight="false" target="web/coverage" charset="UTF-8" yui="true" lowUpperBound="75" highLowerBound="90" /> -->
+   </logging>
+
+    <testsuites>
+        <testsuite name="Compatibility tests for JSPHP Project">
+            <file>testphp/standard_1Test.php</file>
+            <file>testphp/standard_3Test.php</file>
+            <file>testphp/standard_4Test.php</file>
+            <file>testphp/standard_5Test.php</file>
+            <file>testphp/standard_8Test.php</file>
+            <file>testphp/pcreTest.php</file>
+            <file>testphp/dummyTest.php</file>
+        </testsuite>
+    </testsuites>
+
+</phpunit>

@@ -4,3 +4,6 @@
 [submodule "test/jasmine"]
 	path = test/jasmine
 	url = https://github.com/pivotal/jasmine.git
+[submodule "VisualPHPUnit"]
+	path = VisualPHPUnit
+	url = https://github.com/NSinopoli/VisualPHPUnit.git

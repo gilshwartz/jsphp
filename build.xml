@@ -2,24 +2,55 @@
 <project default="test">
     <property name="phantomjs" value="phantomjs.exe"/>
     <property name="qunit.runner" location="test/qunit/addons/phantomjs/runner.js"/>
+    <property name="jsdoc.home" location="C:/Users/jsiciarek/AppData/Roaming/npm/node_modules/jsdoc"/>
+    <property name="jsdoc" location="${jsdoc.home}/jsdoc.cmd"/>
 
     <target name="test" depends="reg, min" />
 
-    <target name="doc">
+    <target name="jsdoc">
         <delete verbose="true" includeemptydirs="true">
-            <fileset dir="docs" includes="**/*" />
+            <fileset dir="jsdocs" includes="**/*.html" />
+        </delete>
+
+        <exec executable="grunt.cmd">
+            <arg line="concat" />
+        </exec>
+
+        <exec executable="${jsdoc}">
+            <arg line="dist/*.js" />
+        </exec>
+
+        <exec executable="mv">
+            <arg line="-v ./out/* ./jsdocs" />
+        </exec>
+
+        <exec executable="rm">
+            <arg line="-rvf out" />
+        </exec>
+
+        <exec executable="git" dir="${jsdoc.home}">
+            <arg line="checkout -- templates" />
+        </exec>
+
+        <exec executable="git" dir="${jsdoc.home}">
+            <arg line="status" />
+        </exec>
+
+        <exec executable="grunt.cmd">
+            <arg line="min" />
+        </exec>
+
+    </target>
+
+    <target name="phpdoc">
+        <delete verbose="true" includeemptydirs="true">
+            <fileset dir="phpdocs" includes="**/*" />
         </delete>
         <exec executable="phpdoc.bat">
-            <arg value="--target" />
-            <arg value="docs" />
-            <arg value="--directory" />
-            <arg value="phpsrc" />
+            <arg line="--target phpdocs --directory phpsrc --template responsive" />
         </exec>
         <exec executable="phpdoc.bat">
-            <arg value="--target" />
-            <arg value="docs" />
-            <arg value="--directory" />
-            <arg value="phpsrc" />
+            <arg line="--target phpdocs --directory phpsrc --template responsive" />
         </exec>
     </target>
 
