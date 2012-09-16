@@ -1,4 +1,17 @@
 <?php
+
+function dummy($a, $b) {
+    return $a + $b;
+}
+
+function shimmy($a, $b) {
+    return $a + $b;
+}
+
+function fummy($a, $b) {
+    return "AXXC";
+}
+
 /**
  * Unit Tests of Standard PHP Library Package #3.
  * For JSPHP Project.

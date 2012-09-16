@@ -9,6 +9,14 @@ class standard_8Test extends JsphpTestCase
     /**
      * @test
      */
+    function shuffle()
+    {
+        $this->runTestOnData();
+    }
+
+    /**
+     * @test
+     */
     function array_fill()
     {
         $this->runTestOnData();

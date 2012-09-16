@@ -95,7 +95,7 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
 
     function setUp()
     {
-        $fixtures_path = implode(DIRECTORY_SEPARATOR, array(dirname(__FILE__), '..', 'testjs', 'data', 'fixtures.js'));
+        $fixtures_path = implode(DIRECTORY_SEPARATOR, array(dirname(__FILE__), '..', 'data', 'fixtures.js'));
 
         $prefix = 'var fixtures = ';
         $sufix  = ';';
@@ -108,6 +108,8 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
 
         $this->module = preg_replace('/^(\w+)Test$/', '$1', get_class($this));
         $this->func   = preg_replace('/^test_?$/', '', $this->getName());
+
+        $json = preg_replace('|//.*?\n|','', $json);
 
         $temp = json_decode($json, true);
 

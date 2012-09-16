@@ -1,12 +1,29 @@
 var fixtures = {
     "standard_8": {
+        "shuffle": [
+            [true, true, [1,2,3,4]],
+            [true, true, []],
+            [false, "shuffle() expects parameter 1 to be array, string given", "Foo"],
+            [false, "shuffle() expects parameter 1 to be array, string given", ""],
+            [false, "shuffle() expects parameter 1 to be array, null given", null],
+            [false, "shuffle() expects parameter 1 to be array, integer given", 0],
+            [false, "shuffle() expects parameter 1 to be array, integer given", 1],
+            [false, "shuffle() expects parameter 1 to be array, boolean given", true],
+            [false, "shuffle() expects parameter 1 to be array, boolean given", false],
+            [false, "shuffle() expects exactly 1 parameter, 0 given"],
+            [false, "shuffle() expects exactly 1 parameter, 2 given", null, null]
+        ],
         "array_fill": [
             [false, "array_fill() expects exactly 3 parameters, 0 given"],
             [false, "array_fill() expects exactly 3 parameters, 1 given", null],
             [false, "array_fill() expects exactly 3 parameters, 2 given", null, null],
             [false, "array_fill() expects exactly 3 parameters, 4 given", null, null, null, null],
             [false, "array_fill(): Number of elements must be positive", null, null, null],
-            [false, "array_fill(): Number of elements must be positive", null, 0, null]
+            [false, "array_fill(): Number of elements must be positive", null, 0, null],
+//            [false, "array_fill() expects parameter 1 to be long, string given", "a", null, null],
+            [true, [1, 1, 1, 1], 0, 4, 1],
+            [true, {"1": 1, "2": 1, "3": 1, "4": 1}, 1, 4, 1],
+            [true, {"-2": 1, "0": 1, "1": 1, "2": 1}, -2, 4, 1]
         ]
     },
     "standard_1": {

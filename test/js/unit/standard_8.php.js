@@ -16,6 +16,11 @@ test("array_fill ($start_index, $num, $value) ", function(){
     runTestOnData();
 });
 
+test("shuffle ($array) ", function(){
+    runTestOnData();
+});
+
+
 /*
 test("syslog ($priority, $message) ", function(){
     ok(false, "Not implemented yet.");
@@ -130,10 +135,6 @@ test("uasort ($array, $cmp_function) ", function(){
 });
 
 test("uksort ($array, $cmp_function) ", function(){
-    ok(false, "Not implemented yet.");
-});
-
-test("shuffle ($array) ", function(){
     ok(false, "Not implemented yet.");
 });
 

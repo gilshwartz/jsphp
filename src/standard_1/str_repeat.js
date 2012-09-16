@@ -27,7 +27,10 @@ function str_repeat($input, $multiplier) {
             conditions: [
                 true,
                 {
-                    func: function (val) { return val >= 0; },
+                    func: function (val) {
+
+                        return val >= 0;
+                    },
                     msg: function (arg) { return "str_repeat(): " + ___args_names[arg] + " argument has to be greater than or equal to 0"; }
                 }
             ]

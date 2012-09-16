@@ -29,7 +29,7 @@ test("print_r ($expression, $return) ", function () {
             ],
             "expected": [
                 "Array\n(\n)", "Array\n(\n)",
-                (typeof $.browser['msie'] !== 'undefined') ? "Document Object\n(\n)" : "HTMLDocument Object\n(\n)",
+                navigator.appName.match(/Microsoft/i) ? "Document Object\n(\n)" : "HTMLDocument Object\n(\n)",
                 "HTMLBodyElement Object\n(\n)"
             ]
         },

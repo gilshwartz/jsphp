@@ -61,7 +61,7 @@ $(document).ready(function () {
             <body>
                 <div id="qunit">
                     <h1 id="qunit-header">
-                        <a href="/testphp">
+                        <a href="/test/php">
                             <xsl:value-of select="$title"/>
                         </a>
                     </h1>
@@ -142,7 +142,7 @@ $(document).ready(function () {
 
                                         </strong>
 
-                                        <a href="/testphp">Rerun</a>
+                                        <a href="/test/php">Rerun</a>
 
                                         <xsl:element name="ol">
 
@@ -150,11 +150,6 @@ $(document).ready(function () {
                                                 <xsl:attribute name="style">
                                                     <xsl:value-of select="'display:none'"/>
                                                 </xsl:attribute>
-
-
-                                                <xsl:call-template name="okays">
-                                                    <xsl:with-param name="count" select="@assertions - 1"/>
-                                                </xsl:call-template>
 
                                             </xsl:if>
 
@@ -214,6 +209,10 @@ $(document).ready(function () {
 
                                                 </xsl:for-each>
                                             </xsl:if>
+                                            <xsl:call-template name="okays">
+                                                <xsl:with-param name="count" select="@assertions - 1 - $failures"/>
+                                            </xsl:call-template>
+
                                         </xsl:element>
 
                                     </xsl:element>

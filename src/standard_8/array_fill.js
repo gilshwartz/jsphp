@@ -14,7 +14,7 @@
  * </p>
  * @return array the filled array
  */
-function array_fill ($start_index, $num, $value) {
+function array_fill($start_index, $num, $value) {
 
     arguments[1] = arguments[1] === null ? 0 : arguments[1];
 
@@ -22,11 +22,11 @@ function array_fill ($start_index, $num, $value) {
         'array_fill',
         {
             required: [true, true, true],
-            type: ['any', 'any', 'any'],
+            type: ['any', 'integer', 'any'],
             conditions: [
                 true,
                 {
-                    func: function (val) { return val > 0; },
+                    func: function (val) { return ___gettype(val) === "integer" && val > 0; },
                     msg: function (arg) { return "array_fill(): Number of elements must be positive"; }
                 },
                 true
@@ -34,4 +34,27 @@ function array_fill ($start_index, $num, $value) {
         },
         arguments
     );
+
+    var i;
+    var arr = [];
+    var obj = {};
+
+    if ($start_index === 0) {
+        for (i = 0; i < $num; i++) {
+            arr.push($value);
+        }
+        return arr;
+    }
+
+    if($start_index < 0) {
+        obj[$start_index] = $value;
+        $start_index = 0;
+        $num -= 1;
+    }
+
+    for (i = 0; i < $num; i++) {
+        obj[$start_index + i] = $value;
+    }
+
+    return obj;
 }

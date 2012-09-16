@@ -2,7 +2,7 @@
 <!DOCTYPE phpunit>
 
 <phpunit
-    bootstrap="testphp/bootstrap.php"
+    bootstrap="test/php/bootstrap.php"
     strict="true"
     verbose="true"
     fork="true"
@@ -23,13 +23,12 @@
 
     <testsuites>
         <testsuite name="Compatibility tests for JSPHP Project">
-            <file>testphp/standard_1Test.php</file>
-            <file>testphp/standard_3Test.php</file>
-            <file>testphp/standard_4Test.php</file>
-            <file>testphp/standard_5Test.php</file>
-            <file>testphp/standard_8Test.php</file>
-            <file>testphp/pcreTest.php</file>
-            <file>testphp/dummyTest.php</file>
+            <file>test/php/standard_1Test.php</file>
+            <file>test/php/standard_3Test.php</file>
+            <file>test/php/standard_4Test.php</file>
+            <file>test/php/standard_5Test.php</file>
+            <file>test/php/standard_8Test.php</file>
+            <file>test/php/pcreTest.php</file>
         </testsuite>
     </testsuites>
 
