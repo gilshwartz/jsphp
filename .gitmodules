@@ -1,9 +1,0 @@
-[submodule "test/qunit"]
-	path = test/qunit
-	url = https://github.com/jquery/qunit.git
-[submodule "test/jasmine"]
-	path = test/jasmine
-	url = https://github.com/pivotal/jasmine.git
-[submodule "VisualPHPUnit"]
-	path = VisualPHPUnit
-	url = https://github.com/NSinopoli/VisualPHPUnit.git
