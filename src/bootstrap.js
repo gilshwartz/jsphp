@@ -37,6 +37,7 @@ function ___parse_regexp(func, pattern, modifiers) {
     var rxrx = new RegExp('^' + sep + '(.*?)' + sep + '(\\w*)$');
     var rxtemp = temp.match(rxrx);
 
+
     var rxsep = sep;
     var rxbody = rxtemp[1];
     var rxmodif = rxtemp[2];
