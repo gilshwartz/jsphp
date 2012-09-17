@@ -78,17 +78,17 @@ function ___gettype($var) {
 
         case "object":
             if ($var !== null) {
-                var objtype = Object.prototype.toString.call($var);
 
-                if (objtype.match(/\[object Array]/)) {
+                var match = Object.prototype.toString.call($var).match(/^\[object ([A-Z]\w+)\]$/);
+                objtype = match[1];
+
+                console.log(objtype);
+
+                if (objtype === "Object" || objtype === "Array") {
                     return "array";
                 }
 
-                if (objtype.match(/\[object Object]/)) {
-                    return "object";
-                }
-
-                return "resource"; // ie. HTML elements (why not?)
+                return "object";
             } else {
                 return "NULL";
             }
@@ -148,8 +148,6 @@ function ___validate_function_arguments(funct, config, args) {
             ', ' +
             given + ' given';
     }
-
-    console.log([funct, dynargs]);
 
     if (given < at_least) {
         msg = getMsg('at least', at_least);

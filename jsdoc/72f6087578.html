@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: Exception</title>
+    
+    <script src="http://shjs.sourceforge.net/sh_main.min.js"> </script>
+    <script src="http://shjs.sourceforge.net/lang/sh_javascript.min.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/node-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Class: Exception</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="module-Core_c.html">Core_c</a>~</span>
+    
+    Exception
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <h4 class="name" id="Exception"><span class="type-signature"></span>new Exception</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 5 &gt;= 5.1.0)<br/>
+Construct the exception. Note: The message is NOT binary safe.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>$message</code></td>
+            
+            
+            <td class="type">
+            
+                        string
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">[optional] The Exception message to throw.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>$code</code></td>
+            
+            
+            <td class="type">
+            
+                        int
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">[optional] The Exception code.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>$previous</code></td>
+            
+            
+            <td class="type">
+            
+                        Exception
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">[optional] The previous exception used for the exception chaining. Since 5.3.0</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/Core_c.js, line 24</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="getCode"><span class="type-signature"></span>getCode</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 5 &gt;= 5.1.0)<br/>
+Gets the Exception code
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/Core_c.js, line 56</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the exception code as integer in
+<b>Exception</b> but possibly as other type in
+<b>Exception</b> descendants (for example as
+string in <b>PDOException</b>).
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">mixed</span> |
+		
+		<span class="param-type">number</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getFile"><span class="type-signature"></span>getFile</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 5 &gt;= 5.1.0)<br/>
+Gets the file in which the exception occurred
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/Core_c.js, line 66</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the filename in which the exception was created.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">string</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getLine"><span class="type-signature"></span>getLine</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 5 &gt;= 5.1.0)<br/>
+Gets the line in which the exception occurred
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/Core_c.js, line 76</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the line number where the exception was created.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">int</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getMessage"><span class="type-signature"></span>getMessage</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 5 &gt;= 5.1.0)<br/>
+Gets the Exception message
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/Core_c.js, line 43</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the Exception message as a string.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">string</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getPrevious"><span class="type-signature"></span>getPrevious</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 5 &gt;= 5.3.0)<br/>
+Returns previous Exception
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/Core_c.js, line 97</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the previous <b>Exception</b> if available
+or null otherwise.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">Exception</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getTrace"><span class="type-signature"></span>getTrace</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 5 &gt;= 5.1.0)<br/>
+Gets the stack trace
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/Core_c.js, line 86</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the Exception stack trace as an array.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">array</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getTraceAsString"><span class="type-signature"></span>getTraceAsString</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 5 &gt;= 5.1.0)<br/>
+Gets the stack trace as a string
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/Core_c.js, line 107</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the Exception stack trace as a string.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">string</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="toString"><span class="type-signature"></span>toString</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 5 &gt;= 5.1.0)<br/>
+String representation of the exception
+    </div>
+    
+    
+    
+        <h5>This:</h5>
+        <ul><li>Exception</li></ul>
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/Core_c.js, line 130</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the string representation of the exception.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">string</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-Core_c.html">Core_c</a></li><li><a href="module-pcre.html">pcre</a></li><li><a href="module-standard_0.html">standard_0</a></li><li><a href="module-standard_1.html">standard_1</a></li><li><a href="module-standard_2.html">standard_2</a></li><li><a href="module-standard_3.html">standard_3</a></li><li><a href="module-standard_4.html">standard_4</a></li><li><a href="module-standard_5.html">standard_5</a></li><li><a href="module-standard_6.html">standard_6</a></li><li><a href="module-standard_7.html">standard_7</a></li><li><a href="module-standard_8.html">standard_8</a></li><li><a href="module-standard_9.html">standard_9</a></li><li><a href="module-standard_defines.html">standard_defines</a></li><li><a href="module-Superglobals.html">Superglobals</a></li></ul><h3>Classes</h3><ul><li><a href="72f6087578.html">Exception</a></li><li><a href="5dc4680790.html">stdClass</a></li><li><a href="b53a859955.html">__PHP_Incomplete_Class</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Mon Sep 17 2012 13:20:41 GMT+0200 (CEST)
+</footer>
+
+<script> sh_highlightDocument(); </script>
+</body>
+</html>

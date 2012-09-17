@@ -4,12 +4,15 @@
     <property name="qunit.runner" location="test/qunit/addons/phantomjs/runner.js"/>
     <property name="jsdoc.home" location="C:/Users/jsiciarek/AppData/Roaming/npm/node_modules/jsdoc"/>
     <property name="jsdoc" location="${jsdoc.home}/jsdoc.cmd"/>
+    <property name="jsdoc.dir" location="./jsdoc"/>
+    <property name="dist.dir" location="./dist"/>
 
     <target name="test" depends="reg, min" />
 
     <target name="jsdoc">
         <delete verbose="true" includeemptydirs="true">
-            <fileset dir="jsdocs" includes="**/*.html" />
+            <fileset dir="${jsdoc.dir}" includes="**/*.html" />
+            <fileset dir="${dist.dir}" includes="**/*" />
         </delete>
 
         <exec executable="grunt.cmd">
@@ -17,11 +20,11 @@
         </exec>
 
         <exec executable="${jsdoc}">
-            <arg line="dist/*.js" />
+            <arg line="${dist.dir}/*.js" />
         </exec>
 
         <exec executable="mv">
-            <arg line="-v ./out/* ./jsdocs" />
+            <arg line="-v ./out/* ./${jsdoc.dir}" />
         </exec>
 
         <exec executable="rm">
@@ -32,13 +35,13 @@
             <arg line="checkout -- templates" />
         </exec>
 
-        <exec executable="git" dir="${jsdoc.home}">
-            <arg line="status" />
-        </exec>
+        <!--<exec executable="git" dir="${jsdoc.home}">-->
+            <!--<arg line="status" />-->
+        <!--</exec>-->
 
-        <exec executable="grunt.cmd">
-            <arg line="min" />
-        </exec>
+        <!--<exec executable="grunt.cmd">-->
+            <!--<arg line="min" />-->
+        <!--</exec>-->
 
     </target>
 

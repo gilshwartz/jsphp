@@ -57,52 +57,58 @@ function serialize($value) {
             break;
         case "array":
             var x = 0;
-            output = "a:" + $value.length + ":{";
-            for (x = 0; x < $value.length; x++) {
-                output += "i:" + x + ";";
-                output += serialize($value[x]);
+
+            var cn = ___get_constructor_name($value);
+            var len = ___object_length($value);
+
+            if (cn === "Array") {
+
+                var temp = [];
+
+                for (x = 0; x < len; x++) {
+                    if (___get_constructor_name($value[x]) === "Function") {
+                        continue;
+                    }
+                    temp.push($value[x]);
+                }
+
+                output = "a:" + temp.length + ":{";
+
+                for (x = 0; x < temp.length; x++) {
+                    output += "i:" + x + ";";
+                    output += serialize(temp[x]);
+                }
             }
+            else {
+                var temp = {};
+
+                for (var key in $value) {
+                    if (___get_constructor_name($value[key]) === "Function") {
+                        continue;
+                    }
+
+                    temp[key] = $value[key];
+                }
+
+                output = (cn === "Object") ? "a:" : "O:" + cn.length + ":\"" + cn + "\":";
+                output += ___object_length(temp) + ":{";
+
+                for (var key in temp) {
+                    output += serialize(key);
+                    output += serialize(temp[key]);
+                }
+            }
+
             output += "}";
+
             break;
         case "object":
             var x = 0;
 
             var cname = ___get_constructor_name($value);
 
-            if(cname === 'Function') {
+            if (cname === 'Function') {
                 throw new Exception("Serialization of 'Closure' is not allowed");
-            }
-
-            if(cname === 'Array') {
-                output = "a:" + ___object_length($value) + ":{";
-            }
-            else
-            {
-                var ocount = 0;
-
-                for (x in $value) {
-                    if(___get_constructor_name($value[x]) === 'Function') {
-                        continue;
-                    }
-                    ocount++;
-                }
-
-                output = "O:" + cname.length + ':"' + cname + '":' + ocount + ":{";
-            }
-
-            for (x in $value) {
-
-                if(___get_constructor_name($value[x]) === 'Function') {
-                    continue;
-                }
-
-                output += serialize(x);
-                output += serialize($value[x]);
-            }
-            output += "}";
-
-            if(output === 'a:0:{}' && cname === 'Object') {
-                output = '';
             }
 
             break;

@@ -186,8 +186,8 @@ test("serialize ($value) ", function () {
             "expected": [
                 'O:4:"Kura":4:{s:4:"legs";i:2;s:5:"wings";i:2;s:4:"eyes";i:2;s:6:"canFly";b:0;}',
                 'O:8:"stdClass":0:{}',
-                'O:6:"Object":0:{}',
-                'O:6:"Object":3:{s:1:"a";i:1;s:1:"b";i:2;s:1:"c";i:3;}'
+                'a:0:{}',
+                'a:3:{s:1:"a";i:1;s:1:"b";i:2;s:1:"c";i:3;}'
             ]
         }
     };
@@ -338,15 +338,68 @@ test("serialize(), unserialize() cross tests", function () {
     var i;
 
     var expected = [
-        [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-        {a:{a:{a:{a:{a:{a:{a:{a:{}}}}}}}}},
-        { "obj": {}, "obj": {}, "obj": {}, "obj": {}, "obj": {}, "obj": {}},
-        { "obj": {} },
-        { "scalar": 0.9994433, "obj": {} },
-        {"i":1, "d": 4.14, "s": "Zażółć gęślą jaźń", "bf":false, "bt":true, "a":[5,6,79]},
-        [1,2,3], [[1,[2],3],4], [[],[],[]],
-        [[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]],
-        false, 0, "", [], {}, true, 1, 1000, 3.4, 45232.422, .9999,
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        {"a": {"a": {"a": {"a": {"a": {"a": {"a": {"a": []}}}}}}}},
+        { "obj": [], "obj": [], "obj": [], "obj": []},
+        { "scalar": 0.9994433, "obj": [] },
+        {"i": 1, "d": 4.14, "s": "Zażółć gęślą jaźń", "bf": false, "bt": true, "a": [5, 6, 79]},
+        [1, 2, 3],
+        [
+            [1, [2], 3],
+            4
+        ],
+        [
+            [],
+            [],
+            []
+        ],
+        [
+            [
+                [
+                    [
+                        [
+                            [
+                                [
+                                    [
+                                        [
+                                            [
+                                                [
+                                                    [
+                                                        [
+                                                            [
+                                                                [
+                                                                    [
+                                                                        [
+                                                                            [
+                                                                                []
+                                                                            ]
+                                                                        ]
+                                                                    ]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ],
+        false,
+        0,
+        "",
+        [],
+        true,
+        1,
+        1000,
+        3.4,
+        45232.422,
+        .9999,
         null
     ];
 

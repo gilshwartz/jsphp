@@ -13,6 +13,12 @@ function stdClass() {
 
 }
 
+/**
+ * (PHP 5 &gt;= 5.1.0)<br/>
+ * stdClass could not be converted to string
+ * @override
+ * @throws Exception
+ */
 stdClass.prototype.toString = function () {
     throw new Exception("Object of class stdClass could not be converted to string");
 };

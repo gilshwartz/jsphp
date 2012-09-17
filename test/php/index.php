@@ -6,7 +6,7 @@ function run()
     $template = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'phpunit.xsl';
 
     $files = array(
-        dirname(__FILE__) . DIRECTORY_SEPARATOR . 'dummyTestx.php'
+        dirname(__FILE__) . DIRECTORY_SEPARATOR . 'standard_2Test.php'
     );
 
     $files = glob(dirname(__FILE__) . DIRECTORY_SEPARATOR . '*Test.php');

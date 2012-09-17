@@ -17,8 +17,6 @@ function strtolower($str) {
         arguments
     );
 
-    var vtype = typeof $str;
-
     if($str === null || $str === false) {
         $str = "";
     }
@@ -27,9 +25,12 @@ function strtolower($str) {
         $str = "1";
     }
 
-    if($str !== "" && !(vtype !== 'object')) {
-        var type = ___get_constructor_name($str) === 'Array' ? 'array' : vtype;
-        throw new Exception("strtolower() expects parameter 1 to be string, " + type + " given");
+    var vtype = ___gettype($str);
+
+    if($str !== "" && (vtype === 'array' || vtype === 'object')) {
+        var cn = ___get_constructor_name($str);
+        var obj = cn === 'Array' || cn === 'Object' ? 'array' : 'object';
+        throw new Exception("strtolower() expects parameter 1 to be string, " + obj + " given");
     }
 
     $str = "" + $str;

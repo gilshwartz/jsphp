@@ -14,7 +14,7 @@ module.exports = function (grunt) {
     }
 
     function getModuleBanner(module, description) {
-       return '/**\n' +
+        return '/**\n' +
             ' * ' + description + '\n' +
             ' * @module ' + module + '\n' +
             ' * @author <%= pkg.author.name %>\n' +
@@ -103,6 +103,12 @@ module.exports = function (grunt) {
                 ],
                 dest: 'dist/standard_1.js'
             },
+            standard_2: {
+                src: [
+                    '<banner:meta.standard_2>'
+                ],
+                dest: 'dist/standard_2.js'
+            },
             standard_3: {
                 src: [
                     '<banner:meta.standard_3>',
@@ -129,7 +135,53 @@ module.exports = function (grunt) {
                     'src/standard_5/gettype.js'
                 ],
                 dest: 'dist/standard_5.js'
+            },
+            standard_6: {
+                src: [
+                    '<banner:meta.standard_6>'
+                ],
+                dest: 'dist/standard_6.js'
+            },
+            standard_7: {
+                src: [
+                    '<banner:meta.standard_7>'
+                ],
+                dest: 'dist/standard_7.js'
+            },
+            standard_8: {
+                    src: [
+                        '<banner:meta.standard_8>',
+                        'src/standard_8/array_pop.js',
+                        'src/standard_8/array_push.js',
+                        'src/standard_8/array_shift.js',
+                        'src/standard_8/array_unshift.js',
+                        'src/standard_8/array_fill.js',
+                        'src/standard_8/shuffle.js'
+                    ],
+                    dest: 'dist/standard_8.js'
+            },
+            standard_9: {
+                src: [
+                    '<banner:meta.standard_9>'
+                ],
+                dest: 'dist/standard_9.js'
             }
+
+//            jsphp: {
+//                src: [
+//                    '<banner:meta.banner>',
+//                    'src/bootstrap.js',
+//                    'dist/standard_defines.js',
+//                    'dist/Core_c.js',
+//                    'dist/pcre.js',
+//                    'dist/standard_0.js',
+//                    'dist/standard_1.js',
+//                    'dist/standard_3.js',
+//                    'dist/standard_4.js',
+//                    'dist/standard_5.js'
+//                ],
+//                dest: 'dist/<%= pkg.name %>.js'
+//            }
         },
         min: {
             dist: {
@@ -143,7 +195,8 @@ module.exports = function (grunt) {
                     'dist/standard_1.js',
                     'dist/standard_3.js',
                     'dist/standard_4.js',
-                    'dist/standard_5.js'
+                    'dist/standard_5.js',
+                    'dist/standard_8.js'
                 ],
                 dest: 'dist/<%= pkg.name %>.min.js'
             }
@@ -171,7 +224,7 @@ module.exports = function (grunt) {
 
         qunit: {
             files: [
-                "testjs/index.html"
+                "http://jsphp.dev/test/js"
             ]
         },
 

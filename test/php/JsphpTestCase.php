@@ -11,9 +11,10 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
     function runTestOnData($extra = array())
     {
         $actual = null;
-        $index = 0;
+        $index  = 0;
 
         $failures = array();
+        $this->assertTrue(function_exists($this->func));
 
         foreach ($this->fixtures as $a) {
 
@@ -21,9 +22,19 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
             $expected = array_shift($a);
             $func     = $this->func;
 
+
             switch (count($a)) {
                 case 1:
-                    @$actual = $func($a[0]);
+
+                    $arg = null;
+                    $arg = $a[0];
+
+                    if (preg_match("/^(new|function)/", strval($arg))) {
+                        $arg = eval("return " . strval($arg) . ";");
+                    }
+
+                    @$actual = $func($arg);
+
                     break;
                 case 2:
                     @$actual = $func($a[0], $a[1]);
@@ -52,9 +63,17 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
             if ($isok === false) {
 
                 // TODO: resolve array/object JS PHP problem:
-                if (preg_match("/object given$/", $expected)) {
-                    $expected = preg_replace("/object given$/", "array given", $expected);
-                }
+//                $match = array();
+//                if (preg_match("/expects parameter (\d+) to be \w+, (object|array) given$/", $expected, $match)) {
+//
+//                    echo "AAAAAAAAAAAAAAAAAAAAA";
+//
+//                    //$v = $a[$match[1]];
+//                    //echo $v;exit;
+////                    if (is_object($v) === false) {
+////                        $expected = preg_replace("/object given$/", "array given", $expected);
+////                    }
+//                }
 
                 $actual = $php_errormsg;
 
@@ -62,7 +81,7 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
                 // str_repeat() [<a href='function.str-repeat'>function.str-repeat</a>]: Second argument has to be greater than or equal to 0
                 $actual = preg_replace('/\s*\[<a.*?\]\s*/', '', $actual);
 
-                } else {
+            } else {
 
                 // TODO: resolve array/object JS PHP problem:
                 if ($this->func === "gettype" and $expected === "object" and $actual === "array") {
@@ -72,11 +91,10 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
 
             try {
                 $this->assertEquals($expected, $actual);
-            }
-            catch(Exception $e) {
-                $jexpected = json_encode($expected);
-                $jactual = json_encode($actual);
-                $fd = new FineDiff($jexpected, $jactual);
+            } catch (Exception $e) {
+                $jexpected  = json_encode($expected);
+                $jactual    = json_encode($actual);
+                $fd         = new FineDiff($jexpected, $jactual);
                 $failures[] = implode("\n", array(
                     $jexpected,
                     $jactual,
@@ -88,8 +106,8 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
             $index++;
         }
 
-        if(count($failures) > 0) {
-             $this->assertTrue(false, "-------------------------\n" . implode("\n-------------------------\n", $failures) . "\n-------------------------\n" );
+        if (count($failures) > 0) {
+            $this->assertTrue(false, "-------------------------\n" . implode("\n-------------------------\n", $failures) . "\n-------------------------\n");
         }
     }
 
@@ -109,7 +127,7 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
         $this->module = preg_replace('/^(\w+)Test$/', '$1', get_class($this));
         $this->func   = preg_replace('/^test_?$/', '', $this->getName());
 
-        $json = preg_replace('|//.*?\n|','', $json);
+        $json = preg_replace('|//.*?\n|', '', $json);
 
         $temp = json_decode($json, true);
 

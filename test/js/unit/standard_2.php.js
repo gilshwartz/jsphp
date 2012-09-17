@@ -11,6 +11,15 @@ module("standard_2.php", {
     }
 });
 
+test("chr ($ascii) ", function(){
+    runTestOnData();
+});
+
+test("ord ($string) ", function(){
+    runTestOnData();
+});
+
+/*
 test("nl_langinfo ($item) ", function(){
     ok(false, "Not implemented yet.");
 });
@@ -23,13 +32,6 @@ test("levenshtein ($str1, $str2) ", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("chr ($ascii) ", function(){
-    ok(false, "Not implemented yet.");
-});
-
-test("ord ($string) ", function(){
-    ok(false, "Not implemented yet.");
-});
 
 test("parse_str ($str, $arr) ", function(){
     ok(false, "Not implemented yet.");
@@ -227,3 +229,4 @@ test("getmyinode () ", function(){
     ok(false, "Not implemented yet.");
 });
 
+*/

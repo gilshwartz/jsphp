@@ -1,4 +1,23 @@
 var fixtures = {
+    "standard_2": {
+        "chr":[
+            [false, "Wrong parameter count for chr()"],
+            [false, "Wrong parameter count for chr()", 1, 1],
+            [true, "F", 70]
+        ],
+        "ord": [
+            [false, "ord() expects parameter 1 to be string, object given", "new stdClass()"],
+            [false, "ord() expects exactly 1 parameter, 0 given"],
+            [false, "ord() expects exactly 1 parameter, 2 given", null, null],
+            [false, "ord() expects parameter 1 to be string, array given", [1]],
+            [false, "ord() expects parameter 1 to be string, array given", {"a": 4}],
+            [true, 0, null],
+            [true, 48, 0],
+            [true, 70, "F"],
+            [true, 70, "Foo"],
+            [true, 70, "Foo Baz Bar"]
+        ]
+    },
     "standard_8": {
         "array_unshift": [
             [true, true, [1,2,3,4], 5],
@@ -12,8 +31,7 @@ var fixtures = {
             [false, "array_unshift() expects parameter 1 to be array, boolean given", true, null],
             [false, "array_unshift() expects parameter 1 to be array, boolean given", false, null],
             [false, "array_unshift() expects at least 2 parameters, 0 given"],
-            [false, "array_unshift() expects at least 2 parameters, 1 given", null] //,
-//            [false, "array_unshift() expects at most 3 parameters, 4 given", [], null, null, null]
+            [false, "array_unshift() expects at least 2 parameters, 1 given", null]
        ],
         "array_shift": [
             [true, 1, [1, 2, 3, 4]],
@@ -69,8 +87,8 @@ var fixtures = {
             [false, "shuffle() expects parameter 1 to be array, integer given", 1],
             [false, "shuffle() expects parameter 1 to be array, boolean given", true],
             [false, "shuffle() expects parameter 1 to be array, boolean given", false],
-            [false, "shuffle() expects exactly 1 parameter, 0 given"] //,
-//            [false, "shuffle() expects exactly 1 parameter, 2 given", null, null]
+            [false, "shuffle() expects exactly 1 parameter, 0 given"],
+            [false, "shuffle() expects exactly 1 parameter, 2 given", null, null]
         ],
         "array_fill": [
             [false, "array_fill() expects exactly 3 parameters, 0 given"],
@@ -79,7 +97,7 @@ var fixtures = {
             [false, "array_fill() expects exactly 3 parameters, 4 given", null, null, null, null],
             [false, "array_fill(): Number of elements must be positive", null, null, null],
             [false, "array_fill(): Number of elements must be positive", null, 0, null],
-//            [false, "array_fill() expects parameter 1 to be long, string given", "a", null, null],
+            [false, "array_fill() expects parameter 1 to be long, string given", "a", null, null],
             [true, [1, 1, 1, 1], 0, 4, 1],
             [true, {"1": 1, "2": 1, "3": 1, "4": 1}, 1, 4, 1],
             [true, {"-2": 1, "0": 1, "1": 1, "2": 1}, -2, 4, 1]
@@ -106,7 +124,7 @@ var fixtures = {
             [false, "strtolower() expects exactly 1 parameter, 0 given"],
             [false, "strtolower() expects exactly 1 parameter, 2 given", 1, 1],
             [false, "strtolower() expects parameter 1 to be string, array given", []],
-            [false, "strtolower() expects parameter 1 to be string, object given", {}],
+            [false, "strtolower() expects parameter 1 to be string, array given", {}],
             [true, "abcdefg", "ABCDEFG"],
             [true, "abc    def  xyz      g", "ABC    DEF  xyz      G"],
             [true, "0", 0],
@@ -120,7 +138,7 @@ var fixtures = {
             [false, "strtoupper() expects exactly 1 parameter, 0 given"],
             [false, "strtoupper() expects exactly 1 parameter, 2 given", 1, 1],
             [false, "strtoupper() expects parameter 1 to be string, array given", []],
-            [false, "strtoupper() expects parameter 1 to be string, object given", {}],
+            [false, "strtoupper() expects parameter 1 to be string, array given", {}],
             [true, "ABCDEFG", "abcdefg"],
             [true, "ABC    DEF  XYZ      G", "abc    def  XYZ      g"],
             [true, "0", 0],
@@ -134,7 +152,9 @@ var fixtures = {
             [false, "strrev() expects exactly 1 parameter, 0 given"],
             [false, "strrev() expects exactly 1 parameter, 2 given", 1, 1],
             [false, "strrev() expects parameter 1 to be string, array given", []],
-            [false, "strrev() expects parameter 1 to be string, object given", {}],
+            [false, "strrev() expects parameter 1 to be string, array given", [1,2,3]],
+            [false, "strrev() expects parameter 1 to be string, array given", {}],
+            [false, "strrev() expects parameter 1 to be string, array given", {"a":1}],
             [true, "gfedcba", "abcdefg"],
             [true, "g      ZYX  fed    cba", "abc    def  XYZ      g"],
             [true, "0", 0],
@@ -150,7 +170,7 @@ var fixtures = {
             [false, "str_repeat() expects exactly 2 parameters, 3 given", 1, 1, 1],
             [false, "str_repeat(): Second argument has to be greater than or equal to 0", "", -1],
             [false, "str_repeat() expects parameter 2 to be long, array given", "", []],
-            [false, "str_repeat() expects parameter 2 to be long, object given", "", {}],
+            [false, "str_repeat() expects parameter 2 to be long, array given", "", {}],
             [true, "", 1, 0],
             [true, "", "1", 0],
             [true, "", "1", false],

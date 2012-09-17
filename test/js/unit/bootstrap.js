@@ -36,6 +36,14 @@ function runTestOnData(extra, _expect) {
         isok = a.shift();
         var expected = a.shift();
 
+        var c;
+
+        for(c = 0; c < a.length; c++) {
+            if(___gettype(a[c]) === 'string' && a[c].match(/^(new|function)/)) {
+                a[c] = eval("" + a[c] + ";");
+            }
+        }
+
         try {
             var given;
 

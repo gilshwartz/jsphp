@@ -17,8 +17,6 @@ function strtoupper($string) {
         arguments
     );
 
-    var vtype = typeof $string;
-
     if($string === null || $string === false) {
         $string = "";
     }
@@ -27,9 +25,12 @@ function strtoupper($string) {
         $string = "1";
     }
 
-    if($string !== "" && !(vtype !== 'object')) {
-        var type = ___get_constructor_name($string) === 'Array' ? 'array' : vtype;
-        throw new Exception("strtoupper() expects parameter 1 to be string, " + type + " given");
+    var vtype = ___gettype($string);
+
+    if($string !== "" && (vtype === 'array' || vtype === 'object')) {
+        var cn = ___get_constructor_name($string);
+        var obj = cn === 'Array' || cn === 'Object' ? 'array' : 'object';
+        throw new Exception("strtoupper() expects parameter 1 to be string, " + obj + " given");
     }
 
     $string = "" + $string;

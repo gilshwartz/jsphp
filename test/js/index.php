@@ -22,6 +22,9 @@
         <script type="text/javascript" src="../../src/standard_1/strtoupper.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_1/strrev.js?<?php echo rand(1234567,98765432) ?>"></script>
 
+        <script type="text/javascript" src="../../src/standard_2/chr.js?<?php echo rand(1234567,98765432) ?>"></script>
+        <script type="text/javascript" src="../../src/standard_2/ord.js?<?php echo rand(1234567,98765432) ?>"></script>
+
         <script type="text/javascript" src="../../src/standard_3/pi.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_3/base64_encode.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_3/base64_decode.js?<?php echo rand(1234567,98765432) ?>"></script>
@@ -58,7 +61,7 @@
         <script type="text/javascript" src="unit/Core_c.php.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="unit/standard_0.php.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="unit/standard_1.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-        <!--<script type="text/javascript" src="unit/standard_2.php.js?<?php echo rand(1234567,98765432) ?>"></script>-->
+        <script type="text/javascript" src="unit/standard_2.php.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="unit/standard_3.php.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="unit/standard_4.php.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="unit/standard_5.php.js?<?php echo rand(1234567,98765432) ?>"></script>
