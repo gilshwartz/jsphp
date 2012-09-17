@@ -121,10 +121,15 @@ function ___validate_function_arguments(funct, config, args) {
     var given = args.length;
     var msg = null;
     var code = 0;
+    var dynargs = false;
 
     config.required.map(function (val) {
-        at_most += 1;
+        at_most +=  val !== null ? 1 : 0;;
         at_least += val ? 1 : 0;
+
+        if(val === null) {
+            dynargs = true;
+        }
     });
 
     // Number of parameters check:
@@ -143,17 +148,21 @@ function ___validate_function_arguments(funct, config, args) {
             given + ' given';
     }
 
+    console.log([funct, dynargs]);
+
     if (given < at_least) {
         msg = getMsg('at least', at_least);
     }
 
-    if (given > at_most) {
+    if (dynargs === false && given > at_most) {
         msg = getMsg('at most', at_most);
     }
 
-    if (given !== at_most && at_most === at_least) {
+    if (dynargs === false && given !== at_most && at_most === at_least) {
         msg = getMsg('exactly', at_most);
     }
+
+    // Custom required exception message:
 
     if (msg !== null) {
         if (typeof config.customrequiredx !== 'undefined') {

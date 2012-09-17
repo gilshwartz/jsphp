@@ -1,5 +1,64 @@
 var fixtures = {
     "standard_8": {
+        "array_unshift": [
+            [true, true, [1,2,3,4], 5],
+            [true, true, [], 1],
+            [true, true, [1, 2, 3, 4], 50, 40, 30, 44],
+            [false, "array_unshift() expects parameter 1 to be array, string given", "Foo", null],
+            [false, "array_unshift() expects parameter 1 to be array, string given", "", null],
+            [false, "array_unshift() expects parameter 1 to be array, null given", null, null],
+            [false, "array_unshift() expects parameter 1 to be array, integer given", 0, null],
+            [false, "array_unshift() expects parameter 1 to be array, integer given", 1, null],
+            [false, "array_unshift() expects parameter 1 to be array, boolean given", true, null],
+            [false, "array_unshift() expects parameter 1 to be array, boolean given", false, null],
+            [false, "array_unshift() expects at least 2 parameters, 0 given"],
+            [false, "array_unshift() expects at least 2 parameters, 1 given", null] //,
+//            [false, "array_unshift() expects at most 3 parameters, 4 given", [], null, null, null]
+       ],
+        "array_shift": [
+            [true, 1, [1, 2, 3, 4]],
+            [true, null, []],
+            [true, null, [null]],
+            [true, null, [null, null]],
+            [false, "array_shift() expects parameter 1 to be array, string given", "Foo"],
+            [false, "array_shift() expects parameter 1 to be array, string given", ""],
+            [false, "array_shift() expects parameter 1 to be array, null given", null],
+            [false, "array_shift() expects parameter 1 to be array, integer given", 0],
+            [false, "array_shift() expects parameter 1 to be array, integer given", 1],
+            [false, "array_shift() expects parameter 1 to be array, boolean given", true],
+            [false, "array_shift() expects parameter 1 to be array, boolean given", false],
+            [false, "array_shift() expects exactly 1 parameter, 0 given"],
+            [false, "array_shift() expects exactly 1 parameter, 2 given", null, null]
+        ],
+        "array_push": [
+            [true, true, [1, 2, 3, 4], 5],
+            [true, true, [], 10],
+            [true, true, [], 10, 20, 30, 40],
+            [false, "array_push() expects parameter 1 to be array, string given", "Foo", null],
+            [false, "array_push() expects parameter 1 to be array, string given", "", null],
+            [false, "array_push() expects parameter 1 to be array, null given", null, null],
+            [false, "array_push() expects parameter 1 to be array, integer given", 0, null],
+            [false, "array_push() expects parameter 1 to be array, integer given", 1, null],
+            [false, "array_push() expects parameter 1 to be array, boolean given", true, null],
+            [false, "array_push() expects parameter 1 to be array, boolean given", false, null],
+            [false, "array_push() expects at least 2 parameters, 0 given"],
+            [false, "array_push() expects at least 2 parameters, 1 given", null]
+        ],
+        "array_pop": [
+            [true, 4, [1, 2, 3, 4]],
+            [true, null, []],
+            [true, null, [null]],
+            [true, null, [null, null]],
+            [false, "array_pop() expects parameter 1 to be array, string given", "Foo"],
+            [false, "array_pop() expects parameter 1 to be array, string given", ""],
+            [false, "array_pop() expects parameter 1 to be array, null given", null],
+            [false, "array_pop() expects parameter 1 to be array, integer given", 0],
+            [false, "array_pop() expects parameter 1 to be array, integer given", 1],
+            [false, "array_pop() expects parameter 1 to be array, boolean given", true],
+            [false, "array_pop() expects parameter 1 to be array, boolean given", false],
+            [false, "array_pop() expects exactly 1 parameter, 0 given"],
+            [false, "array_pop() expects exactly 1 parameter, 2 given", null, null]
+        ],
         "shuffle": [
             [true, true, [1,2,3,4]],
             [true, true, []],
@@ -10,8 +69,8 @@ var fixtures = {
             [false, "shuffle() expects parameter 1 to be array, integer given", 1],
             [false, "shuffle() expects parameter 1 to be array, boolean given", true],
             [false, "shuffle() expects parameter 1 to be array, boolean given", false],
-            [false, "shuffle() expects exactly 1 parameter, 0 given"],
-            [false, "shuffle() expects exactly 1 parameter, 2 given", null, null]
+            [false, "shuffle() expects exactly 1 parameter, 0 given"] //,
+//            [false, "shuffle() expects exactly 1 parameter, 2 given", null, null]
         ],
         "array_fill": [
             [false, "array_fill() expects exactly 3 parameters, 0 given"],

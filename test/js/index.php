@@ -37,6 +37,10 @@
         <script type="text/javascript" src="../../src/standard_5/doubleval.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_5/gettype.js?<?php echo rand(1234567,98765432) ?>"></script>
 
+        <script type="text/javascript" src="../../src/standard_8/array_unshift.js?<?php echo rand(1234567,98765432) ?>"></script>
+        <script type="text/javascript" src="../../src/standard_8/array_shift.js?<?php echo rand(1234567,98765432) ?>"></script>
+        <script type="text/javascript" src="../../src/standard_8/array_pop.js?<?php echo rand(1234567,98765432) ?>"></script>
+        <script type="text/javascript" src="../../src/standard_8/array_push.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_8/array_fill.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_8/shuffle.js?<?php echo rand(1234567,98765432) ?>"></script>
 
@@ -46,6 +50,7 @@
         <script type="text/javascript" src="../data/fixtures.js?<?php echo rand(1234567,98765432) ?>"></script>
 
         <script type="text/javascript" src="unit/bootstrap.js?<?php echo rand(1234567,98765432) ?>"></script>
+        <script type="text/javascript" src="unit/bootstrap_test.js?<?php echo rand(1234567,98765432) ?>"></script>
 
         <script type="text/javascript" src="unit/standard_defines.php.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="unit/Superglobals.php.js?<?php echo rand(1234567,98765432) ?>"></script>
