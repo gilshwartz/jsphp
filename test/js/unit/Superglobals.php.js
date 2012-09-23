@@ -9,19 +9,29 @@ module("Superglobals", {
     }
 });
 
-test("variable definition test", function () {
-    ok(typeof $GLOBALS !== "undefined" && typeof $GLOBALS === "object", "$GLOBALS is defined");
-    ok(typeof $_SERVER !== "undefined" && typeof $_SERVER === "object", "$_SERVER is defined");
-    ok(typeof $_GET !== "undefined" && typeof $_GET === "object", "$_GET is defined");
-    ok(typeof $_POST !== "undefined" && typeof $_POST === "object", "$_POST is defined");
-    ok(typeof $_FILES !== "undefined" && typeof $_FILES === "object", "$_FILES is defined");
-    ok(typeof $_REQUEST !== "undefined" && typeof $_REQUEST === "object", "$_REQUEST is defined");
-    ok(typeof $_SESSION !== "undefined" && typeof $_SESSION === "object", "$_SESSION is defined");
-    ok(typeof $_ENV !== "undefined" && typeof $_ENV === "object", "$_ENV is defined");
-    ok(typeof $_COOKIE !== "undefined" && typeof $_COOKIE === "object", "$_COOKIE is defined");
-    ok(typeof $php_errormsg !== "undefined" && typeof $php_errormsg === "object", "$php_errormsg is defined");
-    ok(typeof $HTTP_RAW_POST_DATA !== "undefined" && $HTTP_RAW_POST_DATA === "", "$HTTP_RAW_POST_DATA is defined");
-    ok(typeof $http_response_header !== "undefined" && $http_response_header === "", "$http_response_header is defined");
-    ok(typeof $argc !== "undefined" && $argc === 0, "$argc is defined");
-    ok(typeof $argv !== "undefined" && ___get_constructor_name($argv) === "Array", "$argv is defined");
+test("defined", function () {
+    var i;
+    var module = QUnit.config.current.module.replace(/^(\w+).*$/, '$1');
+    var vars = variables_fixtures[module];
+
+    for(i = 0; i < vars.length; i++) {
+        var condition;
+        switch(vars[i][0])
+        {
+            case "$HTTP_RAW_POST_DATA":
+            case "$http_response_header":
+                condition = 'typeof ' + vars[i][0] + ' !== "undefined" && ' + vars[i][0] + ' === "' + vars[i][1] + '"';
+                break;
+            case "$argc":
+                condition = 'typeof ' + vars[i][0] + ' !== "undefined" && ' + vars[i][0] + ' === ' + vars[i][1] + '';
+                break;
+            case "$argv":
+                condition = 'typeof ' + vars[i][0] + ' !== "undefined" &&  ___get_constructor_name(' + vars[i][0] + ') === "' + vars[i][1] + '"';
+                break;
+            default:
+                condition = 'typeof ' + vars[i][0] + ' !== "undefined" && typeof ' + vars[i][0] + ' === "' + vars[i][1] + '"';
+                break;
+        }
+        ok(eval(condition), vars[i][0] + " is defined");
+    }
 });

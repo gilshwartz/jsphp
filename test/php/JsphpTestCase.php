@@ -22,19 +22,15 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
             $expected = array_shift($a);
             $func     = $this->func;
 
+            for ($i = 0; $i < count($a); $i++) {
+                if (gettype($a[$i]) === "string" and preg_match("/^[A-Z_]+$|^(new|function)/", strval($a[$i]))) {
+                    $a[$i] = eval("return " . strval($a[$i]) . ";");
+                }
+            }
 
             switch (count($a)) {
                 case 1:
-
-                    $arg = null;
-                    $arg = $a[0];
-
-                    if (preg_match("/^(new|function)/", strval($arg))) {
-                        $arg = eval("return " . strval($arg) . ";");
-                    }
-
-                    @$actual = $func($arg);
-
+                    @$actual = $func($a[0]);
                     break;
                 case 2:
                     @$actual = $func($a[0], $a[1]);
@@ -61,24 +57,7 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
             }
 
             if ($isok === false) {
-
-                // TODO: resolve array/object JS PHP problem:
-//                $match = array();
-//                if (preg_match("/expects parameter (\d+) to be \w+, (object|array) given$/", $expected, $match)) {
-//
-//                    echo "AAAAAAAAAAAAAAAAAAAAA";
-//
-//                    //$v = $a[$match[1]];
-//                    //echo $v;exit;
-////                    if (is_object($v) === false) {
-////                        $expected = preg_replace("/object given$/", "array given", $expected);
-////                    }
-//                }
-
                 $actual = $php_errormsg;
-
-                // On the web in warning messages are links to function manual ie.
-                // str_repeat() [<a href='function.str-repeat'>function.str-repeat</a>]: Second argument has to be greater than or equal to 0
                 $actual = preg_replace('/\s*\[<a.*?\]\s*/', '', $actual);
 
             } else {
@@ -109,6 +88,34 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
         if (count($failures) > 0) {
             $this->assertTrue(false, "-------------------------\n" . implode("\n-------------------------\n", $failures) . "\n-------------------------\n");
         }
+    }
+
+    public function variablesTestDataProvider() {
+        $module = preg_replace('/^(\w+)Test$/', '$1', get_class($this));
+
+        $fixtures_path = implode(DIRECTORY_SEPARATOR, array(dirname(__FILE__), '..', 'data', 'variables-fixtures.js'));
+
+        $prefix = 'var variables_fixtures = ';
+        $sufix  = ';';
+
+        $content = trim(file_get_contents($fixtures_path));
+        $start   = strlen($prefix);
+        $end     = strlen($content) - strlen($prefix) - strlen($sufix);
+
+        $json = trim(file_get_contents($fixtures_path, null, null, $start, $end));
+
+
+        $json = preg_replace('|//.*?\n|', '', $json);
+
+        $temp = json_decode($json, true);
+
+        $fixtures = array();
+
+        if (isset($temp[$module])) {
+            $fixtures = $temp[$module];
+        }
+
+        return $fixtures;
     }
 
     function setUp()

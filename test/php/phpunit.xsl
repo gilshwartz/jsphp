@@ -52,6 +52,12 @@ $(document).ready(function () {
     $("span.module-name, span.test-name, b.counts").click(function() {
          $(this).parent().siblings("ol").toggle();
     });
+
+    $("#qunit-modulefilter").change(function() {
+        var url = location.href.replace(/^(.*?)\?.*?$/, '$1');
+        url += "?module=" + $("#qunit-modulefilter option:selected").text();
+        location.href = url;
+    });
 });
 ]]>
                 </script>
@@ -142,7 +148,182 @@ $(document).ready(function () {
 
                                         </strong>
 
-                                        <a href="/test/php">Rerun</a>
+                                        <xsl:element name="a">
+                                            <xsl:attribute name="href">
+                                                <xsl:value-of select="concat('/test/php?filter=', $test-name)"/>
+                                            </xsl:attribute>
+                                            <xsl:value-of select="'Rerun'" />
+                                        </xsl:element>
+
+                                        <xsl:element name="a">
+                                            <xsl:attribute name="href">
+                                                <xsl:value-of select="'/test/php'"/>
+                                            </xsl:attribute>
+                                            <xsl:value-of select="'All'" />
+                                        </xsl:element>
+
+                                        <xsl:element name="ol">
+
+                                            <xsl:if test="$failures = 0">
+                                                <xsl:attribute name="style">
+                                                    <xsl:value-of select="'display:none'"/>
+                                                </xsl:attribute>
+
+                                            </xsl:if>
+
+
+                                            <xsl:if test="($failures) > 0">
+
+                                                <xsl:for-each select="failure">
+
+                                                    <xsl:choose>
+
+                                                        <xsl:when test="false()">
+                                                            <li class="pass">okay</li>
+                                                        </xsl:when>
+
+                                                        <xsl:otherwise>
+                                                            <li class="fail">
+                                                                <span class="test-message">failed</span>
+                                                                <table>
+                                                                    <tbody>
+                                                                        <tr class="test-expected">
+                                                                            <th>Expected:</th>
+                                                                            <td>
+                                                                                <pre>
+                                                                                    <xsl:copy-of select="expected"/>
+                                                                                </pre>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="test-actual">
+                                                                            <th>Result:</th>
+                                                                            <td>
+                                                                                <pre>
+                                                                                    <xsl:copy-of select="result"/>
+                                                                                </pre>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="test-diff">
+                                                                            <th>Diff:</th>
+                                                                            <td>
+                                                                                <pre>
+                                                                                    <xsl:copy-of select="diff"/>
+                                                                                </pre>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="test-source">
+                                                                            <th>Source:</th>
+                                                                            <td>
+                                                                                <pre>
+                                                                                    <xsl:copy-of select="source"/>
+                                                                                </pre>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </li>
+                                                        </xsl:otherwise>
+                                                    </xsl:choose>
+
+                                                </xsl:for-each>
+                                            </xsl:if>
+                                            <xsl:call-template name="okays">
+                                                <xsl:with-param name="count" select="@assertions - 1 - $failures"/>
+                                            </xsl:call-template>
+
+                                        </xsl:element>
+
+                                    </xsl:element>
+                                </xsl:if>
+                            </xsl:for-each>
+
+                        </xsl:for-each>
+
+                        <xsl:for-each select="/testsuites/testsuite/testsuite/testsuite">
+
+                            <xsl:variable name="module-name">
+                                <xsl:if test="'Test' = substring(@name, string-length(@name) - string-length('Test') + 1, string-length(@name))">
+                                    <xsl:value-of
+                                            select="substring(@name, 1, string-length(@name) - string-length('Test'))"/>
+                                </xsl:if>
+                                <xsl:if test="'Test' != substring(@name, string-length(@name) - string-length('Test') + 1, string-length(@name))">
+                                    <xsl:value-of
+                                            select="@name"/>
+                                </xsl:if>
+                            </xsl:variable>
+
+                            <xsl:for-each select="testcase">
+
+                                <xsl:if test="@assertions &gt; 0">
+
+                                    <xsl:variable name="test-name">
+                                        <xsl:if test="starts-with(@name, 'test_') = true()">
+                                            <xsl:value-of
+                                                    select="substring(@name, string-length('test_') + 1, string-length(@name))"/>
+                                        </xsl:if>
+                                        <xsl:if test="starts-with(@name, 'test_') = false()">
+                                            <xsl:if test="starts-with(@name, 'test') = true()">
+                                                <xsl:value-of
+                                                        select="substring(@name, string-length('test') + 1, string-length(@name))"/>
+                                            </xsl:if>
+                                            <xsl:if test="starts-with(@name, 'test') = false()">
+                                                <xsl:value-of select="@name"/>
+                                            </xsl:if>
+                                        </xsl:if>
+                                    </xsl:variable>
+
+                                    <xsl:variable name="failures">
+                                        <xsl:value-of select="count(failure)"/>
+                                    </xsl:variable>
+
+                                    <xsl:element name="li">
+                                        <xsl:attribute name="class">
+                                            <xsl:if test="$failures = 0">
+                                                <xsl:value-of select="'pass'"/>
+                                            </xsl:if>
+                                            <xsl:if test="$failures &gt; 0">
+                                                <xsl:value-of select="'fail'"/>
+                                            </xsl:if>
+                                        </xsl:attribute>
+
+                                        <strong>
+                                            <span class="module-name">
+                                                <xsl:value-of select="$module-name"/>
+                                            </span>
+                                            <xsl:value-of select="': '"/>
+                                            <span class="test-name">
+                                                <xsl:value-of select="$test-name"/>
+                                            </span>
+
+                                            <b class="counts">
+                                                <xsl:value-of select="' ('"/>
+                                                <b class="failed">
+                                                    <xsl:value-of select="$failures"/>
+                                                </b>
+                                                <xsl:value-of select="', '"/>
+                                                <b class="passed">
+                                                    <xsl:value-of select="@assertions - $failures"/>
+                                                </b>
+                                                <xsl:value-of select="', '"/>
+                                                <xsl:value-of select="@assertions"/>
+                                                <xsl:value-of select="')'"/>
+                                            </b>
+
+                                        </strong>
+
+                                        <xsl:element name="a">
+                                            <xsl:attribute name="href">
+                                                <xsl:value-of select="concat('/test/php?filter=', $test-name)"/>
+                                            </xsl:attribute>
+                                            <xsl:value-of select="'Rerun'" />
+                                        </xsl:element>
+
+                                        <xsl:element name="a">
+                                            <xsl:attribute name="href">
+                                                <xsl:value-of select="'/test/php'"/>
+                                            </xsl:attribute>
+                                            <xsl:value-of select="'All'" />
+                                        </xsl:element>
 
                                         <xsl:element name="ol">
 

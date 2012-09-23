@@ -23,11 +23,19 @@
 
     <testsuites>
         <testsuite name="Compatibility tests for JSPHP Project">
+            <file>test/php/standard_defines.php</file>
+            <file>test/php/Superglobals.php</file>
+            <file>test/php/Core_cTest.php</file>
+            <file>test/php/standard_0Test.php</file>
             <file>test/php/standard_1Test.php</file>
+            <file>test/php/standard_2Test.php</file>
             <file>test/php/standard_3Test.php</file>
             <file>test/php/standard_4Test.php</file>
             <file>test/php/standard_5Test.php</file>
+            <file>test/php/standard_6Test.php</file>
+            <file>test/php/standard_7Test.php</file>
             <file>test/php/standard_8Test.php</file>
+            <file>test/php/standard_9Test.php</file>
             <file>test/php/pcreTest.php</file>
         </testsuite>
     </testsuites>

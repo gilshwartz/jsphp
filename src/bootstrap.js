@@ -82,8 +82,6 @@ function ___gettype($var) {
                 var match = Object.prototype.toString.call($var).match(/^\[object ([A-Z]\w+)\]$/);
                 objtype = match[1];
 
-                console.log(objtype);
-
                 if (objtype === "Object" || objtype === "Array") {
                     return "array";
                 }
@@ -114,6 +112,25 @@ var ___args_names = {
     8: 'Nineth',
     9: 'Tenth'
 };
+
+function ___is_scalar($value) {
+    var type = ___gettype($value);
+    var output;
+    switch(type) {
+        case "boolean":
+        case "integer":
+        case "double":
+        case "string":
+        case "NULL":
+            output = true;
+            break;
+        default:
+            output = type;
+            break;
+    }
+
+    return type;
+}
 
 function ___validate_function_arguments(funct, config, args) {
     var i;

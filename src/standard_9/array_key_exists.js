@@ -10,7 +10,7 @@
  * </p>
  * @return bool true on success or false on failure.
  */
-function array_key_exists ($key, $search) {
+function array_key_exists($key, $search) {
 
     return typeof $search[$key] != 'undefined';
 }

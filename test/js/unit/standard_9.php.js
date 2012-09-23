@@ -2,7 +2,7 @@
  * standard_9.php - Unit Test (QUnit)
  */
 
-module("standard_9.php", {
+module("standard_9", {
     setup: function () {
 
     },
@@ -11,6 +11,20 @@ module("standard_9.php", {
     }
 });
 
+
+test("array_unique", function(){
+    runTestOnData();
+});
+
+test("array_keys", function(){
+    runTestOnData();
+});
+
+test("array_values", function(){
+    runTestOnData();
+});
+
+/*
 test("array_merge_recursive ($array1, $_) ", function(){
     ok(false, "Not implemented yet.");
 });
@@ -23,13 +37,7 @@ test("array_replace_recursive ($array, $array1, $array2, $_) ", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("array_keys ($input, $search_value, $strict) ", function(){
-    ok(false, "Not implemented yet.");
-});
 
-test("array_values ($input) ", function(){
-    ok(false, "Not implemented yet.");
-});
 
 test("array_count_values ($input) ", function(){
     ok(false, "Not implemented yet.");
@@ -56,10 +64,6 @@ test("array_change_key_case ($input, $case) ", function(){
 });
 
 test("array_rand ($input, $num_req) ", function(){
-    ok(false, "Not implemented yet.");
-});
-
-test("array_unique ($array, $sort_flags) ", function(){
     ok(false, "Not implemented yet.");
 });
 
@@ -223,3 +227,4 @@ test("sys_get_temp_dir () ", function(){
     ok(false, "Not implemented yet.");
 });
 
+*/

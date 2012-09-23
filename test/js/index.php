@@ -7,7 +7,7 @@
         <script src="../qunit/qunit/qunit.js"></script>
 
         <!-- Library scripts: -->
-        <script type="text/javascript" src="../../src/bootstrap.js?<?php echo rand(1234567,98765432) ?>"></script>
+        <script type="text/javascript" src="../../src/bootstrap.js?<?php // echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_defines.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/Superglobals.js?<?php echo rand(1234567,98765432) ?>"></script>
 
@@ -47,31 +47,15 @@
         <script type="text/javascript" src="../../src/standard_8/array_fill.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_8/shuffle.js?<?php echo rand(1234567,98765432) ?>"></script>
 
+        <script type="text/javascript" src="../../src/standard_9/array_values.js?<?php echo rand(1234567,98765432) ?>"></script>
+        <script type="text/javascript" src="../../src/standard_9/array_keys.js?<?php //echo rand(1234567,98765432) ?>"></script>
+        <script type="text/javascript" src="../../src/standard_9/array_unique.js?<?php echo rand(1234567,98765432) ?>"></script>
+
         <script type="text/javascript" src="../../src/pcre.js?<?php echo rand(1234567,98765432) ?>"></script>
 
-        <!-- Unit Tests: -->
-        <script type="text/javascript" src="../data/fixtures.js?<?php echo rand(1234567,98765432) ?>"></script>
+<?php include_once "tests.inc" ?>
 
-        <script type="text/javascript" src="unit/bootstrap.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="unit/bootstrap_test.js?<?php echo rand(1234567,98765432) ?>"></script>
-
-        <script type="text/javascript" src="unit/standard_defines.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-        <script type="text/javascript" src="unit/Superglobals.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-
-        <script type="text/javascript" src="unit/Core_c.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-        <script type="text/javascript" src="unit/standard_0.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-        <script type="text/javascript" src="unit/standard_1.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-        <script type="text/javascript" src="unit/standard_2.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-        <script type="text/javascript" src="unit/standard_3.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-        <script type="text/javascript" src="unit/standard_4.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-        <script type="text/javascript" src="unit/standard_5.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-        <!--<script type="text/javascript" src="unit/standard_6.php.js?<?php echo rand(1234567,98765432) ?>"></script>-->
-        <!--<script type="text/javascript" src="unit/standard_7.php.js?<?php echo rand(1234567,98765432) ?>"></script>-->
-        <script type="text/javascript" src="unit/standard_8.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-        <!--<script type="text/javascript" src="unit/standard_9.php.js?<?php echo rand(1234567,98765432) ?>"></script>-->
-        <script type="text/javascript" src="unit/pcre.php.js?<?php echo rand(1234567,98765432) ?>"></script>
-        <!--<script type="text/javascript" src="unit/date.php.js?<?php echo rand(1234567,98765432) ?>"></script>-->
-
 
     </head>
     <body>

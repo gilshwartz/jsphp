@@ -40,7 +40,7 @@ function runTestOnData(extra, _expect) {
 
         for(c = 0; c < a.length; c++) {
             if(___gettype(a[c]) === 'string' && a[c].match(/^(new|function)/)) {
-                a[c] = eval("" + a[c] + ";");
+                eval("a[" + c + "] = " + a[c] + ";");
             }
         }
 
