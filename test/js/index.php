@@ -47,6 +47,10 @@
         <script type="text/javascript" src="../../src/standard_8/array_fill.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_8/shuffle.js?<?php echo rand(1234567,98765432) ?>"></script>
 
+        <script type="text/javascript" src="../../src/standard_9/array_rand.js?<?php echo rand(1234567,98765432) ?>"></script>
+        <script type="text/javascript" src="../../src/standard_9/array_change_key_case.js?<?php //echo rand(1234567,98765432) ?>"></script>
+        <script type="text/javascript" src="../../src/standard_9/array_flip.js?<?php echo rand(1234567,98765432) ?>"></script>
+        <script type="text/javascript" src="../../src/standard_9/array_reverse.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_9/array_values.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_9/array_keys.js?<?php //echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_9/array_unique.js?<?php echo rand(1234567,98765432) ?>"></script>

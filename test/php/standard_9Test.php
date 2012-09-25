@@ -9,6 +9,36 @@ class standard_9Test extends JsphpTestCase
     /**
      * @test
      */
+    function array_rand()
+    {
+        $this->runTestOnData();
+    }
+    /**
+     * @test
+     */
+    function array_change_key_case()
+    {
+        $this->runTestOnData();
+    }
+    /**
+     * @test
+     */
+    function array_flip()
+    {
+        $this->runTestOnData();
+    }
+
+    /**
+     * @test
+     */
+    function array_reverse()
+    {
+        $this->runTestOnData();
+    }
+
+    /**
+     * @test
+     */
     function array_values()
     {
         $this->runTestOnData();

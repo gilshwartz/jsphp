@@ -1,5 +1,88 @@
 var fixtures = {
     "standard_9": {
+        "array_rand": [
+
+        ],
+        "array_change_key_case": [
+            [false, "array_change_key_case() expects parameter 2 to be long, object given", {"a":"a","B":"b"}, "new stdClass()"],
+
+            [true, {"a":"a","b":"B"}, {"a":"a","B":"B"}],
+
+            [true, {"a":"a","b":"null"}, {"a":"a","B":"null"}, null],
+            [true, {"a":"a","b":"false"}, {"a":"a","B":"false"}, false],
+            [true, {"a":"a","b":"zero"}, {"a":"a","B":"zero"}, 0],
+            [true, {"a":"a","b":"zero"}, {"a":"a","B":"zero"}, 0.5],
+            [true, {"a":"a","b":"zero"}, {"a":"a","B":"zero"}, "0"],
+            [true, {"a":"a","b":"zero"}, {"a":"a","B":"zero"}, "0.5"],
+
+            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, true],
+            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, 1],
+            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, 1.5],
+            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, "1"],
+            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, "1.5"],
+            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, 1000],
+            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, 1000.5],
+            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, "1000"],
+            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, "1000.5"],
+
+            [true, ["a","B"], ["a","B"]],
+            [true, [], []],
+            [true, [], {}],
+
+            [true, false, "new stdClass()"],
+            [true, false, "function(){return true;}"],
+            [true, false, null],
+            [true, false, true],
+            [true, false, false],
+            [true, false, 0],
+            [true, false, 512],
+            [true, false, 512.5],
+            [true, false, "Foo Baz Bar"],
+
+            [false, "array_change_key_case() expects parameter 2 to be long, array given", {"a":"a","B":"b"}, {}],
+            [false, "array_change_key_case() expects parameter 2 to be long, array given", {"a":"a","B":"b"}, []],
+            [false, "array_change_key_case() expects parameter 2 to be long, object given", {"a":"a","B":"b"}, "new stdClass()"],
+            [false, "array_change_key_case() expects parameter 2 to be long, string given", {"a":"a","B":"b"}, "Foo Baz Bar"],
+            [false, "array_change_key_case() expects parameter 2 to be long, string given", {"a":"a","B":"b"},  ""],
+            [false, "array_change_key_case() expects at most 2 parameters, 3 given", null, null, null],
+            [false, "array_change_key_case() expects at least 1 parameter, 0 given"]
+        ],
+        "array_flip": [
+            [true, [], []],
+            [true, [], {}],
+            [true, [1,2,3,4], {"1":0,"2":1,"3":2,"4":3}],
+            [true, {"1":0,"2":1,"3":2,"4":3}, [1,2,3,4]],
+            [true, {"a":"1","b":"2","c":"3"}, {"1":"a","2":"b","3":"c"}],
+            [true, {"1":"a","2":"b","3":"c"}, {"a":1,"b":2,"c":3}],
+            [false, "array_flip() expects parameter 1 to be array, object given", "new stdClass()"],
+
+            [false, "array_flip() expects parameter 1 to be array, object given", "function(){}"],
+            [false, "array_flip() expects exactly 1 parameter, 2 given", null, null],
+            [false, "array_flip() expects exactly 1 parameter, 0 given"]
+        ],
+        "array_reverse": [
+            [true, [], []],
+            [true, [], [], false],
+            [true, [], [], true],
+            [true, [1,2,3,4], [4,3,2,1]],
+            [true, [4,3,2,1], [1,2,3,4]],
+            [true, {"a":1,"b":2,"c":3}, {"c":3,"b":2,"a":1}],
+            [true, {"c":3,"b":2,"a":1}, {"a":1,"b":2,"c":3}],
+            [true, [1,2,3,4], [4,3,2,1], false],
+            [true, [4,3,2,1], [1,2,3,4], false],
+            [true, {"a":1,"b":2,"c":3}, {"c":3,"b":2,"a":1}, false],
+            [true, {"c":3,"b":2,"a":1}, {"a":1,"b":2,"c":3}, false],
+            [true, [1,2,3,4], {"3":4,"2":3,"1":2,"0":1}, true],
+            [true, {"3":4,"2":3,"1":2,"0":1}, [1,2,3,4], true],
+            [true, {"a":1,"b":2,"c":3}, {"c":3,"b":2,"a":1}, true],
+            [true, {"c":3,"b":2,"a":1}, {"a":1,"b":2,"c":3}, true],
+
+            [false, "array_reverse() expects parameter 2 to be boolean, array given", {"a": 1, "b": 2, "3": 3}, []],
+            [false, "array_reverse() expects parameter 2 to be boolean, array given", {"a": 1, "b": 2, "3": 3}, {}],
+            [false, "array_reverse() expects parameter 2 to be boolean, object given", {"a": 1, "b": 2, "3": 3}, "new stdClass()"],
+            [false, "array_reverse() expects at most 2 parameters, 3 given", null, null, null],
+            [false, "array_reverse() expects at least 1 parameter, 0 given"]
+        ],
         "array_keys": [
             [true, [], {"a": "123", "b": "124", "c": "125"}, 124, 1],
             [true, [], {"a": "123", "b": "124", "c": "125"}, 124, true],
@@ -287,8 +370,30 @@ var fixtures = {
             [true, 3.1415926535898]
         ]
     },
+    "standard_4": {
+        "serialize": [
+
+            [true, "N;", null],
+            [true, "b:1;", true],
+            [true, "b:0;", false],
+            [true, "i:1130;", 1130],
+            [true, "d:34.5234;", 34.5234],
+            [true, "s:11:\"Foo Baz Bar\";", "Foo Baz Bar"],
+
+            [true, "a:0:{}", []],
+            [true, "a:0:{}", {}],
+            [true, "a:3:{i:0;i:23;i:1;i:24;i:2;i:25;}", [23, 24, 25]],
+            [true, "a:3:{s:1:\"a\";i:1;s:1:\"b\";i:2;s:1:\"c\";i:3;}", {"a": 1, "b": 2, "c": 3}],
+
+            [true, "O:8:\"stdClass\":0:{}", "new stdClass()"],
+//            [false, "Serialization of Closure is not allowed", "function(){}"],
+            [false, "serialize() expects exactly 1 parameter, 2 given", 1, 1],
+            [false, "serialize() expects exactly 1 parameter, 0 given"]
+        ]
+    },
     "standard_5": {
         "floatval": [
+            [false, "Object of class stdClass could not be converted to double", "new stdClass()" ],
             [false, "floatval() expects exactly 1 parameter, 0 given"],
             [false, "floatval() expects exactly 1 parameter, 2 given", 1, 1],
             [true, 4, "4d"],
@@ -308,8 +413,13 @@ var fixtures = {
             [false, "gettype() expects exactly 1 parameter, 0 given"],
             [false, "gettype() expects exactly 1 parameter, 2 given", 1, 1],
 
-            [true, "object", {}],
-            [true, "object", {"a": 1, "b": 2}],
+            [true, "object", "new stdClass()"],
+            [true, "object", "function () {}"],
+//            [true, "object", "function () { return true; }"],
+//            [true, "object", "function (a, b) { return a * b; }"],
+
+            [true, "array", {}],
+            [true, "array", {"a": 1, "b": 2}],
 
             [true, "array", []],
             [true, "array", [1, 2, 3]],

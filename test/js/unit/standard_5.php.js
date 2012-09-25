@@ -2,7 +2,7 @@
  * standard_5 - Unit Test (QUnit)
  */
 
-module("standard_5.php", {
+module("standard_5", {
     setup: function () {
         extra = [];
     },
@@ -11,57 +11,16 @@ module("standard_5.php", {
     }
 });
 
-test("intval($var, $base)", function () {
+test("intval", function () {
     runTestOnData();
 });
 
-test("gettype($var)", function () {
-
-    var fun1 = function () {
-        return true;
-    };
-
-    function fun2(a, b) {
-        return a * b;
-    }
-
-    var _expect = 9;
-
-    try {
-        extra = [
-            [true, "object", new stdClass()],
-            [true, "object", function () {}],
-            [true, "object", function () { return true; }],
-            [true, "object", function (a, b) { return a * b; }],
-            [true, "object", fun1],
-            [true, "object", fun2],
-            [true, "object", function fun3(a, b) { return a * b; }],
-            [true, "double", .9999999999999999],
-            [true, "double", .8999999999999999999999999999999]
-
-        ];
-    }
-    catch (e) {
-        ok(false, 'Unexpected exception: ' + e);
-    }
-
-    runTestOnData(extra, _expect);
+test("gettype", function () {
+    runTestOnData();
 });
 
-test("floatval($var)", function () {
-
-    var _expect = 1;
-
-    try {
-        extra = [
-            [false, "Object of class stdClass could not be converted to double", new stdClass() ]
-        ];
-    }
-    catch (e) {
-        ok(false, 'Unexpected exception: ' + e);
-    }
-
-    runTestOnData(extra, _expect);
+test("floatval", function () {
+    runTestOnData();
 });
 
 /*

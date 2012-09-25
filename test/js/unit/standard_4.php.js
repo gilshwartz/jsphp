@@ -2,7 +2,7 @@
  * standard_4.php - Unit Test (QUnit)
  */
 
-module("standard_4.php", {
+module("standard_4", {
     setup: function () {
 
     },
@@ -11,7 +11,7 @@ module("standard_4.php", {
     }
 });
 
-test("print_r ($expression, $return) ", function () {
+test("print_r", function () {
     var i = 0;
 
     var data = {
@@ -100,106 +100,35 @@ test("print_r ($expression, $return) ", function () {
 
 });
 
-test("serialize ($value) ", function () {
-    var i = 0;
+test("serialize", function () {
 
-    try {
-        serialize();
-    }
-    catch (e) {
-        var msg = '' + e;
-        ok(msg.match(/serialize\(\) expects exactly 1 parameter, 0 given in/), 'no args exception');
-    }
+    Hen.prototype = new stdClass();
+    Hen.prototype.constructor = Hen;
 
-    var f1 = function (a, b) {
-        return a + b;
-    };
-
-    function f2(a, b) {
-        return a * b;
-    }
-
-    try {
-        serialize(function (x, y) { return x > y; });
-        ok(false, 'No exception was thrown.')
-    }
-    catch (e) {
-        var msg = '' + e;
-        ok(msg.match(/Serialization of 'Closure' is not allowed/), 'Serialization of function (anonymous) exception');
-    }
-
-    try {
-        serialize(f1);
-        ok(false, 'No exception was thrown.')
-    }
-    catch (e) {
-        var msg = '' + e;
-        ok(msg.match(/Serialization of 'Closure' is not allowed/), 'Serialization of function (variable) exception');
-    }
-
-    try {
-        serialize(f2);
-        ok(false, 'No exception was thrown.')
-    }
-    catch (e) {
-        var msg = '' + e;
-        ok(msg.match(/Serialization of 'Closure' is not allowed/), 'Serialization of function (declared) exception');
-    }
-
-    Kura.prototype = new stdClass();
-    Kura.prototype.constructor = Kura;
-
-    function Kura() {
+    function Hen() {
         this.legs = 2;
         this.wings = 2;
         this.eyes = 2;
         this.canFly = false;
     }
 
-    Kura.prototype.setLegs = function (legs) {
+    Hen.prototype.setLegs = function (legs) {
         this.legs = legs;
     }
 
-    Kura.prototype.setWings = function (wings) {
+    Hen.prototype.setWings = function (wings) {
         this.wings = wings;
     }
 
-    var data = {
-        "scalars": {
-            "input": [null, true, false, 1130, 34.5234, "Foo Baz Bar"],
-            "expected": ["N;", "b:1;", "b:0;", "i:1130;", "d:34.5234;", 's:11:"Foo Baz Bar";']
-        },
-        "arrays": {
-            "input": [
-                [],
-                [23, 24, 25]
-            ],
-            "expected": ["a:0:{}", "a:3:{i:0;i:23;i:1;i:24;i:2;i:25;}"]
-        },
-        "objects": {
-            "input": [
-                new Kura(),
-                new stdClass(),
-                {},
-                {"a": 1, "b": 2, "c": 3}
-            ],
-            "expected": [
-                'O:4:"Kura":4:{s:4:"legs";i:2;s:5:"wings";i:2;s:4:"eyes";i:2;s:6:"canFly";b:0;}',
-                'O:8:"stdClass":0:{}',
-                'a:0:{}',
-                'a:3:{s:1:"a";i:1;s:1:"b";i:2;s:1:"c";i:3;}'
-            ]
-        }
-    };
+    var extra = [
+        [true, "O:4:\"Hen\":4:{s:4:\"legs\";i:2;s:5:\"wings\";i:2;s:4:\"eyes\";i:2;s:6:\"canFly\";b:0;}", new Hen()]
+    ];
+    var _expected = extra.length;
 
-    for (var key in data) {
-        for (i = 0; i < data[key]['input'].length; i++) {
-            strictEqual(serialize(data[key]['input'][i]), data[key]['expected'][i], key + ': ' + i);
-        }
-    }
+    runTestOnData(extra, _expected);
 });
 
-test("unserialize ($str) ", function () {
+test("unserialize", function () {
     var i = 0;
 
     var data = {
@@ -409,7 +338,7 @@ test("serialize(), unserialize() cross tests", function () {
     }
 });
 
-test("var_dump ($expression, $expression) ", function () {
+test("var_dump", function () {
     var i = 0;
 
     try {

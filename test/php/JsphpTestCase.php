@@ -60,12 +60,6 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
                 $actual = $php_errormsg;
                 $actual = preg_replace('/\s*\[<a.*?\]\s*/', '', $actual);
 
-            } else {
-
-                // TODO: resolve array/object JS PHP problem:
-                if ($this->func === "gettype" and $expected === "object" and $actual === "array") {
-                    $expected = "array";
-                }
             }
 
             try {

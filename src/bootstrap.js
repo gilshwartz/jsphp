@@ -79,8 +79,7 @@ function ___gettype($var) {
         case "object":
             if ($var !== null) {
 
-                var match = Object.prototype.toString.call($var).match(/^\[object ([A-Z]\w+)\]$/);
-                objtype = match[1];
+                var objtype = ___get_constructor_name($var);
 
                 if (objtype === "Object" || objtype === "Array") {
                     return "array";

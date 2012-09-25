@@ -11,6 +11,21 @@ module("standard_9", {
     }
 });
 
+test("array_change_key_case", function(){
+    runTestOnData();
+});
+
+test("array_rand", function(){
+    runTestOnData();
+});
+
+test("array_flip", function(){
+    runTestOnData();
+});
+
+test("array_reverse", function(){
+    runTestOnData();
+});
 
 test("array_unique", function(){
     runTestOnData();
@@ -43,10 +58,6 @@ test("array_count_values ($input) ", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("array_reverse ($array, $preserve_keys) ", function(){
-    ok(false, "Not implemented yet.");
-});
-
 test("array_reduce ($input, $function, $initial) ", function(){
     ok(false, "Not implemented yet.");
 });
@@ -55,17 +66,7 @@ test("array_pad ($input, $pad_size, $pad_value) ", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("array_flip ($trans) ", function(){
-    ok(false, "Not implemented yet.");
-});
 
-test("array_change_key_case ($input, $case) ", function(){
-    ok(false, "Not implemented yet.");
-});
-
-test("array_rand ($input, $num_req) ", function(){
-    ok(false, "Not implemented yet.");
-});
 
 test("array_intersect ($array1, $array2, $_) ", function(){
     ok(false, "Not implemented yet.");

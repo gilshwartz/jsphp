@@ -26,36 +26,5 @@ function gettype($var) {
         arguments
     );
 
-    var vtype = typeof $var;
-
-    switch (vtype) {
-        case "boolean":
-        case "string":
-            return vtype;
-
-        case "function":
-            return "object";
-
-        case "object":
-            if ($var === null) {
-                return "NULL";
-            }
-
-            var match = Object.prototype.toString.call($var).match(/\[object (\w+)]/);
-
-            switch(match[1]) {
-                case "Array":
-                    return "array";
-                default:
-                    return "object";
-            }
-            break;
-
-        case "number":
-            var temp = "" + $var + "";
-            return temp.match(/\./) ? "double" : "integer";
-
-        default:
-            return 'unknown type';
-    }
+    return ___gettype($var);
 }
