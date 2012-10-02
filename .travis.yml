@@ -8,17 +8,14 @@
 #  - sudo node test/js/server.js ../../ 80 &
 #  - sleep 5
 #
-#language: node_js
-#
-#node_js:
-#  - 0.6
-#  - 0.8
-#  - 0.9
-#
-#script: phantomjs test/qunit/addons/phantomjs/runner.js "http://localhost:80/test/js/index.php"
+language: node_js
 
-rvm:
-  - 1.9.3
+node_js:
+  - 0.6
+  - 0.8
+  - 0.9
+
+#script: phantomjs test/qunit/addons/phantomjs/runner.js "http://localhost:80/test/js/index.php"
 
 before_script:
   - "export DISPLAY=:99.0"
@@ -26,4 +23,3 @@ before_script:
   - bundle exec rackup &
   - sleep 5
 
-script: phantomjs test/qunit/addons/phantomjs/runner.js "http://localhost:9292/test/js/index.php"
