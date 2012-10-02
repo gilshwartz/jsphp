@@ -16,7 +16,7 @@
         "url": "https://github.com/jsiciarek/jsphp/issues"
     },
     "scripts" : {
-        "test" : "phantomjs test/qunit/phantomjs/runner.js test/qunit/js/static.html"
+        "test" : "phantomjs test/qunit/addons/phantomjs/runner.js test/qunit/js/static.html"
     },
     "licenses": [
         {
