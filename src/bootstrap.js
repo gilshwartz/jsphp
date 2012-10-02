@@ -93,7 +93,8 @@ function ___gettype($var) {
         case "number":
             var temp = "" + $var + "";
             return temp.match(/\./) ? "double" : "integer";
-
+        case "undefined":
+            return 'unknown type';
         default:
             return 'unknown type';
     }

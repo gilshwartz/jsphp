@@ -16,24 +16,29 @@
  */
 function array_fill($start_index, $num, $value) {
 
-    arguments[1] = arguments[1] === null ? 0 : arguments[1];
-
     ___validate_function_arguments(
         'array_fill',
         {
             required: [true, true, true],
-            type: ['any', 'integer', 'any'],
-            conditions: [
-                true,
-                {
-                    func: function (val) { return ___gettype(val) === "integer" && val > 0; },
-                    msg: function (arg) { return "array_fill(): Number of elements must be positive"; }
-                },
-                true
-            ]
+            type: ['any', 'any', 'any']
         },
         arguments
     );
+
+    var vtype = ___gettype($num);
+
+    if(typeof $num === "undefined" || $num === null) {
+        vtype = "integer";
+        $num = 0;
+    }
+
+    if(vtype !== "integer") {
+        throw new Exception("array_fill() expects parameter 1 to be long, " + vtype + " given");
+    }
+
+    if($num <= 0) {
+        throw new Exception("array_fill(): Number of elements must be positive");
+    }
 
     var i;
     var arr = [];

@@ -1,0 +1,3 @@
+language: javascript
+
+script: phantomjs test/qunit/addons/phantomjs/runner.js test/js/static.html
