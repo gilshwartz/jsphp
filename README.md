@@ -11,7 +11,5 @@ JSPHP - PHP Standard Library in JavaScript
 - Report issues, questions, feature requests on [GitHub Issues](https://github.com/siciarek/jsphp/issues)
 
 ## Authors
-
-[Jacek Siciarek](https://github.com/siciarek)
-![Jacek Siciarek](https://twimg0-a.akamaihd.net/profile_images/2667570461/1a95184a52d0d978576f53f9a43acaf8.jpeg?s=100 "Jacek Siciarek")
+![Jacek Siciarek](https://secure.gravatar.com/avatar/d4b77615f3bd9f43f109bee92c908e01?s=100 "Jacek Siciarek") [Jacek Siciarek](https://github.com/siciarek)
 
