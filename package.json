@@ -14,7 +14,10 @@
     },
     "bugs": {
         "url": "https://github.com/jsiciarek/jsphp/issues"
-    }
+    },
+    "scripts": {
+        "test": "grunt travis --verbose"
+    },
     "licenses": [
         {
             "type": "MIT",
