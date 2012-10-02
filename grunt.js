@@ -25,7 +25,7 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
 
-        pkg: '<json:project.json>',
+        pkg: '<json:package.json>',
         meta: {
             standard_defines: getModuleBanner('standard_defines', 'Standard Defines'),
             Superglobals: getModuleBanner('Superglobals', 'Superglobals are built-in variables that are always available in all scopes'),
@@ -224,7 +224,7 @@ module.exports = function (grunt) {
 
         qunit: {
             files: [
-                "http://www.jsphp.dev/jsphp/test/js/index.php"
+                "test/js/static.html"
             ]
         },
 
@@ -253,6 +253,7 @@ module.exports = function (grunt) {
 
     // Default task.
     grunt.registerTask('default', 'regular concat min');
+    grunt.registerTask('travis', 'concat qunit');
 
     grunt.registerTask('sntx', 'concat lint');
     grunt.registerTask('test', 'concat qunit');
