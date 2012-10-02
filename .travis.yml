@@ -1,19 +1,29 @@
+#
+#before_script:
+#  - "export DISPLAY=:99.0"
+#  - "sh -e /etc/init.d/xvfb start"
+#  - sleep 3 &
+#  - npm install connect &
+#  - sleep 5 &
+#  - sudo node test/js/server.js ../../ 80 &
+#  - sleep 5
+#
+#language: node_js
+#
+#node_js:
+#  - 0.6
+#  - 0.8
+#  - 0.9
+#
+#script: phantomjs test/qunit/addons/phantomjs/runner.js "http://localhost:80/test/js/index.php"
+
+rvm:
+  - 1.9.3
 
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 &
-  - npm install connect &
-  - sleep 5 &
-  - sudo node test/js/server.js ../../ 80 &
+  - bundle exec rackup &
   - sleep 5
 
-language: node_js
-
-node_js:
-  - 0.6
-  - 0.8
-  - 0.9
-
-script: phantomjs test/qunit/addons/phantomjs/runner.js "http://localhost:80/test/js/index.php"
-
+script: phantomjs test/qunit/addons/phantomjs/runner.js "http://localhost:9292/test/js/index.php"
