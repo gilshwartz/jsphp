@@ -4,7 +4,7 @@ jsphp
 
 JSPHP - PHP Standard Library in JavaScript
 
-![Jacek Sicirek](https://twimg0-a.akamaihd.net/profile_images/2667570461/1a95184a52d0d978576f53f9a43acaf8.jpeg, "Jacek Siciarek")
+![Jacek Sicirek](https://twimg0-a.akamaihd.net/profile_images/2667570461/1a95184a52d0d978576f53f9a43acaf8.jpeg "Jacek Siciarek")
 
 ## Development
 
