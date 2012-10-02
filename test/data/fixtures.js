@@ -386,7 +386,7 @@ var fixtures = {
             [true, "a:3:{s:1:\"a\";i:1;s:1:\"b\";i:2;s:1:\"c\";i:3;}", {"a": 1, "b": 2, "c": 3}],
 
             [true, "O:8:\"stdClass\":0:{}", "new stdClass()"],
-//            [false, "Serialization of Closure is not allowed", "function(){}"],
+            [false, "Serialization of 'Closure' is not allowed", "function(){}"],
             [false, "serialize() expects exactly 1 parameter, 2 given", 1, 1],
             [false, "serialize() expects exactly 1 parameter, 0 given"]
         ]

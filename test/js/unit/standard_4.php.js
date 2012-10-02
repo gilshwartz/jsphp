@@ -121,8 +121,9 @@ test("serialize", function () {
     }
 
     var extra = [
-        [true, "O:4:\"Hen\":4:{s:4:\"legs\";i:2;s:5:\"wings\";i:2;s:4:\"eyes\";i:2;s:6:\"canFly\";b:0;}", new Hen()]
+        [true, "O:3:\"Hen\":4:{s:4:\"legs\";i:2;s:5:\"wings\";i:2;s:4:\"eyes\";i:2;s:6:\"canFly\";b:0;}", new Hen()]
     ];
+
     var _expected = extra.length;
 
     runTestOnData(extra, _expected);

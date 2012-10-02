@@ -7,67 +7,73 @@
     <property name="jsdoc.dir" location="./jsdoc"/>
     <property name="dist.dir" location="./dist"/>
 
-    <target name="test" depends="reg, min" />
+    <target name="test" depends="reg, min"/>
+
+    <target name="qunit">
+        <exec executable="phantomjs">
+            <arg line="${qunit.runner} test/js/static.html"/>
+        </exec>
+    </target>
 
     <target name="jsdoc">
         <delete verbose="true" includeemptydirs="true">
-            <fileset dir="${jsdoc.dir}" includes="**/*.html" />
-            <fileset dir="${dist.dir}" includes="**/*" />
+            <fileset dir="${jsdoc.dir}" includes="**/*.html"/>
+            <fileset dir="${dist.dir}" includes="**/*"/>
         </delete>
 
         <exec executable="grunt.cmd">
-            <arg line="concat" />
+            <arg line="concat"/>
         </exec>
 
         <exec executable="${jsdoc}">
-            <arg line="${dist.dir}/*.js" />
+            <arg line="${dist.dir}/*.js"/>
         </exec>
 
         <exec executable="mv">
-            <arg line="-v ./out/* ./${jsdoc.dir}" />
+            <arg line="-v ./out/* ./${jsdoc.dir}"/>
         </exec>
 
         <exec executable="rm">
-            <arg line="-rvf out" />
+            <arg line="-rvf out"/>
         </exec>
 
         <exec executable="git" dir="${jsdoc.home}">
-            <arg line="checkout -- templates" />
+            <arg line="checkout -- templates"/>
         </exec>
 
         <!--<exec executable="git" dir="${jsdoc.home}">-->
-            <!--<arg line="status" />-->
+        <!--<arg line="status" />-->
         <!--</exec>-->
 
         <!--<exec executable="grunt.cmd">-->
-            <!--<arg line="min" />-->
+        <!--<arg line="min" />-->
         <!--</exec>-->
 
     </target>
 
     <target name="phpdoc">
         <delete verbose="true" includeemptydirs="true">
-            <fileset dir="phpdocs" includes="**/*" />
+            <fileset dir="phpdocs" includes="**/*"/>
         </delete>
         <exec executable="phpdoc.bat">
-            <arg line="--target phpdocs --directory phpsrc --template responsive" />
+            <arg line="--target phpdocs --directory phpsrc --template responsive"/>
         </exec>
         <exec executable="phpdoc.bat">
-            <arg line="--target phpdocs --directory phpsrc --template responsive" />
+            <arg line="--target phpdocs --directory phpsrc --template responsive"/>
         </exec>
     </target>
 
     <target name="reg">
         <exec executable="${phantomjs}">
-            <arg value="${qunit.runner}" />
-            <arg value="test/index.html" />
+            <arg value="${qunit.runner}"/>
+            <arg value="test/index.html"/>
         </exec>
     </target>
 
     <target name="min">
         <exec executable="${phantomjs}">
-            <arg value="${qunit.runner}" />
-            <arg value="test/minified.html" />
+            <arg value="${qunit.runner}"/>
+            <arg value="test/minified.html"/>
         </exec>
     </target>
 

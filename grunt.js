@@ -224,7 +224,7 @@ module.exports = function (grunt) {
 
         qunit: {
             files: [
-                "http://jsphp.dev/test/js"
+                "http://www.jsphp.dev/jsphp/test/js/index.php"
             ]
         },
 

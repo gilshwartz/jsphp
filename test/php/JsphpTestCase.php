@@ -57,9 +57,15 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
             }
 
             if ($isok === false) {
-                $actual = $php_errormsg;
-                $actual = preg_replace('/\s*\[<a.*?\]\s*/', '', $actual);
+                try {
+                    $actual = $php_errormsg;
+                    $actual = preg_replace('/\s*\[<a.*?\]\s*/', '', $actual);
+                }
+                catch(Exception $e)
+                {
+                    $actual = $e->getMessage();
 
+                }
             }
 
             try {
@@ -84,7 +90,8 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
         }
     }
 
-    public function variablesTestDataProvider() {
+    public function variablesTestDataProvider()
+    {
         $module = preg_replace('/^(\w+)Test$/', '$1', get_class($this));
 
         $fixtures_path = implode(DIRECTORY_SEPARATOR, array(dirname(__FILE__), '..', 'data', 'variables-fixtures.js'));

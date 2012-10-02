@@ -36,6 +36,7 @@ function serialize($value) {
     );
 
     var vtype = ___gettype($value);
+    var cn = ___get_constructor_name($value);
 
     var output;
 
@@ -57,8 +58,6 @@ function serialize($value) {
             break;
         case "array":
             var x = 0;
-
-            var cn = ___get_constructor_name($value);
             var len = ___object_length($value);
 
             if (cn === "Array") {
@@ -102,16 +101,38 @@ function serialize($value) {
             output += "}";
 
             break;
+
         case "object":
             var x = 0;
 
-            var cname = ___get_constructor_name($value);
+            var len = ___object_length($value);
 
-            if (cname === 'Function') {
+            if (cn === 'Function') {
                 throw new Exception("Serialization of 'Closure' is not allowed");
             }
 
+            var temp = {};
+
+            for (var key in $value) {
+                if (___get_constructor_name($value[key]) === "Function") {
+                    continue;
+                }
+
+                temp[key] = $value[key];
+            }
+
+            output = "O:" + cn.length + ":\"" + cn + "\":";
+            output += ___object_length(temp) + ":{";
+
+            for (var key in temp) {
+                output += serialize(key);
+                output += serialize(temp[key]);
+            }
+
+            output += "}";
+
             break;
+
         case "resource":
             break;
     }
