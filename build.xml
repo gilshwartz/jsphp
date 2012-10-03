@@ -26,7 +26,20 @@
         </exec>
 
         <exec executable="${jsdoc}">
-            <arg line="${dist.dir}/*.js"/>
+            <arg line="${dist.dir}/standard_defines.js"/>
+            <arg line="${dist.dir}/Superglobals.js"/>
+            <arg line="${dist.dir}/Core_c.js"/>
+            <arg line="${dist.dir}/standard_0.js"/>
+            <arg line="${dist.dir}/standard_1.js"/>
+            <arg line="${dist.dir}/standard_2.js"/>
+            <arg line="${dist.dir}/standard_3.js"/>
+            <arg line="${dist.dir}/standard_4.js"/>
+            <arg line="${dist.dir}/standard_5.js"/>
+            <arg line="${dist.dir}/standard_6.js"/>
+            <arg line="${dist.dir}/standard_7.js"/>
+            <arg line="${dist.dir}/standard_8.js"/>
+            <arg line="${dist.dir}/standard_9.js"/>
+            <arg line="${dist.dir}/pcre.js"/>
         </exec>
 
         <exec executable="mv">
