@@ -105,7 +105,9 @@ module.exports = function (grunt) {
             },
             standard_2: {
                 src: [
-                    '<banner:meta.standard_2>'
+                    '<banner:meta.standard_2>',
+                    'src/standard_2/chr.js',
+                    'src/standard_2/ord.js'
                 ],
                 dest: 'dist/standard_2.js'
             },
@@ -132,7 +134,11 @@ module.exports = function (grunt) {
             standard_5: {
                 src: [
                     '<banner:meta.standard_5>',
-                    'src/standard_5/gettype.js'
+                    'src/standard_5/doubleval.js',
+                    'src/standard_5/floatval.js',
+                    'src/standard_5/gettype.js',
+                    'src/standard_5/intval.js',
+                    'src/standard_5/strval.js'
                 ],
                 dest: 'dist/standard_5.js'
             },
@@ -162,42 +168,44 @@ module.exports = function (grunt) {
             },
             standard_9: {
                 src: [
-                    '<banner:meta.standard_9>'
+                    '<banner:meta.standard_9>',
+                    'src/standard_9/array_change_key_case.js',
+                    'src/standard_9/array_flip.js',
+                    'src/standard_9/array_key_exists.js',
+                    'src/standard_9/array_keys.js',
+                    'src/standard_9/array_rand.js',
+                    'src/standard_9/array_reverse.js',
+                    'src/standard_9/array_unique.js',
+                    'src/standard_9/array_values.js'
                 ],
                 dest: 'dist/standard_9.js'
-            }
+            },
 
-//            jsphp: {
-//                src: [
-//                    '<banner:meta.banner>',
-//                    'src/bootstrap.js',
-//                    'dist/standard_defines.js',
-//                    'dist/Core_c.js',
-//                    'dist/pcre.js',
-//                    'dist/standard_0.js',
-//                    'dist/standard_1.js',
-//                    'dist/standard_3.js',
-//                    'dist/standard_4.js',
-//                    'dist/standard_5.js'
-//                ],
-//                dest: 'dist/<%= pkg.name %>.js'
-//            }
-        },
-        min: {
-            dist: {
+            jsphp: {
                 src: [
                     '<banner:meta.banner>',
                     'src/bootstrap.js',
                     'dist/standard_defines.js',
+                    'dist/Superglobals.js',
                     'dist/Core_c.js',
-                    'dist/pcre.js',
                     'dist/standard_0.js',
                     'dist/standard_1.js',
+                    'dist/standard_2.js',
                     'dist/standard_3.js',
                     'dist/standard_4.js',
                     'dist/standard_5.js',
-                    'dist/standard_8.js'
+                    'dist/standard_6.js',
+                    'dist/standard_7.js',
+                    'dist/standard_8.js',
+                    'dist/standard_9.js',
+                    'dist/pcre.js'
                 ],
+                dest: 'dist/<%= pkg.name %>.js'
+            }
+        },
+        min: {
+            dist: {
+                src: 'dist/<%= pkg.name %>.js',
                 dest: 'dist/<%= pkg.name %>.min.js'
             }
         },
