@@ -47,7 +47,7 @@
         
 	
 	<dt class="tag-version">Version:</dt>
-	<dd class="tag-version"><ul class="dummy"><li>0.1b</li></ul></dd>
+	<dd class="tag-version"><ul class="dummy"><li>0.0.1</li></ul></dd>
 	
 	
 	
@@ -101,6 +101,1135 @@
     
     
     
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="array_change_key_case"><span class="type-signature">&lt;inner> </span>array_change_key_case</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
+Changes all keys in an array
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>array</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">$input <p>
+The array to work on
+</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>int</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">$case [optional] <p>
+Either CASE_UPPER or
+CASE_LOWER (default)
+</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/standard_9.js, line 22</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    array an array with its keys lower or uppercased, or false if
+input is not an array.
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="array_flip"><span class="type-signature">&lt;inner> </span>array_flip</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 4, PHP 5)<br/>
+Exchanges all keys with their associated values in an array
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>$trans</code></td>
+            
+            
+            <td class="type">
+            
+                        array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>
+An array of key/value pairs to be flipped.
+</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/standard_9.js, line 109</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the flipped array on success and false on failure.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">array</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="array_key_exists"><span class="type-signature">&lt;inner> </span>array_key_exists</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 4 &gt;= 4.0.7, PHP 5)<br/>
+Checks if the given key or index exists in the array
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>$key</code></td>
+            
+            
+            <td class="type">
+            
+                        mixed
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>
+Value to check.
+</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>$search</code></td>
+            
+            
+            <td class="type">
+            
+                        array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>
+An array with keys to check.
+</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/standard_9.js, line 179</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    bool true on success or false on failure.
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="array_keys"><span class="type-signature">&lt;inner> </span>array_keys</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 4, PHP 5)<br/>
+Return all the keys of an array
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>$input</code></td>
+            
+            
+            <td class="type">
+            
+                        array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>
+An array containing keys to return.
+</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>$search_value</code></td>
+            
+            
+            <td class="type">
+            
+                        mixed
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">[optional] <p>
+If specified, then only keys containing these values are returned.
+</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>$strict</code></td>
+            
+            
+            <td class="type">
+            
+                        bool
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">[optional] <p>
+Determines if strict comparison (===) should be used during the search.
+</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/standard_9.js, line 199</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    array an array of all the keys in input.
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="array_rand"><span class="type-signature">&lt;inner> </span>array_rand</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 4, PHP 5)<br/>
+Pick one or more random entries out of an array
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>array</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">$input <p>
+The input array.
+</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>int</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">$num_req [optional] <p>
+Specifies how many entries you want to pick.
+</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/standard_9.js, line 301</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    mixed If you are picking only one entry, array_rand
+returns the key for a random entry. Otherwise, it returns an array
+of keys for the random entries. This is done so that you can pick
+random keys as well as values out of the array.
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="array_reverse"><span class="type-signature">&lt;inner> </span>array_reverse</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 4, PHP 5)<br/>
+Return an array with elements in reverse order
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>$array</code></td>
+            
+            
+            <td class="type">
+            
+                        array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>
+The input array.
+</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>$preserve_keys</code></td>
+            
+            
+            <td class="type">
+            
+                        bool
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">[optional] <p>
+If set to true keys are preserved.
+</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/standard_9.js, line 317</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    array the reversed array.
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="array_unique"><span class="type-signature">&lt;inner> </span>array_unique</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 4 &gt;= 4.0.1, PHP 5)<br/>
+Removes duplicate values from an array
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>array</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">$array <p>
+The input array.
+</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>int</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">$sort_flags [optional] <p>
+The optional second parameter sort_flags
+may be used to modify the sorting behavior using these values:
+</p>
+<p>
+Sorting type flags:
+SORT_REGULAR - compare items normally
+(don't change types)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/standard_9.js, line 414</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    array the filtered array.
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="array_values"><span class="type-signature">&lt;inner> </span>array_values</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        (PHP 4, PHP 5)<br/>
+Return all the values of an array
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>$input</code></td>
+            
+            
+            <td class="type">
+            
+                        array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><p>
+The array.
+</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>dist/standard_9.js, line 477</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    array an indexed array of values.
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
     
     
     
@@ -121,7 +1250,7 @@
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Mon Sep 17 2012 13:20:41 GMT+0200 (CEST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Wed Oct 03 2012 07:00:13 GMT+0200 (CEST)
 </footer>
 
 <script> sh_highlightDocument(); </script>
