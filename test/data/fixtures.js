@@ -117,6 +117,10 @@ var fixtures = {
             [false, "array_values() expects exactly 1 parameter, 0 given"]
         ],
         "array_unique": [
+            [false, "array_unique() expects parameter 1 to be array, object given", "function(){}"],
+            [false, "array_unique() expects at most 2 parameters, 3 given", null, null, null],
+            [false, "array_unique() expects at least 1 parameter, 0 given"],
+
             [true, [[1,0],[1,2]], [[1,0],[1,2],[1,0],[1,2],[1,0],[1,2]], "SORT_REGULAR"],
 
             [true, [1.2, 0.4, 0.1, 0.3, 0.2], [1.2, 0.4, 0.1, 0.3, 0.2, 0.3, 0.4, 0.3]],

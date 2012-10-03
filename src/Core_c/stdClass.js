@@ -2,7 +2,7 @@
  * Created by typecasting to object.
  * @link http://php.net/manual/en/reserved.classes.php
  */
-stdClass.prototype = new Object();
+stdClass.prototype = {};
 stdClass.prototype.constructor = stdClass;
 
 /**

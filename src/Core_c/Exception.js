@@ -2,7 +2,7 @@
  * Exception is the base class for all Exceptions.
  * @link http://php.net/manual/en/class.exception.php
  */
-Exception.prototype = new Object();
+Exception.prototype = {};
 Exception.prototype.constructor = Exception;
 
 /**
@@ -25,7 +25,7 @@ function Exception($message, $code, $previous) {
     this.line = 1;
     /** @private */ this.trace = [];
     /** @private */ this.previous = $previous;
-};
+}
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -35,7 +35,7 @@ function Exception($message, $code, $previous) {
  */
 Exception.prototype.getMessage = function () {
     return this.message;
-}
+};
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -48,7 +48,7 @@ Exception.prototype.getMessage = function () {
  */
 Exception.prototype.getCode = function () {
     return this.code;
-}
+};
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -58,7 +58,7 @@ Exception.prototype.getCode = function () {
  */
 Exception.prototype.getFile = function () {
     return this.file;
-}
+};
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -68,7 +68,7 @@ Exception.prototype.getFile = function () {
  */
 Exception.prototype.getLine = function () {
     return this.line;
-}
+};
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -78,7 +78,7 @@ Exception.prototype.getLine = function () {
  */
 Exception.prototype.getTrace = function () {
     return this.trace;
-}
+};
 
 /**
  * (PHP 5 &gt;= 5.3.0)<br/>
@@ -89,7 +89,7 @@ Exception.prototype.getTrace = function () {
  */
 Exception.prototype.getPrevious = function () {
     return this.previous;
-}
+};
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>
@@ -110,7 +110,7 @@ Exception.prototype.getTraceAsString = function () {
     var err = getStackInfo();
 
     return err.stack;
-}
+};
 
 /**
  * (PHP 5 &gt;= 5.1.0)<br/>

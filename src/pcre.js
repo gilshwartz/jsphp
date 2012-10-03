@@ -272,7 +272,7 @@ function preg_match_all($pattern, $subject, $matches, $flags, $offset) {
     };
 
     ___parse_regexp('preg_match_all', $pattern, modifiers);
-    modifiers['g'] = true;
+    modifiers.g = true;
     var rx = ___parse_regexp('preg_match_all', $pattern + 'g', modifiers);
 
     var matches = $subject.match(rx);
@@ -383,12 +383,12 @@ function preg_replace($pattern, $replacement, $subject, $limit, $count) {
     $count = $count || null;
 
     var modifiers = {
-        'i': true
+        "i": true
     };
 
-    var rx = ___parse_regexp('preg_replace', $pattern, modifiers);
-    modifiers['g'] = true;
-    rx = ___parse_regexp('preg_replace', $pattern + 'g', modifiers);
+    var rx = ___parse_regexp("preg_replace", $pattern, modifiers);
+    modifiers.g = true;
+    rx = ___parse_regexp("preg_replace", $pattern + "g", modifiers);
 
     var match = $subject.match(rx);
 
@@ -430,8 +430,8 @@ function preg_replace($pattern, $replacement, $subject, $limit, $count) {
  * <b>preg_replace_callback</b> and
  * <b>create_function</b>
  * <code>
- * /* a unix-style command line filter to convert uppercase
- * * letters at the beginning of paragraphs to lowercase * /
+ * // a unix-style command line filter to convert uppercase
+ * // letters at the beginning of paragraphs to lowercase
  * $fp = fopen("php://stdin", "r") or die("can't read stdin");
  * while (!feof($fp)) {
  * $line = fgets($fp);

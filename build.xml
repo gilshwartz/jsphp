@@ -54,14 +54,6 @@
             <arg line="checkout -- templates"/>
         </exec>
 
-        <!--<exec executable="git" dir="${jsdoc.home}">-->
-        <!--<arg line="status" />-->
-        <!--</exec>-->
-
-        <!--<exec executable="grunt.cmd">-->
-        <!--<arg line="min" />-->
-        <!--</exec>-->
-
     </target>
 
     <target name="phpdoc">
