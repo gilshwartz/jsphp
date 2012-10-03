@@ -15,3 +15,8 @@ before_script:
   - sleep 3
   - "npm install grunt-jasmine-task"
   - sleep 3
+  - grunt concat
+  - sleep 2
+  - grunt lint
+  - sleep 2
+
