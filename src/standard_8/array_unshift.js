@@ -26,7 +26,7 @@ function array_unshift ($array, $var, $_) {
         );
     }
     catch (e) {
-        msg = e.getMessage().toLowerCase();
+        var msg = e.getMessage().toLowerCase();
         throw new Exception(msg, e.getCode());
     }
 

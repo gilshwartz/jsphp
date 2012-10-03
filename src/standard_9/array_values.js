@@ -7,7 +7,7 @@
  * </p>
  * @return array an indexed array of values.
  */
-function array_values ($input) {
+function array_values($input) {
     ___validate_function_arguments(
         "array_values",
         {
@@ -30,7 +30,9 @@ function array_values ($input) {
     }
     else {
         for (key in $input) {
-           output.push($input[key]);
+            if (key) {
+                output.push($input[key]);
+            }
         }
     }
 

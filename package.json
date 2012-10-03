@@ -16,7 +16,7 @@
         "url": "https://github.com/jsiciarek/jsphp/issues"
     },
     "scripts": {
-        "test": "grunt travis --verbose"
+        "test": "grunt test --verbose"
     },
     "licenses": [
         {

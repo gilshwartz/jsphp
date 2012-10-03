@@ -36,37 +36,41 @@ function print_r($expression, $return) {
         var xprint_rVar = '';
 
         function pv(val, start) {
+            var x = 0;
 
-            if (typeof start == 'undefined') {
+            if (typeof start === 'undefined') {
                 xprint_rVar = '';
             }
 
-            if (Object.prototype.toString.call(val).match(/\[object Array]/)) {
-                var x = 0;
-                xprint_rVar += 'Array\n(\n'
+            var cn = ___get_constructor_name(val);
+
+            if (cn === "Array") {
+                xprint_rVar += 'Array\n(\n';
                 for (x = 0; x < val.length; x++) {
-                    xprint_rVar += '[' + x + '] => '
+                    xprint_rVar += '[' + x + '] => ';
                     pv(val[x], 0);
-                    xprint_rVar += '\n'
+                    xprint_rVar += '\n';
                 }
-                xprint_rVar += ')'
+                xprint_rVar += ')';
             }
-            else if (Object.prototype.toString.call(val).match(/\[object Object]/)) {
-                xprint_rVar += 'Array\n(\n'
+            else if (cn === "Object") {
+                xprint_rVar += 'Array\n(\n';
                 var y = 0;
                 for (var key in val) {
-                    xprint_rVar += '[' + key + '] => '
-                    pv(val[key], 0);
-                    xprint_rVar += '\n'
+                    if (key) {
+                        xprint_rVar += '[' + key + '] => ';
+                        pv(val[key], 0);
+                        xprint_rVar += '\n';
+                    }
                 }
-                xprint_rVar += ')'
+                xprint_rVar += ')';
             }
             else {
                 val = val === null ? '' : val;
                 val = val === true ? 1 : val;
                 val = val === false ? '' : val;
 
-                xprint_rVar += val
+                xprint_rVar += val;
             }
             return;
         }
@@ -107,18 +111,17 @@ function print_r($expression, $return) {
         return temp.join('\n') + '\n' + last;
     }
 
-    if (xtype != 'object') {
+    if (xtype !== 'object') {
         if (xtype === 'function') {
             var temp = '' + $expression;
             var c = 0;
-
 
             temp = temp.replace(/\s+/g, '');
             var ptemp = temp.replace(/^function\((.*?)\).*?$/, '$1').split(',');
             var params = [];
 
             for (c = 0; c < ptemp.length; c++) {
-                if (ptemp[c] != "") {
+                if (ptemp[c] !== "") {
                     params[c] = ptemp[c];
                 }
             }
@@ -145,16 +148,14 @@ function print_r($expression, $return) {
         }
     }
     else {
+        var nxtype = Object.prototype.toString.call($expression).match(/\[object (\w+)\]/)[1];
 
-        xtype = Object.prototype.toString.call($expression).match(/\[object (\w+)]/)[1];
-
-        switch (xtype) {
+        switch (nxtype) {
             case 'Null':
                 output = '';
                 break;
             default:
-                output = xtype + ' Object\n(';
-
+                output = nxtype + ' Object\n(';
                 output += '\n)';
                 break;
             case 'Array':
@@ -165,7 +166,6 @@ function print_r($expression, $return) {
     }
 
     if ($return === false) {
-        console.log(output);
         return true;
     }
 

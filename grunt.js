@@ -115,8 +115,8 @@ module.exports = function (grunt) {
             standard_3: {
                 src: [
                     "<banner:meta.standard_3>",
-                    "src/standard_3/base64_encode.js",
-                    "src/standard_3/base64_decode.js",
+//                    "src/standard_3/base64_encode.js",
+//                    "src/standard_3/base64_decode.js",
                     "src/standard_3/pi.js"
                 ],
                 dest: "dist/standard_3.js"
@@ -125,18 +125,18 @@ module.exports = function (grunt) {
                 src: [
 
                     "<banner:meta.standard_4>",
-                    "src/standard_4/print_r.js",
                     "src/standard_4/var_dump.js",
                     "src/standard_4/serialize.js",
-                    "src/standard_4/unserialize.js"
+                    "src/standard_4/unserialize.js",
+                    "src/standard_4/print_r.js"
                 ],
                 dest: "dist/standard_4.js"
             },
             standard_5: {
                 src: [
                     "<banner:meta.standard_5>",
-                    "src/standard_5/doubleval.js",
                     "src/standard_5/floatval.js",
+                    "src/standard_5/doubleval.js",
                     "src/standard_5/gettype.js",
                     "src/standard_5/intval.js",
                     "src/standard_5/strval.js"
@@ -198,7 +198,7 @@ module.exports = function (grunt) {
                     "dist/standard_6.js",
                     "dist/standard_7.js",
                     "dist/standard_8.js",
-                    "dist/standard_9.js",
+                    "dist/standard_9.js", //
                     "dist/pcre.js"
                 ],
                 dest: "dist/<%= pkg.name %>.js"
@@ -256,16 +256,10 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask("regular", function () {
-        console.log("\n\n *** REGULAR RUN ***\n\n");
-    });
-
     // Default task.
-    grunt.registerTask("default", "regular concat min");
-    grunt.registerTask("travis", "concat qunit");
-
+    grunt.registerTask("default", "concat min");
+    grunt.registerTask("test", "concat lint qunit");
     grunt.registerTask("sntx", "concat lint");
-    grunt.registerTask("test", "concat qunit");
 
     // Load grunt tasks from NPM packages
     grunt.loadNpmTasks("grunt-compare-size");

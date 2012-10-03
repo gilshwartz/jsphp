@@ -48,7 +48,7 @@ function intval($var, $base) {
 
     var cname = ___get_constructor_name($var);
 
-    var output = parseInt($var);
+    var output = parseInt($var, 10);
 
     if(cname.match(/^Array|Object$/) && ___object_length($var) > 0) {
         return 1;
@@ -58,9 +58,9 @@ function intval($var, $base) {
         return 0;
     }
 
-    if (vtype == 'string') {
+    if (vtype === "string") {
         return parseInt($var, $base);
     }
 
-    return parseInt($var);
+    return output;
 }

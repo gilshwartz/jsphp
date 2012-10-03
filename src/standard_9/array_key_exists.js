@@ -12,5 +12,5 @@
  */
 function array_key_exists($key, $search) {
 
-    return typeof $search[$key] != 'undefined';
+    return typeof $search[$key] !== 'undefined';
 }

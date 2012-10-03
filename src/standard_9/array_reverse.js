@@ -23,9 +23,12 @@ function array_reverse ($array, $preserve_keys) {
 
     $preserve_keys = $preserve_keys || null;
 
+    var vtype;
+    var ctype;
+
     if ($preserve_keys !== null) {
-        var vtype = typeof $preserve_keys;
-        var ctype = ___get_constructor_name($preserve_keys);
+        vtype = typeof $preserve_keys;
+        ctype = ___get_constructor_name($preserve_keys);
 
         if (vtype === "object") {
             if (ctype === "Array" || ctype === "Object") {
@@ -42,7 +45,7 @@ function array_reverse ($array, $preserve_keys) {
         $preserve_keys = false;
     }
 
-    var vtype = ___get_constructor_name($array);
+    vtype = ___get_constructor_name($array);
     var output;
     var key;
     var temp = [];
@@ -54,7 +57,7 @@ function array_reverse ($array, $preserve_keys) {
             temp.unshift([key, $array[key]]);
         }
 
-        if($preserve_keys == true && temp.length > 0) {
+        if($preserve_keys === true && temp.length > 0) {
             output = {};
             for(key = 0; key < temp.length; key++) {
                 output[temp[key][0]] = temp[key][1];
@@ -65,7 +68,9 @@ function array_reverse ($array, $preserve_keys) {
         output = {};
         var aoutput = [];
         for (key in $array) {
-            temp.unshift([key, $array[key]]);
+            if(key) {
+                temp.unshift([key, $array[key]]);
+            }
         }
 
         var isarray = true;

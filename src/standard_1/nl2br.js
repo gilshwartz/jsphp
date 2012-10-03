@@ -31,7 +31,7 @@ function nl2br($string, $is_xhtml) {
         $string = "1";
     }
 
-    if($string !== "" && !(vtype !== 'object')) {
+    if($string !== "" && vtype === "object") {
         var type = ___get_constructor_name($string) === 'Array' ? 'array' : vtype;
         throw new Exception("strtolower() expects parameter 1 to be string, " + type + " given");
     }

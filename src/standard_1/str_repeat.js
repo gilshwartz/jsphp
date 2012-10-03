@@ -16,9 +16,12 @@ function str_repeat($input, $multiplier) {
 
     var output = '';
 
-    arguments[0] = arguments[0] === null ? '' : arguments[0];
-    arguments[1] = arguments[1] === null ? 0 : arguments[1];
+    var args = arguments;
+    
+    args[0] = args[0] === null ? '' : args[0];
+    args[1] = args[1] === null ? 0 : args[1];
 
+    
     ___validate_function_arguments(
         'str_repeat',
         {
@@ -35,7 +38,7 @@ function str_repeat($input, $multiplier) {
                 }
             ]
         },
-        arguments
+        args
     );
 
     $input = $input.toString();

@@ -27,9 +27,12 @@ function array_keys($input, $search_value, $strict) {
     $search_value = $search_value || null;
     $strict = $strict || null;
 
+    var vtype;
+    var ctype;
+
     if ($search_value !== null) {
-        var vtype = typeof $search_value;
-        var ctype = ___get_constructor_name($search_value);
+        vtype = typeof $search_value;
+        ctype = ___get_constructor_name($search_value);
 
         if (vtype === "object") {
             if (ctype !== "Array" && ctype !== "Object") {
@@ -39,8 +42,8 @@ function array_keys($input, $search_value, $strict) {
     }
 
     if ($strict !== null) {
-        var vtype = typeof $strict;
-        var ctype = ___get_constructor_name($strict);
+        vtype = typeof $strict;
+        ctype = ___get_constructor_name($strict);
 
         if (vtype === "object") {
             if (ctype === "Array" || ctype === "Object") {
@@ -57,7 +60,7 @@ function array_keys($input, $search_value, $strict) {
         $strict = false;
     }
 
-    var vtype = ___get_constructor_name($input);
+    vtype = ___get_constructor_name($input);
     var output = [];
 
     var key;
@@ -71,9 +74,12 @@ function array_keys($input, $search_value, $strict) {
                     }
                 }
                 else {
+                    /*jshint eqeqeq:false */ // weak check is preferred
                     if ($input[key] != $search_value) {
+                    /*jshint eqeqeq:true */
                         continue;
                     }
+
                 }
             }
             output.push(key);
@@ -81,19 +87,23 @@ function array_keys($input, $search_value, $strict) {
     }
     else {
         for (key in $input) {
-            if ($search_value !== null) {
-                if ($strict === true) {
-                    if ($input[key] !== $search_value) {
-                        continue;
+            if (key) {
+                if ($search_value !== null) {
+                    if ($strict === true) {
+                        if ($input[key] !== $search_value) {
+                            continue;
+                        }
                     }
+                    else {
+                        /*jshint eqeqeq:false */  // weak check is preferred
+                        if ($input[key] != $search_value) {
+                        /*jshint eqeqeq:true */
+                            continue;
+                        }
+                     }
                 }
-                else {
-                    if ($input[key] != $search_value) {
-                        continue;
-                    }
-                }
+                output.push(key);
             }
-            output.push(key);
         }
     }
 

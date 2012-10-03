@@ -39,6 +39,10 @@ function serialize($value) {
     var cn = ___get_constructor_name($value);
 
     var output;
+    var x;
+    var key;
+    var temp = {};
+    var len = 0;
 
     switch (vtype) {
         case "NULL":
@@ -57,12 +61,13 @@ function serialize($value) {
             output = 's:' + $value.length + ':"' + $value + '"' + ';';
             break;
         case "array":
-            var x = 0;
-            var len = ___object_length($value);
+
+            x = 0;
+            len = ___object_length($value);
 
             if (cn === "Array") {
 
-                var temp = [];
+                temp = [];
 
                 for (x = 0; x < len; x++) {
                     if (___get_constructor_name($value[x]) === "Function") {
@@ -79,22 +84,26 @@ function serialize($value) {
                 }
             }
             else {
-                var temp = {};
+                temp = {};
 
-                for (var key in $value) {
-                    if (___get_constructor_name($value[key]) === "Function") {
-                        continue;
+                for (key in $value) {
+                    if (key) {
+                        if (___get_constructor_name($value[key]) === "Function") {
+                            continue;
+                        }
+
+                        temp[key] = $value[key];
                     }
-
-                    temp[key] = $value[key];
                 }
 
                 output = (cn === "Object") ? "a:" : "O:" + cn.length + ":\"" + cn + "\":";
                 output += ___object_length(temp) + ":{";
 
-                for (var key in temp) {
-                    output += serialize(key);
-                    output += serialize(temp[key]);
+                for (key in temp) {
+                    if (key) {
+                        output += serialize(key);
+                        output += serialize(temp[key]);
+                    }
                 }
             }
 
@@ -103,30 +112,35 @@ function serialize($value) {
             break;
 
         case "object":
-            var x = 0;
+            x = 0;
 
-            var len = ___object_length($value);
+            len = ___object_length($value);
 
             if (cn === 'Function') {
                 throw new Exception("Serialization of 'Closure' is not allowed");
             }
 
-            var temp = {};
+            temp = {};
 
-            for (var key in $value) {
-                if (___get_constructor_name($value[key]) === "Function") {
-                    continue;
+            for (key in $value) {
+                if (key) {
+                    if (___get_constructor_name($value[key]) === "Function") {
+                        continue;
+                    }
+
+                    temp[key] = $value[key];
                 }
-
-                temp[key] = $value[key];
             }
 
             output = "O:" + cn.length + ":\"" + cn + "\":";
             output += ___object_length(temp) + ":{";
 
-            for (var key in temp) {
-                output += serialize(key);
-                output += serialize(temp[key]);
+            for (key in temp) {
+                if (key) {
+                    output += serialize(key);
+                    output += serialize(temp[key]);
+                }
+
             }
 
             output += "}";

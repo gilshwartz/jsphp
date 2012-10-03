@@ -40,7 +40,7 @@ function unserialize($str) {
                 {
                     func: function (val) {
                         val = '' + val;
-                        return /^((i|s|d|b):.+;$|N;$|a:\d+:\{.*\}$|O:\d+:"\w+":\d+:\{.*\}$)/.test(val);
+                        return (/^((i|s|d|b):.+;$|N;$|a:\d+:\{.*\}$|O:\d+:"\w+":\d+:\{.*\}$)/).test(val);
                     },
                     msg: function (arg, val) {
                         val = '' + val;
@@ -56,13 +56,17 @@ function unserialize($str) {
         return false;
     }
 
+    var match;
+    var offset;
+    var val;
+
     switch ($str.charAt(0)) {
 
         case 'O':
-            var match = $str.match(/^(O:\d+:"[^"]+")(:.*)$/);
+            match = $str.match(/^(O:\d+:"[^"]+")(:.*)$/);
 
             if (match === null) {
-                var offset = 0;
+                offset = 0;
                 throw new Exception('unserialize(): Error at offset ' + offset + ' of ' + $str.length + ' bytes');
             }
 
@@ -71,54 +75,56 @@ function unserialize($str) {
 
             var classdata = unserialize(temp);
 
+            /*jshint evil:true */
             var obj = eval('new ' + classname + '();');
+            /*jshint evil:false */
 
             var classdatalen = ___object_length(classdata);
             var classdatacons = ___get_constructor_name(classdata);
 
-            if(classdatacons === 'Array') {
+            if (classdatacons === 'Array') {
                 // Rather impossible but...
-                if(classdatalen > 0) {
-                    var offset = 0;
+                if (classdatalen > 0) {
+                    offset = 0;
                     throw new Exception('unserialize(): Error at offset ' + offset + ' of ' + $str.length + ' bytes');
                 }
                 return obj;
             }
 
-            for(var key in classdata) {
-                obj[key] = classdata[key];
+            for (var key in classdata) {
+                if (key) {
+                    obj[key] = classdata[key];
+                }
             }
 
             /*
-// Jak klasa nie jest zdefiniowana:
-__PHP_Incomplete_Class Object
-(
-    [__PHP_Incomplete_Class_Name] => Kura
-    [legs] => 2
-    [wings] => 2
-    [eyes] => 2
-    [canFly] =>
-)
+             // TODO: Jak klasa nie jest zdefiniowana:
+             __PHP_Incomplete_Class Object
+             (
+             [__PHP_Incomplete_Class_Name] => Kura
+             [legs] => 2
+             [wings] => 2
+             [eyes] => 2
+             [canFly] =>
+             )
 
-// Otherwise:
-Kura Object
-(
-    [legs] => 2
-    [wings] => 2
-    [eyes] => 2
-    [canFly] =>
-)
+             // Otherwise:
+             Kura Object
+             (
+             [legs] => 2
+             [wings] => 2
+             [eyes] => 2
+             [canFly] =>
+             )
              */
 
             return obj;
-
-            break;
 
         case 'a':
             var i, c, index = 0;
             var output = [];
             var xmatch = $str.match(/^a:(\d+?):\{(.*)\}$/);
-            var len = parseInt(xmatch[1]);
+            var len = parseInt(xmatch[1], 10);
             var content = xmatch[2].split('');
             var parsevar = false;
             var type = null;
@@ -126,13 +132,13 @@ Kura Object
             var chunk = '';
 
             for (c = 0; c < content.length; c++) {
-                var char = content[c]
+                var char = content[c];
                 chunk += char;
 
                 var matchi = chunk.match(new RegExp('^i:' + index + ';'));
                 var matchs = chunk.match(new RegExp('^s:\\d+:".*?";'));
 
-                var match = matchi !== null || matchs !== null;
+                match = matchi !== null || matchs !== null;
 
                 if (parsevar === false && match === true) {
                     index++;
@@ -175,7 +181,7 @@ Kura Object
                                 }
 
                                 if (brackets === 0) {
-                                    var val = chunk;
+                                    val = chunk;
                                     output.push(unserialize(val));
                                     parsevar = false;
                                     type = null;
@@ -190,7 +196,7 @@ Kura Object
                             case 's':
 
                                 if (char === ';') {
-                                    var val = type + chunk;
+                                    val = type + chunk;
                                     output.push(unserialize(val));
                                     parsevar = false;
                                     type = null;
@@ -208,8 +214,8 @@ Kura Object
                 }
             }
 
-            if (output.length != len * 2) {
-                var offset = 0;
+            if (output.length !== len * 2) {
+                offset = 0;
                 throw new Exception('unserialize(): Error at offset ' + offset + ' of ' + $str.length + ' bytes');
             }
 
@@ -232,34 +238,34 @@ Kura Object
             else {
                 result = {};
                 for (c = 0; c < output.length; c += 2) {
-                    var key = unserialize(output[c]);
+                    key = unserialize(output[c]);
                     result[key] = output[c + 1];
                 }
             }
 
             return result;
         case 'N':
-            return null
+            return null;
         case 'b':
-            var match = $str.match(/^b:(1|0);$/);
+            match = $str.match(/^b:(1|0);$/);
             if (match === null) {
                 throw new Exception('unserialize(): Error at offset 0 of ' + $str.length + ' bytes');
             }
             return match[1] === '1';
         case 'i':
-            var match = $str.match(/^i:(?:0*)(\d+);$/);
+            match = $str.match(/^i:(?:0*)(\d+);$/);
             if (match === null) {
                 throw new Exception('unserialize(): Error at offset 0 of ' + $str.length + ' bytes');
             }
-            return parseInt(match[1]);
+            return parseInt(match[1], 10);
         case 'd':
-            var match = $str.match(/^d:(?:0*)(\.?\d+|\d+\.\d+);$/);
+            match = $str.match(/^d:(?:0*)(\.?\d+|\d+\.\d+);$/);
             if (match === null) {
                 throw new Exception('unserialize(): Error at offset 0 of ' + $str.length + ' bytes');
             }
             return parseFloat(match[1]);
         case 's':
-            var match = $str.match(/^(s:(\d+):")(.*)";$/);
+            match = $str.match(/^(s:(\d+):")(.*)";$/);
 
             if (match === null) {
                 throw new Exception('unserialize(): Error at offset 0 of ' + $str.length + ' bytes');
@@ -267,10 +273,10 @@ Kura Object
 
             // String length check:
             var given = match[3].length;
-            var expected = parseInt(match[2]);
+            var expected = parseInt(match[2], 10);
 
-            if (expected != given) {
-                var offset = expected > given ? 2 : match[1].length + expected;
+            if (expected !== given) {
+                offset = expected > given ? 2 : match[1].length + expected;
                 throw new Exception('unserialize(): Error at offset ' + offset + ' of ' + $str.length + ' bytes');
             }
 

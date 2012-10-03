@@ -52,13 +52,13 @@ function array_change_key_case ($input, $case) {
                 var matches = $case.match(/^(\d+)(\.\d+)?$/);
                 giv = matches === null ? "string" : "integer";
                 if(giv === "integer") {
-                    $case = parseInt(matches[1]);
+                    $case = parseInt(matches[1], 10);
                 }
                 break;
             case "double":
             case "integer":
                 giv = "integer";
-                $case = parseInt($case);
+                $case = parseInt($case, 10);
                 break;
             case "boolean":
                 giv = "integer";
@@ -84,8 +84,10 @@ function array_change_key_case ($input, $case) {
     var key;
 
     for(key in $input) {
-        var newkey = $case === CASE_LOWER ? key.toLocaleLowerCase() : key.toLocaleUpperCase();
-        output[newkey] = $input[key];
+        if(key) {
+            var newkey = $case === CASE_LOWER ? key.toLocaleLowerCase() : key.toLocaleUpperCase();
+            output[newkey] = $input[key];
+        }
     }
 
     return output;

@@ -2,7 +2,7 @@
  * Incomplete object class ie. when class is not reachable in current context.
  * @link http://php.net/manual/en/reserved.classes.php
  */
-__PHP_Incomplete_Class.prototype = new Object();
+__PHP_Incomplete_Class.prototype = {};
 __PHP_Incomplete_Class.prototype.constructor = __PHP_Incomplete_Class;
 
 /**

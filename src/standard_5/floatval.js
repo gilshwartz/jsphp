@@ -26,15 +26,16 @@ function floatval($var) {
     if ($var === null || $var === "") {
         $var = 0;
     }
+    var output;
 
     try {
-        var output = parseFloat($var);
+        output = parseFloat($var);
     }
     catch(e) {
-        var message = (typeof e.getMessage !== 'undefined' ? e.getMessage() : e);
+        var msg = (typeof e.getMessage !== 'undefined' ? e.getMessage() : e);
         var code = (typeof e.getCode !== 'undefined' ? e.getCode() : 0);
-        message = message.replace(/^(.* could not be converted to )\w+$/, '$1double');
-        throw new Exception(message, code);
+        msg = msg.replace(/^(.* could not be converted to )\w+$/, '$1double');
+        throw new Exception(msg, code);
     }
 
     return output;
