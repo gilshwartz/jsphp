@@ -258,7 +258,7 @@ module.exports = function (grunt) {
 
     // Default task.
     grunt.registerTask("default", "concat min");
-    grunt.registerTask("test", "concat lint qunit");
+    grunt.registerTask("test", "concat qunit lint");
     grunt.registerTask("sntx", "concat lint");
 
     // Load grunt tasks from NPM packages
