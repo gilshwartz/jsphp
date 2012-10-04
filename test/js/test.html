@@ -6,12 +6,17 @@
     <link rel="stylesheet" href="../qunit/qunit/qunit.css">
     <script src="../qunit/qunit/qunit.js"></script>
 
+
     <!-- Library scripts: -->
     <script type="text/javascript" src="../../dist/jsphp.js"></script>
 
     <!-- Unit Tests: -->
     <script type="text/javascript" src="../data/variables-fixtures.js?55181922"></script>
     <script type="text/javascript" src="../data/fixtures.js?58768491"></script>
+    <script type="text/javascript">
+        console.log("");
+        QUnit.config.testTimeout = 30000;
+    </script>
 
     <script type="text/javascript" src="unit/bootstrap.js?88535526"></script>
     <script type="text/javascript" src="unit/standard_defines.php.js?52143012"></script>

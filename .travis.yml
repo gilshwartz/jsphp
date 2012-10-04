@@ -2,8 +2,8 @@ language: node_js
 
 node_js:
   - 0.6
-    #  - 0.8
-    #  - 0.9
+  - 0.8
+  - 0.9
 
 before_script:
   - "export DISPLAY=:99.0"
@@ -15,8 +15,3 @@ before_script:
   - sleep 3
   - "npm install grunt-jasmine-task"
   - sleep 3
-  - grunt concat
-  - sleep 2
-  - grunt lint
-  - sleep 2
-

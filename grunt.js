@@ -257,11 +257,11 @@ module.exports = function (grunt) {
     });
 
     // Default task.
-    grunt.registerTask("default", "concat min");
-    grunt.registerTask("test", "concat qunit lint");
-    grunt.registerTask("sntx", "concat lint");
-
     // Load grunt tasks from NPM packages
     grunt.loadNpmTasks("grunt-compare-size");
     grunt.loadNpmTasks("grunt-jasmine-task");
+
+    grunt.registerTask("default", "concat lint qunit min");
+    grunt.registerTask("test", "concat lint qunit");
+    grunt.registerTask("sntx", "concat lint");
 };
