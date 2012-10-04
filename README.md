@@ -2,7 +2,7 @@ js&hearts;php
 =====
 [![Build Status](https://secure.travis-ci.org/siciarek/jsphp.png)](http://travis-ci.org/siciarek/jsphp)
 
-JSPHP - PHP Standard Library in JavaScript
+PHP Standard Library in plain JavaScript.
 
 
 ## Development
