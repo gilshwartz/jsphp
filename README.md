@@ -1,4 +1,4 @@
-jsphp
+js&hearts;php
 =====
 [![Build Status](https://secure.travis-ci.org/siciarek/jsphp.png)](http://travis-ci.org/siciarek/jsphp)
 
