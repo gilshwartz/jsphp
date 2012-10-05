@@ -238,8 +238,8 @@ module.exports = function (grunt) {
 
         qunit: {
             files: [
-                "test/js/test.<%= pkg.name %>.js.html",
-                "test/js/test.<%= pkg.name %>.min.js.html"
+//                "test/js/test.<%= pkg.name %>.min.js.html",
+                "test/js/test.<%= pkg.name %>.js.html"
             ]
         },
 
