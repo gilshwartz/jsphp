@@ -6,7 +6,6 @@
     <xsl:template name="okays">
         <xsl:param name="count"/>
         <xsl:param name="message" select="'okay'"/>
-        <xsl:param name="ouptut" select="''"/>
 
         <xsl:if test="$count &gt; 0">
             <xsl:call-template name="okays">
@@ -43,6 +42,11 @@
                 <script type="text/javascript">
                     <![CDATA[
 $(document).ready(function () {
+
+    if(location.href.match(/filter=/)) {
+         $("#qunit-header, #qunit-banner, #qunit-testrunner-toolbar, #qunit-userAgent").hide();
+    }
+
     $("#qunit-userAgent").html(navigator.userAgent);
 
     $("#qunit-filter-pass").change(function() {

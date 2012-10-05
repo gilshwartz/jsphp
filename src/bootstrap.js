@@ -1,8 +1,63 @@
 var i;
 var ___global_temp;
 
+var NULL = null;
+var TRUE = true;
+var FALSE = false;
+
 function define(name, value) {
 
+}
+
+function ___utf8_to_bytes(input) {
+
+    var i;
+    var left = 0;
+    var right = 0;
+    var output = "";
+    var is_utf = false;
+
+    var vtype = typeof input;
+
+    input = "" + input;
+
+    if(vtype === "number") {
+        input = input.toUpperCase();
+    }
+
+    for (i = 0; i < input.length; i++) {
+        if(input.charCodeAt(i) > 254) {
+            is_utf = true;
+            break;
+        }
+    }
+
+    if(is_utf === false) {
+        return input;
+    }
+
+    for (i = 0; i < input.length; i++) {
+
+        var ch = input.charCodeAt(i);
+
+        if (ch > 127) { // MORE THAN ASCII
+            if (ch < 2048) {
+                output += String.fromCharCode((ch >> 6) | 192);
+            } else {
+                output += String.fromCharCode((ch >> 12) | 224) + String.fromCharCode(((ch >> 6) & 63) | 128);
+            }
+            output += String.fromCharCode((ch & 63) | 128);
+        } else { // ASCII
+            output += String.fromCharCode(ch);
+        }
+
+    }
+
+    if (right > left) {
+        output += input.slice(left, input.length);
+    }
+
+    return output;
 }
 
 function ___get_constructor_name(obj) {
@@ -24,11 +79,16 @@ function ___object_length(obj) {
     var count = 0;
     var cons = ___get_constructor_name(obj);
 
+    if(cons === "Array") {
+        return obj.length;
+    }
+
     for (var x in obj) {
         if (x) {
             count++;
         }
     }
+
     return count;
 }
 
@@ -44,7 +104,6 @@ function ___parse_regexp(func, pattern, modifiers) {
     var rxrx = new RegExp("^" + sep + "(.*?)" + sep + "(\\w*)$");
     var rxtemp = temp.match(rxrx);
 
-    var rxsep = sep;
     var rxbody = rxtemp[1];
     var rxmodif = rxtemp[2];
 
@@ -52,7 +111,7 @@ function ___parse_regexp(func, pattern, modifiers) {
         var m = rxmodif.charAt(i);
 
         if (typeof modifiers[rxmodif.charAt(m)] === "undefined") {
-            throw "JSPHP Warning:  " + func + "(): Unknown modifier \"" + m + '"';
+            throw new Exception(func + "(): Unknown modifier \"" + m + '"');
         }
     }
 
@@ -218,7 +277,7 @@ function ___validate_function_arguments(funct, config, args) {
                     giv = "integer";
                     break;
                 default:
-                    giv = giv;
+                    giv;
                     break;
             }
         }
@@ -232,7 +291,7 @@ function ___validate_function_arguments(funct, config, args) {
                     giv = "string";
                     break;
                 default:
-                    giv = giv;
+                    giv;
                     break;
             }
         }

@@ -2,7 +2,7 @@
  * standard_3.php - Unit Test (QUnit)
  */
 
-module("standard_3.php", {
+module("standard_3", {
     setup: function () {
 
     },
@@ -11,34 +11,34 @@ module("standard_3.php", {
     }
 });
 
-test("pi () ", function(){
+test("pi", function(){
     runTestOnData();
 });
 
-test("base64_decode ($data, $strict) ", function(){
+test("base64_decode", function(){
     runTestOnData();
 });
 
-test("base64_encode ($data) ", function(){
+test("base64_encode", function(){
     runTestOnData();
 });
 
 /*
-test("getlastmod () ", function(){
+test("getlastmod", function(){
     ok(false, "Not implemented yet.");
 });
 
 
 
-test("convert_uuencode ($data) ", function(){
+test("convert_uuencode", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("convert_uudecode ($data) ", function(){
+test("convert_uudecode", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("abs ($number) ", function(){
+test("abs", function(){
     var expected;
     var key;
     var input;
@@ -81,255 +81,255 @@ test("abs ($number) ", function(){
     }
 });
 
-test("ceil ($value) ", function(){
+test("ceil", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("floor ($value) ", function(){
+test("floor", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("round ($val, $precision, $mode) ", function(){
+test("round", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("sin ($arg) ", function(){
+test("sin", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("cos ($arg) ", function(){
+test("cos", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("tan ($arg) ", function(){
+test("tan", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("asin ($arg) ", function(){
+test("asin", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("acos ($arg) ", function(){
+test("acos", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("atan ($arg) ", function(){
+test("atan", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("atanh ($arg) ", function(){
+test("atanh", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("atan2 ($y, $x) ", function(){
+test("atan2", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("sinh ($arg) ", function(){
+test("sinh", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("cosh ($arg) ", function(){
+test("cosh", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("tanh ($arg) ", function(){
+test("tanh", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("asinh ($arg) ", function(){
+test("asinh", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("acosh ($arg) ", function(){
+test("acosh", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("expm1 ($arg) ", function(){
+test("expm1", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("log1p ($number) ", function(){
+test("log1p", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("pi () ", function(){
+test("pi", function(){
     strictEqual(pi(), M_PI);
 });
 
-test("is_finite ($val) ", function(){
+test("is_finite", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("is_nan ($val) ", function(){
+test("is_nan", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("is_infinite ($val) ", function(){
+test("is_infinite", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("pow ($base, $exp) ", function(){
+test("pow", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("exp ($arg) ", function(){
+test("exp", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("log ($arg, $base) ", function(){
+test("log", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("log10 ($arg) ", function(){
+test("log10", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("sqrt ($arg) ", function(){
+test("sqrt", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("hypot ($x, $y) ", function(){
+test("hypot", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("deg2rad ($number) ", function(){
+test("deg2rad", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("rad2deg ($number) ", function(){
+test("rad2deg", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("bindec ($binary_string) ", function(){
+test("bindec", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("hexdec ($hex_string) ", function(){
+test("hexdec", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("octdec ($octal_string) ", function(){
+test("octdec", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("decbin ($number) ", function(){
+test("decbin", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("decoct ($number) ", function(){
+test("decoct", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("dechex ($number) ", function(){
+test("dechex", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("base_convert ($number, $frombase, $tobase) ", function(){
+test("base_convert", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("number_format ($number, $decimals, $dec_point, $thousands_sep) ", function(){
+test("number_format", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("fmod ($x, $y) ", function(){
+test("fmod", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("inet_ntop ($in_addr) ", function(){
+test("inet_ntop", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("inet_pton ($address) ", function(){
+test("inet_pton", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("ip2long ($ip_address) ", function(){
+test("ip2long", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("long2ip ($proper_address) ", function(){
+test("long2ip", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getenv ($varname) ", function(){
+test("getenv", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("putenv ($setting) ", function(){
+test("putenv", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getopt ($options, $longopts) ", function(){
+test("getopt", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("sys_getloadavg () ", function(){
+test("sys_getloadavg", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("microtime ($get_as_float) ", function(){
+test("microtime", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("gettimeofday ($return_float) ", function(){
+test("gettimeofday", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getrusage ($who) ", function(){
+test("getrusage", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("uniqid ($prefix, $more_entropy) ", function(){
+test("uniqid", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("quoted_printable_decode ($str) ", function(){
+test("quoted_printable_decode", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("quoted_printable_encode ($str) ", function(){
+test("quoted_printable_encode", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("convert_cyr_string ($str, $from, $to) ", function(){
+test("convert_cyr_string", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("get_current_user () ", function(){
+test("get_current_user", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("set_time_limit ($seconds) ", function(){
+test("set_time_limit", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("get_cfg_var ($option) ", function(){
+test("get_cfg_var", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("magic_quotes_runtime ($new_setting) ", function(){
+test("magic_quotes_runtime", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("set_magic_quotes_runtime ($new_setting) ", function(){
+test("set_magic_quotes_runtime", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("get_magic_quotes_gpc () ", function(){
+test("get_magic_quotes_gpc", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("get_magic_quotes_runtime () ", function(){
+test("get_magic_quotes_runtime", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("import_request_variables ($types, $prefix) ", function(){
+test("import_request_variables", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("error_log ($message, $message_type, $destination, $extra_headers) ", function(){
+test("error_log", function(){
     ok(false, "Not implemented yet.");
 });
 

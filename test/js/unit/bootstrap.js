@@ -4,6 +4,10 @@ function getConstructorNameForTest(obj) {
         : obj.constructor.name;
 }
 
+function urldecode(enc) {
+    return unescape(enc);
+}
+
 function runTestOnData(extra, _expect) {
     extra = extra || [];
     _expect = _expect || 0;
@@ -39,8 +43,15 @@ function runTestOnData(extra, _expect) {
         var c;
 
         for(c = 0; c < a.length; c++) {
-            if(___gettype(a[c]) === 'string' && a[c].match(/^(new|function)/)) {
-                eval("a[" + c + "] = " + a[c] + ";");
+            try {
+                if(___gettype(a[c]) === 'string' && a[c].match(/^(new|function|return)/)) {
+                    a[c] = a[c].replace(/^return\s+/, '');
+                    var assig = "a[" + c + "] = " + a[c] + ";";
+                    eval(assig);
+                }
+            }
+            catch(e) {
+                console.log(e);
             }
         }
 

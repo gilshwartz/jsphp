@@ -1,31 +1,46 @@
 var fixtures = {
     "standard_9": {
+        "array_map": [
+            [true, [2, 4, 6, 8, 0, 0], "function($x, $y){return $x * $y;}", [1, 2, 3, 4], [2, 2, 2, 2, 2, 2]],
+            [true, [2, 4, 0, 0], "function($x, $y){return $x * $y;}", [1, 2, 3, 4], [2, 2]],
+
+            [true, [6, 8, 10, 12], "function($x, $y){return $x + $y;}", [1, 2, 3, 4], [5, 6, 7, 8]],
+            [true, [6, 8, 3, 4], "function($x, $y){return $x + $y;}", [1, 2, 3, 4], [5, 6], [7, 8]],
+            [true, [6, 8, 3, 4], "function($x, $y){return $x + $y;}", [1, 2, 3, 4], [5, 6]],
+            [true, [1, 2, 3, 4], "intval", [1.99, 2.99, 3.99, 4.99]],
+            [true, {"a": 1, "b": 2, "c": 3}, "intval", {"a": 1.99, "b": 2.99, "c": 3.99}],
+            [true, {"a": 3, "b": 6, "c": 9}, "function($a){return 3 * $a;}", {"a": 1, "b": 2, "c": 3}],
+            [true, [2, 4, 6, 8], "function($x){return 2 * $x;}", [1, 2, 3, 4]],
+            [true, [4, 4, 4, 4], "function($x){return 4;}", [1, 2, 3, 4]],
+            [false, "array_map() expects at least 2 parameters, 1 given", null],
+            [false, "array_map() expects at least 2 parameters, 0 given"]
+        ],
         "array_rand": [
 
         ],
         "array_change_key_case": [
-            [false, "array_change_key_case() expects parameter 2 to be long, object given", {"a":"a","B":"b"}, "new stdClass()"],
+            [false, "array_change_key_case() expects parameter 2 to be long, object given", {"a": "a", "B": "b"}, "new stdClass()"],
 
-            [true, {"a":"a","b":"B"}, {"a":"a","B":"B"}],
+            [true, {"a": "a", "b": "B"}, {"a": "a", "B": "B"}],
 
-            [true, {"a":"a","b":"null"}, {"a":"a","B":"null"}, null],
-            [true, {"a":"a","b":"false"}, {"a":"a","B":"false"}, false],
-            [true, {"a":"a","b":"zero"}, {"a":"a","B":"zero"}, 0],
-            [true, {"a":"a","b":"zero"}, {"a":"a","B":"zero"}, 0.5],
-            [true, {"a":"a","b":"zero"}, {"a":"a","B":"zero"}, "0"],
-            [true, {"a":"a","b":"zero"}, {"a":"a","B":"zero"}, "0.5"],
+            [true, {"a": "a", "b": "null"}, {"a": "a", "B": "null"}, null],
+            [true, {"a": "a", "b": "false"}, {"a": "a", "B": "false"}, false],
+            [true, {"a": "a", "b": "zero"}, {"a": "a", "B": "zero"}, 0],
+            [true, {"a": "a", "b": "zero"}, {"a": "a", "B": "zero"}, 0.5],
+            [true, {"a": "a", "b": "zero"}, {"a": "a", "B": "zero"}, "0"],
+            [true, {"a": "a", "b": "zero"}, {"a": "a", "B": "zero"}, "0.5"],
 
-            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, true],
-            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, 1],
-            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, 1.5],
-            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, "1"],
-            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, "1.5"],
-            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, 1000],
-            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, 1000.5],
-            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, "1000"],
-            [true, {"A":"a","B":"B"}, {"a":"a","B":"B"}, "1000.5"],
+            [true, {"A": "a", "B": "B"}, {"a": "a", "B": "B"}, true],
+            [true, {"A": "a", "B": "B"}, {"a": "a", "B": "B"}, 1],
+            [true, {"A": "a", "B": "B"}, {"a": "a", "B": "B"}, 1.5],
+            [true, {"A": "a", "B": "B"}, {"a": "a", "B": "B"}, "1"],
+            [true, {"A": "a", "B": "B"}, {"a": "a", "B": "B"}, "1.5"],
+            [true, {"A": "a", "B": "B"}, {"a": "a", "B": "B"}, 1000],
+            [true, {"A": "a", "B": "B"}, {"a": "a", "B": "B"}, 1000.5],
+            [true, {"A": "a", "B": "B"}, {"a": "a", "B": "B"}, "1000"],
+            [true, {"A": "a", "B": "B"}, {"a": "a", "B": "B"}, "1000.5"],
 
-            [true, ["a","B"], ["a","B"]],
+            [true, ["a", "B"], ["a", "B"]],
             [true, [], []],
             [true, [], {}],
 
@@ -39,21 +54,21 @@ var fixtures = {
             [true, false, 512.5],
             [true, false, "Foo Baz Bar"],
 
-            [false, "array_change_key_case() expects parameter 2 to be long, array given", {"a":"a","B":"b"}, {}],
-            [false, "array_change_key_case() expects parameter 2 to be long, array given", {"a":"a","B":"b"}, []],
-            [false, "array_change_key_case() expects parameter 2 to be long, object given", {"a":"a","B":"b"}, "new stdClass()"],
-            [false, "array_change_key_case() expects parameter 2 to be long, string given", {"a":"a","B":"b"}, "Foo Baz Bar"],
-            [false, "array_change_key_case() expects parameter 2 to be long, string given", {"a":"a","B":"b"},  ""],
+            [false, "array_change_key_case() expects parameter 2 to be long, array given", {"a": "a", "B": "b"}, {}],
+            [false, "array_change_key_case() expects parameter 2 to be long, array given", {"a": "a", "B": "b"}, []],
+            [false, "array_change_key_case() expects parameter 2 to be long, object given", {"a": "a", "B": "b"}, "new stdClass()"],
+            [false, "array_change_key_case() expects parameter 2 to be long, string given", {"a": "a", "B": "b"}, "Foo Baz Bar"],
+            [false, "array_change_key_case() expects parameter 2 to be long, string given", {"a": "a", "B": "b"}, ""],
             [false, "array_change_key_case() expects at most 2 parameters, 3 given", null, null, null],
             [false, "array_change_key_case() expects at least 1 parameter, 0 given"]
         ],
         "array_flip": [
             [true, [], []],
             [true, [], {}],
-            [true, [1,2,3,4], {"1":0,"2":1,"3":2,"4":3}],
-            [true, {"1":0,"2":1,"3":2,"4":3}, [1,2,3,4]],
-            [true, {"a":"1","b":"2","c":"3"}, {"1":"a","2":"b","3":"c"}],
-            [true, {"1":"a","2":"b","3":"c"}, {"a":1,"b":2,"c":3}],
+            [true, [1, 2, 3, 4], {"1": 0, "2": 1, "3": 2, "4": 3}],
+            [true, {"1": 0, "2": 1, "3": 2, "4": 3}, [1, 2, 3, 4]],
+            [true, {"a": "1", "b": "2", "c": "3"}, {"1": "a", "2": "b", "3": "c"}],
+            [true, {"1": "a", "2": "b", "3": "c"}, {"a": 1, "b": 2, "c": 3}],
             [false, "array_flip() expects parameter 1 to be array, object given", "new stdClass()"],
 
             [false, "array_flip() expects parameter 1 to be array, object given", "function(){}"],
@@ -64,18 +79,18 @@ var fixtures = {
             [true, [], []],
             [true, [], [], false],
             [true, [], [], true],
-            [true, [1,2,3,4], [4,3,2,1]],
-            [true, [4,3,2,1], [1,2,3,4]],
-            [true, {"a":1,"b":2,"c":3}, {"c":3,"b":2,"a":1}],
-            [true, {"c":3,"b":2,"a":1}, {"a":1,"b":2,"c":3}],
-            [true, [1,2,3,4], [4,3,2,1], false],
-            [true, [4,3,2,1], [1,2,3,4], false],
-            [true, {"a":1,"b":2,"c":3}, {"c":3,"b":2,"a":1}, false],
-            [true, {"c":3,"b":2,"a":1}, {"a":1,"b":2,"c":3}, false],
-            [true, [1,2,3,4], {"3":4,"2":3,"1":2,"0":1}, true],
-            [true, {"3":4,"2":3,"1":2,"0":1}, [1,2,3,4], true],
-            [true, {"a":1,"b":2,"c":3}, {"c":3,"b":2,"a":1}, true],
-            [true, {"c":3,"b":2,"a":1}, {"a":1,"b":2,"c":3}, true],
+            [true, [1, 2, 3, 4], [4, 3, 2, 1]],
+            [true, [4, 3, 2, 1], [1, 2, 3, 4]],
+            [true, {"a": 1, "b": 2, "c": 3}, {"c": 3, "b": 2, "a": 1}],
+            [true, {"c": 3, "b": 2, "a": 1}, {"a": 1, "b": 2, "c": 3}],
+            [true, [1, 2, 3, 4], [4, 3, 2, 1], false],
+            [true, [4, 3, 2, 1], [1, 2, 3, 4], false],
+            [true, {"a": 1, "b": 2, "c": 3}, {"c": 3, "b": 2, "a": 1}, false],
+            [true, {"c": 3, "b": 2, "a": 1}, {"a": 1, "b": 2, "c": 3}, false],
+            [true, [1, 2, 3, 4], {"3": 4, "2": 3, "1": 2, "0": 1}, true],
+            [true, {"3": 4, "2": 3, "1": 2, "0": 1}, [1, 2, 3, 4], true],
+            [true, {"a": 1, "b": 2, "c": 3}, {"c": 3, "b": 2, "a": 1}, true],
+            [true, {"c": 3, "b": 2, "a": 1}, {"a": 1, "b": 2, "c": 3}, true],
 
             [false, "array_reverse() expects parameter 2 to be boolean, array given", {"a": 1, "b": 2, "3": 3}, []],
             [false, "array_reverse() expects parameter 2 to be boolean, array given", {"a": 1, "b": 2, "3": 3}, {}],
@@ -121,7 +136,17 @@ var fixtures = {
             [false, "array_unique() expects at most 2 parameters, 3 given", null, null, null],
             [false, "array_unique() expects at least 1 parameter, 0 given"],
 
-            [true, [[1,0],[1,2]], [[1,0],[1,2],[1,0],[1,2],[1,0],[1,2]], "SORT_REGULAR"],
+            [true, [
+                [1, 0],
+                [1, 2]
+            ], [
+                [1, 0],
+                [1, 2],
+                [1, 0],
+                [1, 2],
+                [1, 0],
+                [1, 2]
+            ], "SORT_REGULAR"],
 
             [true, [1.2, 0.4, 0.1, 0.3, 0.2], [1.2, 0.4, 0.1, 0.3, 0.2, 0.3, 0.4, 0.3]],
             [true, {"0": 0, "2": 1.4, "3": 0.1, "4": 0.4, "6": 1}, [0, 0, 1.4, 0.1, 0.4, 0.4, 1, 0.1]],
@@ -175,7 +200,7 @@ var fixtures = {
         ]
     },
     "standard_2": {
-        "chr":[
+        "chr": [
             [false, "Wrong parameter count for chr()"],
             [false, "Wrong parameter count for chr()", 1, 1],
             [true, "F", 70]
@@ -195,7 +220,7 @@ var fixtures = {
     },
     "standard_8": {
         "array_unshift": [
-            [true, true, [1,2,3,4], 5],
+            [true, true, [1, 2, 3, 4], 5],
             [true, true, [], 1],
             [true, true, [1, 2, 3, 4], 50, 40, 30, 44],
             [false, "array_unshift() expects parameter 1 to be array, string given", "Foo", null],
@@ -207,7 +232,7 @@ var fixtures = {
             [false, "array_unshift() expects parameter 1 to be array, boolean given", false, null],
             [false, "array_unshift() expects at least 2 parameters, 0 given"],
             [false, "array_unshift() expects at least 2 parameters, 1 given", null]
-       ],
+        ],
         "array_shift": [
             [true, 1, [1, 2, 3, 4]],
             [true, null, []],
@@ -253,7 +278,7 @@ var fixtures = {
             [false, "array_pop() expects exactly 1 parameter, 2 given", null, null]
         ],
         "shuffle": [
-            [true, true, [1,2,3,4]],
+            [true, true, [1, 2, 3, 4]],
             [true, true, []],
             [false, "shuffle() expects parameter 1 to be array, string given", "Foo"],
             [false, "shuffle() expects parameter 1 to be array, string given", ""],
@@ -266,7 +291,7 @@ var fixtures = {
             [false, "shuffle() expects exactly 1 parameter, 2 given", null, null]
         ],
         "array_fill": [
-            [false, "array_fill() expects parameter 1 to be long, string given", null, "a", null],
+            [false, "array_fill() expects parameter 2 to be long, string given", null, "a", null],
             [false, "array_fill(): Number of elements must be positive", null, null, null],
             [false, "array_fill(): Number of elements must be positive", null, 0, null],
             [false, "array_fill() expects exactly 3 parameters, 0 given"],
@@ -327,9 +352,9 @@ var fixtures = {
             [false, "strrev() expects exactly 1 parameter, 0 given"],
             [false, "strrev() expects exactly 1 parameter, 2 given", 1, 1],
             [false, "strrev() expects parameter 1 to be string, array given", []],
-            [false, "strrev() expects parameter 1 to be string, array given", [1,2,3]],
+            [false, "strrev() expects parameter 1 to be string, array given", [1, 2, 3]],
             [false, "strrev() expects parameter 1 to be string, array given", {}],
-            [false, "strrev() expects parameter 1 to be string, array given", {"a":1}],
+            [false, "strrev() expects parameter 1 to be string, array given", {"a": 1}],
             [true, "gfedcba", "abcdefg"],
             [true, "g      ZYX  fed    cba", "abc    def  XYZ      g"],
             [true, "0", 0],
@@ -363,14 +388,391 @@ var fixtures = {
     },
     "standard_3": {
         "base64_encode": [
+            // https://github.com/php/php-src/blob/master/ext/standard/tests/url/base64_encode_basic_001.phpt
+            [true, "AA==", "return chr(0)"],
+            [true, "AQ==", "return chr(1)"],
+            [true, "Ag==", "return chr(2)"],
+            [true, "Aw==", "return chr(3)"],
+            [true, "BA==", "return chr(4)"],
+            [true, "BQ==", "return chr(5)"],
+            [true, "Bg==", "return chr(6)"],
+            [true, "Bw==", "return chr(7)"],
+            [true, "CA==", "return chr(8)"],
+            [true, "CQ==", "return chr(9)"],
+            [true, "Cg==", "return chr(10)"],
+            [true, "Cw==", "return chr(11)"],
+            [true, "DA==", "return chr(12)"],
+            [true, "DQ==", "return chr(13)"],
+            [true, "Dg==", "return chr(14)"],
+            [true, "Dw==", "return chr(15)"],
+            [true, "EA==", "return chr(16)"],
+            [true, "EQ==", "return chr(17)"],
+            [true, "Eg==", "return chr(18)"],
+            [true, "Ew==", "return chr(19)"],
+            [true, "FA==", "return chr(20)"],
+            [true, "FQ==", "return chr(21)"],
+            [true, "Fg==", "return chr(22)"],
+            [true, "Fw==", "return chr(23)"],
+            [true, "GA==", "return chr(24)"],
+            [true, "GQ==", "return chr(25)"],
+            [true, "Gg==", "return chr(26)"],
+            [true, "Gw==", "return chr(27)"],
+            [true, "HA==", "return chr(28)"],
+            [true, "HQ==", "return chr(29)"],
+            [true, "Hg==", "return chr(30)"],
+            [true, "Hw==", "return chr(31)"],
+            [true, "IA==", "return chr(32)"],
+            [true, "IQ==", "return chr(33)"],
+            [true, "Ig==", "return chr(34)"],
+            [true, "Iw==", "return chr(35)"],
+            [true, "JA==", "return chr(36)"],
+            [true, "JQ==", "return chr(37)"],
+            [true, "Jg==", "return chr(38)"],
+            [true, "Jw==", "return chr(39)"],
+            [true, "KA==", "return chr(40)"],
+            [true, "KQ==", "return chr(41)"],
+            [true, "Kg==", "return chr(42)"],
+            [true, "Kw==", "return chr(43)"],
+            [true, "LA==", "return chr(44)"],
+            [true, "LQ==", "return chr(45)"],
+            [true, "Lg==", "return chr(46)"],
+            [true, "Lw==", "return chr(47)"],
+            [true, "MA==", "return chr(48)"],
+            [true, "MQ==", "return chr(49)"],
+            [true, "Mg==", "return chr(50)"],
+            [true, "Mw==", "return chr(51)"],
+            [true, "NA==", "return chr(52)"],
+            [true, "NQ==", "return chr(53)"],
+            [true, "Ng==", "return chr(54)"],
+            [true, "Nw==", "return chr(55)"],
+            [true, "OA==", "return chr(56)"],
+            [true, "OQ==", "return chr(57)"],
+            [true, "Og==", "return chr(58)"],
+            [true, "Ow==", "return chr(59)"],
+            [true, "PA==", "return chr(60)"],
+            [true, "PQ==", "return chr(61)"],
+            [true, "Pg==", "return chr(62)"],
+            [true, "Pw==", "return chr(63)"],
+            [true, "QA==", "return chr(64)"],
+            [true, "QQ==", "return chr(65)"],
+            [true, "Qg==", "return chr(66)"],
+            [true, "Qw==", "return chr(67)"],
+            [true, "RA==", "return chr(68)"],
+            [true, "RQ==", "return chr(69)"],
+            [true, "Rg==", "return chr(70)"],
+            [true, "Rw==", "return chr(71)"],
+            [true, "SA==", "return chr(72)"],
+            [true, "SQ==", "return chr(73)"],
+            [true, "Sg==", "return chr(74)"],
+            [true, "Sw==", "return chr(75)"],
+            [true, "TA==", "return chr(76)"],
+            [true, "TQ==", "return chr(77)"],
+            [true, "Tg==", "return chr(78)"],
+            [true, "Tw==", "return chr(79)"],
+            [true, "UA==", "return chr(80)"],
+            [true, "UQ==", "return chr(81)"],
+            [true, "Ug==", "return chr(82)"],
+            [true, "Uw==", "return chr(83)"],
+            [true, "VA==", "return chr(84)"],
+            [true, "VQ==", "return chr(85)"],
+            [true, "Vg==", "return chr(86)"],
+            [true, "Vw==", "return chr(87)"],
+            [true, "WA==", "return chr(88)"],
+            [true, "WQ==", "return chr(89)"],
+            [true, "Wg==", "return chr(90)"],
+            [true, "Ww==", "return chr(91)"],
+            [true, "XA==", "return chr(92)"],
+            [true, "XQ==", "return chr(93)"],
+            [true, "Xg==", "return chr(94)"],
+            [true, "Xw==", "return chr(95)"],
+            [true, "YA==", "return chr(96)"],
+            [true, "YQ==", "return chr(97)"],
+            [true, "Yg==", "return chr(98)"],
+            [true, "Yw==", "return chr(99)"],
+            [true, "ZA==", "return chr(100)"],
+            [true, "ZQ==", "return chr(101)"],
+            [true, "Zg==", "return chr(102)"],
+            [true, "Zw==", "return chr(103)"],
+            [true, "aA==", "return chr(104)"],
+            [true, "aQ==", "return chr(105)"],
+            [true, "ag==", "return chr(106)"],
+            [true, "aw==", "return chr(107)"],
+            [true, "bA==", "return chr(108)"],
+            [true, "bQ==", "return chr(109)"],
+            [true, "bg==", "return chr(110)"],
+            [true, "bw==", "return chr(111)"],
+            [true, "cA==", "return chr(112)"],
+            [true, "cQ==", "return chr(113)"],
+            [true, "cg==", "return chr(114)"],
+            [true, "cw==", "return chr(115)"],
+            [true, "dA==", "return chr(116)"],
+            [true, "dQ==", "return chr(117)"],
+            [true, "dg==", "return chr(118)"],
+            [true, "dw==", "return chr(119)"],
+            [true, "eA==", "return chr(120)"],
+            [true, "eQ==", "return chr(121)"],
+            [true, "eg==", "return chr(122)"],
+            [true, "ew==", "return chr(123)"],
+            [true, "fA==", "return chr(124)"],
+            [true, "fQ==", "return chr(125)"],
+            [true, "fg==", "return chr(126)"],
+            [true, "fw==", "return chr(127)"],
+            [true, "gA==", "return chr(128)"],
+            [true, "gQ==", "return chr(129)"],
+            [true, "gg==", "return chr(130)"],
+            [true, "gw==", "return chr(131)"],
+            [true, "hA==", "return chr(132)"],
+            [true, "hQ==", "return chr(133)"],
+            [true, "hg==", "return chr(134)"],
+            [true, "hw==", "return chr(135)"],
+            [true, "iA==", "return chr(136)"],
+            [true, "iQ==", "return chr(137)"],
+            [true, "ig==", "return chr(138)"],
+            [true, "iw==", "return chr(139)"],
+            [true, "jA==", "return chr(140)"],
+            [true, "jQ==", "return chr(141)"],
+            [true, "jg==", "return chr(142)"],
+            [true, "jw==", "return chr(143)"],
+            [true, "kA==", "return chr(144)"],
+            [true, "kQ==", "return chr(145)"],
+            [true, "kg==", "return chr(146)"],
+            [true, "kw==", "return chr(147)"],
+            [true, "lA==", "return chr(148)"],
+            [true, "lQ==", "return chr(149)"],
+            [true, "lg==", "return chr(150)"],
+            [true, "lw==", "return chr(151)"],
+            [true, "mA==", "return chr(152)"],
+            [true, "mQ==", "return chr(153)"],
+            [true, "mg==", "return chr(154)"],
+            [true, "mw==", "return chr(155)"],
+            [true, "nA==", "return chr(156)"],
+            [true, "nQ==", "return chr(157)"],
+            [true, "ng==", "return chr(158)"],
+            [true, "nw==", "return chr(159)"],
+            [true, "oA==", "return chr(160)"],
+            [true, "oQ==", "return chr(161)"],
+            [true, "og==", "return chr(162)"],
+            [true, "ow==", "return chr(163)"],
+            [true, "pA==", "return chr(164)"],
+            [true, "pQ==", "return chr(165)"],
+            [true, "pg==", "return chr(166)"],
+            [true, "pw==", "return chr(167)"],
+            [true, "qA==", "return chr(168)"],
+            [true, "qQ==", "return chr(169)"],
+            [true, "qg==", "return chr(170)"],
+            [true, "qw==", "return chr(171)"],
+            [true, "rA==", "return chr(172)"],
+            [true, "rQ==", "return chr(173)"],
+            [true, "rg==", "return chr(174)"],
+            [true, "rw==", "return chr(175)"],
+            [true, "sA==", "return chr(176)"],
+            [true, "sQ==", "return chr(177)"],
+            [true, "sg==", "return chr(178)"],
+            [true, "sw==", "return chr(179)"],
+            [true, "tA==", "return chr(180)"],
+            [true, "tQ==", "return chr(181)"],
+            [true, "tg==", "return chr(182)"],
+            [true, "tw==", "return chr(183)"],
+            [true, "uA==", "return chr(184)"],
+            [true, "uQ==", "return chr(185)"],
+            [true, "ug==", "return chr(186)"],
+            [true, "uw==", "return chr(187)"],
+            [true, "vA==", "return chr(188)"],
+            [true, "vQ==", "return chr(189)"],
+            [true, "vg==", "return chr(190)"],
+            [true, "vw==", "return chr(191)"],
+            [true, "wA==", "return chr(192)"],
+            [true, "wQ==", "return chr(193)"],
+            [true, "wg==", "return chr(194)"],
+            [true, "ww==", "return chr(195)"],
+            [true, "xA==", "return chr(196)"],
+            [true, "xQ==", "return chr(197)"],
+            [true, "xg==", "return chr(198)"],
+            [true, "xw==", "return chr(199)"],
+            [true, "yA==", "return chr(200)"],
+            [true, "yQ==", "return chr(201)"],
+            [true, "yg==", "return chr(202)"],
+            [true, "yw==", "return chr(203)"],
+            [true, "zA==", "return chr(204)"],
+            [true, "zQ==", "return chr(205)"],
+            [true, "zg==", "return chr(206)"],
+            [true, "zw==", "return chr(207)"],
+            [true, "0A==", "return chr(208)"],
+            [true, "0Q==", "return chr(209)"],
+            [true, "0g==", "return chr(210)"],
+            [true, "0w==", "return chr(211)"],
+            [true, "1A==", "return chr(212)"],
+            [true, "1Q==", "return chr(213)"],
+            [true, "1g==", "return chr(214)"],
+            [true, "1w==", "return chr(215)"],
+            [true, "2A==", "return chr(216)"],
+            [true, "2Q==", "return chr(217)"],
+            [true, "2g==", "return chr(218)"],
+            [true, "2w==", "return chr(219)"],
+            [true, "3A==", "return chr(220)"],
+            [true, "3Q==", "return chr(221)"],
+            [true, "3g==", "return chr(222)"],
+            [true, "3w==", "return chr(223)"],
+            [true, "4A==", "return chr(224)"],
+            [true, "4Q==", "return chr(225)"],
+            [true, "4g==", "return chr(226)"],
+            [true, "4w==", "return chr(227)"],
+            [true, "5A==", "return chr(228)"],
+            [true, "5Q==", "return chr(229)"],
+            [true, "5g==", "return chr(230)"],
+            [true, "5w==", "return chr(231)"],
+            [true, "6A==", "return chr(232)"],
+            [true, "6Q==", "return chr(233)"],
+            [true, "6g==", "return chr(234)"],
+            [true, "6w==", "return chr(235)"],
+            [true, "7A==", "return chr(236)"],
+            [true, "7Q==", "return chr(237)"],
+            [true, "7g==", "return chr(238)"],
+            [true, "7w==", "return chr(239)"],
+            [true, "8A==", "return chr(240)"],
+            [true, "8Q==", "return chr(241)"],
+            [true, "8g==", "return chr(242)"],
+            [true, "8w==", "return chr(243)"],
+            [true, "9A==", "return chr(244)"],
+            [true, "9Q==", "return chr(245)"],
+            [true, "9g==", "return chr(246)"],
+            [true, "9w==", "return chr(247)"],
+            [true, "+A==", "return chr(248)"],
+            [true, "+Q==", "return chr(249)"],
+            [true, "+g==", "return chr(250)"],
+            [true, "+w==", "return chr(251)"],
+            [true, "\/A==", "return chr(252)"],
+            [true, "\/Q==", "return chr(253)"],
+            [true, "\/g==", "return chr(254)"],
+
+            // https://github.com/php/php-src/blob/master/ext/standard/tests/url/base64_encode_basic_002.phpt
+            [true, "SGVsbG8gV29ybGQ=", "Hello World"]    ,
+            [true, "QUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVoxMjM0NTY3ODkwISVeJiooKXt9W10=", "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!%^&*(){}[]"],
+            [true, "CgkgTGluZSB3aXRoIGNvbnRyb2wgY2hhcmFjdGVycw0K", "\n\t Line with control characters\r\n"],
+            [true, "wcLDxMXG", "return urldecode('%C1%C2%C3%C4%C5%C6')"], // "\xC1\xC2\xC3\xC4\xC5\xC6"
+            [true, "PT4\/BzgHOVw4MA==", "return urldecode('%3D%3E%3F%078%079%5C80')"], // "\75\76\77\78\79\80"
+
+            // https://github.com/php/php-src/blob/master/ext/standard/tests/url/base64_encode_error_001.phpt
             [false, "base64_encode() expects exactly 1 parameter, 0 given"],
-            [false, "base64_encode() expects exactly 1 parameter, 2 given", 1, 1]
+            [false, "base64_encode() expects exactly 1 parameter, 2 given", "string_val", 10],
+
+            // https://github.com/php/php-src/blob/master/ext/standard/tests/url/base64_encode_variation_001.phpt
+            // int data
+            [true, "MA==", 0],
+            [true, "MQ==", 1],
+            [true, "MTIzNDU=", 12345],
+            [true, "LTIzNDU=", -2345],
+
+            // float data
+            [true, "MTAuNQ==", 10.5],
+            [true, "LTEwLjU=", -10.5],
+            [true, "MTAxMjM0NTY3MDAw", 10.1234567e10],
+            [true, "MS4wNzY1NDMyMUUtOQ==", 10.7654321E-10],
+            [true, "MC41", 0.5],
+
+            // array data
+            [false, "base64_encode() expects parameter 1 to be string, array given", []],
+            [false, "base64_encode() expects parameter 1 to be string, array given", [0]],
+            [false, "base64_encode() expects parameter 1 to be string, array given", [1]],
+            [false, "base64_encode() expects parameter 1 to be string, array given", [1, 2]],
+            [false, "base64_encode() expects parameter 1 to be string, array given", {"color":"red","item":"pen"}],
+
+
+            // null data
+            [true, "", "return NULL"],
+            [true, "", null],
+
+            // boolean data
+            [true, "MQ==", true],
+            [true, "", false],
+            [true, "MQ==", "return TRUE"],
+            [true, "", "return FALSE"],
+
+            // empty data
+            [true, "", ""],
+            [true, "", "return ''"],
+
+            // object data
+            [false, "base64_encode() expects parameter 1 to be string, object given", "new stdClass()"],
+
+            // undefined data
+//            $undefined_var,
+//
+            // unset data
+//            $unset_var,
+
+            // UTF-8 Text:
+            [true, "QnnFgmEgc29iaWUgbWHFgmEgY2FjYQpNaWHFgmEgbGFsa8SZIGkgcGFqYWNhClRlbiBwYWphY3lrIG1pYcWCIHNwcsSZxbx5bmvEmQpBIGxhbGVjemthIHNtdXRuxIUgbWlua8SZLg==", "Była sobie mała caca\nMiała lalkę i pajaca\nTen pajacyk miał sprężynkę\nA laleczka smutną minkę."],
+            [true, "WmHFvMOzxYLEhyBnxJnFm2zEhSBqYcW6xYQ=", "Zażółć gęślą jaźń"]
         ],
         "base64_decode": [
+            // https://github.com/php/php-src/blob/master/ext/standard/tests/url/base64_decode_basic_002.phpt
+            // Decode 'hello world!':
+            [true, "hello world!", "aGVsbG8gd29ybGQh"],
+            [true, "hello world!", "aGVsbG8gd29ybGQh", false],
+            [true, "hello world!", "aGVsbG8gd29ybGQh", true],
+
+            // Whitespace does not affect base64_decode, even with $strict===true:
+            [true, "hello world!", "a GVs bG8gd2\n\t\t\t\t\t\t9ybGQh"],
+            [true, "hello world!", "a GVs bG8gd2\n\t\t\t\t\t\t9ybGQh", false],
+            [true, "hello world!", "a GVs bG8gd2\n\t\t\t\t\t\t9ybGQh", true],
+
+            // Other chars outside the base64 alphabet are ignored when $strict===false, but cause failure with $strict===true:
+            [true, "hello world!", "aGVsbG8gd29ybGQh*"],
+            [true, "hello world!", "aGVsbG8gd29ybGQh*", false],
+            [true, false, "aGVsbG8gd29ybGQh*", true],
+
+            // https://github.com/php/php-src/blob/master/ext/standard/tests/url/base64_decode_error_001.phpt
             [false, "base64_decode() expects at least 1 parameter, 0 given"],
-            [false, "base64_decode() expects at most 2 parameters, 3 given", 1, 1, 1]
+            [false, "base64_decode() expects at most 2 parameters, 3 given", "string_val", true, 10],
+
+            // https://github.com/php/php-src/blob/master/ext/standard/tests/url/base64_decode_error_001.phpt
+
+            // int data
+            [true, "", 0],
+            [true, "", 1],
+            // Does not work on PHP 5.3
+//            [true, "x", 12345],
+//            [true, "x", -2345],
+
+            // float data
+            // Does not work on PHP 5.3
+//            [true, false, 10.5],
+//            [true, false, -10.5],
+//            [true, false, 10.1234567e10],
+//            [true, false, 10.7654321E-10],
+//            [true, false, 0.5],
+
+            // array data
+            [false, "base64_decode() expects parameter 1 to be string, array given", []],
+            [false, "base64_decode() expects parameter 1 to be string, array given", [0]],
+            [false, "base64_decode() expects parameter 1 to be string, array given", [1]],
+            [false, "base64_decode() expects parameter 1 to be string, array given", [1, 2]],
+            [false, "base64_decode() expects parameter 1 to be string, array given", {"color":"red","item":"pen"}],
+
+
+            // null data
+            [true, "", "return NULL"],
+            [true, "", null],
+
+            // boolean data
+            [true, "", true],
+            [true, "", false],
+            [true, "", "return TRUE"],
+            [true, "", "return FALSE"],
+
+            // empty data
+            [true, "", ""],
+            [true, "", "return ''"],
+
+            // object data
+            [false, "base64_decode() expects parameter 1 to be string, object given", "new stdClass()"],
+
+            // Additional:
+            [true, "", "="],
+            [true, false, "a="]
         ],
-        "pi" : [
+        "pi": [
             [true, 3.1415926535898]
         ]
     },
@@ -428,7 +830,25 @@ var fixtures = {
             [true, "array", []],
             [true, "array", [1, 2, 3]],
             [true, "array", [true, false, true]],
-            [true, "array", [[[[[[[[[[]]]]]]]]]]],
+            [true, "array", [
+                [
+                    [
+                        [
+                            [
+                                [
+                                    [
+                                        [
+                                            [
+                                                []
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]],
             [true, "array", [null, null, null]],
 
             [true, "integer", -1],
@@ -478,7 +898,7 @@ var fixtures = {
             [true, 1, [1]],
             [true, 1, 1],
             [true, 1, [1, 2, 3]],
-            [true, 1, {"a":1,"b":2}],
+            [true, 1, {"a": 1, "b": 2}],
             [true, 1, 1.0],
             [true, 1, 1.9],
             [true, 1, "1.0"],

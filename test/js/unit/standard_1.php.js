@@ -2,7 +2,7 @@
  * standard_1 - Unit Test (QUnit)
  */
 
-module("standard_1.php", {
+module("standard_1", {
     setup: function () {
 
     },
@@ -38,185 +38,185 @@ test("strtoupper", function(){
 
 
 
- test("strpos ($haystack, $needle, $offset) ", function(){
+ test("strpos", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("stripos ($haystack, $needle, $offset) ", function(){
+ test("stripos", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("strrpos ($haystack, $needle, $offset) ", function(){
+ test("strrpos", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("strripos ($haystack, $needle, $offset) ", function(){
+ test("strripos", function(){
  ok(false, "Not implemented yet.");
  });
 
 
 
- test("hebrev ($hebrew_text, $max_chars_per_line) ", function(){
+ test("hebrev", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("hebrevc ($hebrew_text, $max_chars_per_line) ", function(){
+ test("hebrevc", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("nl2br ($string, $is_xhtml) ", function(){
+ test("nl2br", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("basename ($path, $suffix) ", function(){
+ test("basename", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("dirname ($path) ", function(){
+ test("dirname", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("pathinfo ($path, $options) ", function(){
+ test("pathinfo", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("stripslashes ($str) ", function(){
+ test("stripslashes", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("stripcslashes ($str) ", function(){
+ test("stripcslashes", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("strstr ($haystack, $needle, $before_needle) ", function(){
+ test("strstr", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("stristr ($haystack, $needle, $before_needle) ", function(){
+ test("stristr", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("strrchr ($haystack, $needle) ", function(){
+ test("strrchr", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("str_shuffle ($str) ", function(){
+ test("str_shuffle", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("str_word_count ($string, $format, $charlist) ", function(){
+ test("str_word_count", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("str_split ($string, $split_length) ", function(){
+ test("str_split", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("strpbrk ($haystack, $char_list) ", function(){
+ test("strpbrk", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("substr_compare ($main_str, $str, $offset, $length, $case_insensitivity) ", function(){
+ test("substr_compare", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("strcoll ($str1, $str2) ", function(){
+ test("strcoll", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("money_format ($format, $number) ", function(){
+ test("money_format", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("substr ($string, $start, $length) ", function(){
+ test("substr", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("substr_replace ($string, $replacement, $start, $length) ", function(){
+ test("substr_replace", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("quotemeta ($str) ", function(){
+ test("quotemeta", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ucfirst ($str) ", function(){
+ test("ucfirst", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("lcfirst ($str) ", function(){
+ test("lcfirst", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ucwords ($str) ", function(){
+ test("ucwords", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("strtr ($str, $from, $to) ", function(){
+ test("strtr", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("addslashes ($str) ", function(){
+ test("addslashes", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("addcslashes ($str, $charlist) ", function(){
+ test("addcslashes", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("rtrim ($str, $charlist) ", function(){
+ test("rtrim", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("str_replace ($search, $replace, $subject, $count) ", function(){
+ test("str_replace", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("str_ireplace ($search, $replace, $subject, $count) ", function(){
+ test("str_ireplace", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("count_chars ($string, $mode) ", function(){
+ test("count_chars", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("chunk_split ($body, $chunklen, $end) ", function(){
+ test("chunk_split", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("trim ($str, $charlist) ", function(){
+ test("trim", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ltrim ($str, $charlist) ", function(){
+ test("ltrim", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("strip_tags ($str, $allowable_tags) ", function(){
+ test("strip_tags", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("similar_text ($first, $second, $percent) ", function(){
+ test("similar_text", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("explode ($delimiter, $string, $limit) ", function(){
+ test("explode", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("implode ($glue, $pieces) ", function(){
+ test("implode", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("join ($glue, $pieces) ", function(){
+ test("join", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("setlocale ($category, $locale, $_) ", function(){
+ test("setlocale", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("localeconv () ", function(){
+ test("localeconv", function(){
  ok(false, "Not implemented yet.");
  });
 

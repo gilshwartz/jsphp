@@ -11,6 +11,10 @@ module("standard_9", {
     }
 });
 
+//test("array_map", function(){
+//    runTestOnData();
+//});
+
 test("array_change_key_case", function(){
     runTestOnData();
 });
@@ -38,6 +42,8 @@ test("array_keys", function(){
 test("array_values", function(){
     runTestOnData();
 });
+
+
 
 /*
 test("array_merge_recursive ($array1, $_) ", function(){
@@ -141,10 +147,6 @@ test("array_product ($array) ", function(){
 });
 
 test("array_filter ($input, $callback) ", function(){
-    ok(false, "Not implemented yet.");
-});
-
-test("array_map ($callback, $arr1, $_) ", function(){
     ok(false, "Not implemented yet.");
 });
 

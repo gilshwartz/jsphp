@@ -2,7 +2,7 @@
  * standard_2.php - Unit Test (QUnit)
  */
 
-module("standard_2.php", {
+module("standard_2", {
     setup: function () {
 
     },
@@ -11,221 +11,221 @@ module("standard_2.php", {
     }
 });
 
-test("chr ($ascii) ", function(){
+test("chr", function(){
     runTestOnData();
 });
 
-test("ord ($string) ", function(){
+test("ord", function(){
     runTestOnData();
 });
 
 /*
-test("nl_langinfo ($item) ", function(){
+test("nl_langinfo", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("soundex ($str) ", function(){
+test("soundex", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("levenshtein ($str1, $str2) ", function(){
+test("levenshtein", function(){
     ok(false, "Not implemented yet.");
 });
 
 
-test("parse_str ($str, $arr) ", function(){
+test("parse_str", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("str_getcsv ($input, $delimiter, $enclosure, $escape) ", function(){
+test("str_getcsv", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("str_pad ($input, $pad_length, $pad_string, $pad_type) ", function(){
+test("str_pad", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("chop ($str, $character_mask) ", function(){
+test("chop", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("strchr ($haystack, $needle, $part) ", function(){
+test("strchr", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("sprintf ($format, $args, $_) ", function(){
+test("sprintf", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("printf ($format, $args, $_) ", function(){
+test("printf", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("vprintf ($format, $args) ", function(){
+test("vprintf", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("vsprintf ($format, $args) ", function(){
+test("vsprintf", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("fprintf ($handle, $format, $args, $_) ", function(){
+test("fprintf", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("vfprintf ($handle, $format, $args) ", function(){
+test("vfprintf", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("sscanf ($str, $format, $_) ", function(){
+test("sscanf", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("fscanf ($handle, $format, $_) ", function(){
+test("fscanf", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("parse_url ($url, $component) ", function(){
+test("parse_url", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("urlencode ($str) ", function(){
+test("urlencode", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("urldecode ($str) ", function(){
+test("urldecode", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("rawurlencode ($str) ", function(){
+test("rawurlencode", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("rawurldecode ($str) ", function(){
+test("rawurldecode", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("http_build_query ($formdata, $numeric_prefix, $arg_separator) ", function(){
+test("http_build_query", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("readlink ($path) ", function(){
+test("readlink", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("linkinfo ($path) ", function(){
+test("linkinfo", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("symlink ($target, $link) ", function(){
+test("symlink", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("link ($from_path, $to_path) ", function(){
+test("link", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("unlink ($filename, $context) ", function(){
+test("unlink", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("exec ($command, $output, $return_var) ", function(){
+test("exec", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("system ($command, $return_var) ", function(){
+test("system", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("escapeshellcmd ($command) ", function(){
+test("escapeshellcmd", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("escapeshellarg ($arg) ", function(){
+test("escapeshellarg", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("passthru ($command, $return_var) ", function(){
+test("passthru", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("shell_exec ($cmd) ", function(){
+test("shell_exec", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("proc_open ($cmd, $descriptorspec, $pipes, $cwd, $env, $other_options) ", function(){
+test("proc_open", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("proc_close ($process) ", function(){
+test("proc_close", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("proc_terminate ($process, $signal) ", function(){
+test("proc_terminate", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("proc_get_status ($process) ", function(){
+test("proc_get_status", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("proc_nice ($increment) ", function(){
+test("proc_nice", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("rand ($min, $max) ", function(){
+test("rand", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("srand ($seed) ", function(){
+test("srand", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getrandmax () ", function(){
+test("getrandmax", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("mt_rand ($min, $max) ", function(){
+test("mt_rand", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("mt_srand ($seed) ", function(){
+test("mt_srand", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("mt_getrandmax () ", function(){
+test("mt_getrandmax", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getservbyname ($service, $protocol) ", function(){
+test("getservbyname", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getservbyport ($port, $protocol) ", function(){
+test("getservbyport", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getprotobyname ($name) ", function(){
+test("getprotobyname", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getprotobynumber ($number) ", function(){
+test("getprotobynumber", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getmyuid () ", function(){
+test("getmyuid", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getmygid () ", function(){
+test("getmygid", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getmypid () ", function(){
+test("getmypid", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("getmyinode () ", function(){
+test("getmyinode", function(){
     ok(false, "Not implemented yet.");
 });
 

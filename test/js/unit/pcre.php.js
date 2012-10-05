@@ -2,7 +2,7 @@
  * pcre.php - Unit Test (QUnit)
  */
 
-module("pcre.php", {
+module("pcre", {
     setup: function () {
 
     },
@@ -11,7 +11,7 @@ module("pcre.php", {
     }
 });
 
-test("preg_match ($pattern, $subject, $matches, $flags, $offset) ", function(){
+test("preg_match", function(){
 
     expect(8);
 
@@ -60,7 +60,7 @@ test("preg_match ($pattern, $subject, $matches, $flags, $offset) ", function(){
     deepEqual(match, expectedmatch);
 });
 
-test("preg_match_all ($pattern, $subject, $matches, $flags, $offset) ", function(){
+test("preg_match_all", function(){
 
     expect(5);
 
@@ -93,7 +93,7 @@ test("preg_match_all ($pattern, $subject, $matches, $flags, $offset) ", function
     deepEqual(match, expectedmatch);
 });
 
-test("preg_replace ($pattern, $replacement, $subject, $limit, $count)", function(){
+test("preg_replace", function(){
 
     expect(7);
 
@@ -149,27 +149,27 @@ test("preg_replace ($pattern, $replacement, $subject, $limit, $count)", function
 });
 
 /*
-test("preg_replace_callback ($pattern, $callback, $subject, $limit, $count) ", function(){
+test("preg_replace_callback", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("preg_filter ($pattern, $replacement, $subject, $limit, $count) ", function(){
+test("preg_filter", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("preg_split ($pattern, $subject, $limit, $flags) ", function(){
+test("preg_split", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("preg_quote ($str, $delimiter) ", function(){
+test("preg_quote", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("preg_grep ($pattern, $input, $flags) ", function(){
+test("preg_grep", function(){
     ok(false, "Not implemented yet.");
 });
 
-test("preg_last_error () ", function(){
+test("preg_last_error", function(){
     ok(false, "Not implemented yet.");
 });
 

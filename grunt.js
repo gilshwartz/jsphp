@@ -6,10 +6,14 @@ module.exports = function (grunt) {
     function readOptionalJSON(filepath) {
         var data = {};
         try {
+
             data = grunt.file.readJSON(filepath);
             grunt.verbose.write("Reading " + filepath + "...").ok();
+
         } catch (e) {
+
         }
+
         return data;
     }
 
@@ -115,8 +119,8 @@ module.exports = function (grunt) {
             standard_3: {
                 src: [
                     "<banner:meta.standard_3>",
-//                    "src/standard_3/base64_encode.js",
-//                    "src/standard_3/base64_decode.js",
+                    "src/standard_3/base64_encode.js",
+                    "src/standard_3/base64_decode.js",
                     "src/standard_3/pi.js"
                 ],
                 dest: "dist/standard_3.js"
@@ -170,6 +174,7 @@ module.exports = function (grunt) {
             standard_9: {
                 src: [
                     "<banner:meta.standard_9>",
+//                    "src/standard_9/array_map.js",
                     "src/standard_9/array_change_key_case.js",
                     "src/standard_9/array_flip.js",
                     "src/standard_9/array_key_exists.js",
@@ -233,7 +238,8 @@ module.exports = function (grunt) {
 
         qunit: {
             files: [
-                "test/js/test.html"
+                "test/js/test.<%= pkg.name %>.js.html",
+                "test/js/test.<%= pkg.name %>.min.js.html"
             ]
         },
 
@@ -256,12 +262,16 @@ module.exports = function (grunt) {
         }
     });
 
-    // Default task.
     // Load grunt tasks from NPM packages
     grunt.loadNpmTasks("grunt-compare-size");
     grunt.loadNpmTasks("grunt-jasmine-task");
 
-    grunt.registerTask("default", "concat lint qunit min");
+    // Default task.
+    grunt.registerTask("default", "concat min compare_size lint qunit");
+
+    // Unit tests
     grunt.registerTask("test", "concat lint qunit");
-    grunt.registerTask("sntx", "concat lint");
+
+    grunt.registerTask("t", "concat qunit");
+    grunt.registerTask("s", "concat lint");
 };

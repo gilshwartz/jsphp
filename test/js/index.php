@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><?php
+
+?><html>
     <head>
         <meta charset="UTF-8" />
         <title>JSPHP Unit Tests (JavaScript)</title>
@@ -47,6 +48,7 @@
         <script type="text/javascript" src="../../src/standard_8/array_fill.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_8/shuffle.js?<?php echo rand(1234567,98765432) ?>"></script>
 
+        <script type="text/javascript" src="../../src/standard_9/array_map.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_9/array_rand.js?<?php echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_9/array_change_key_case.js?<?php //echo rand(1234567,98765432) ?>"></script>
         <script type="text/javascript" src="../../src/standard_9/array_flip.js?<?php echo rand(1234567,98765432) ?>"></script>
@@ -63,6 +65,6 @@
 
     </head>
     <body>
-        <div id="qunit"></div>
+        <div id="qunit<?php echo false and array_key_exists('filter', $_REQUEST) ? '-tests' : '' ?>"></div>
     </body>
 </html>

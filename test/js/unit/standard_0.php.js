@@ -2,7 +2,7 @@
  * standard_0.php - Unit Test (QUnit)
  */
 
-module("standard_0.php", {
+module("standard_0", {
     setup: function () {
 
     },
@@ -11,8 +11,8 @@ module("standard_0.php", {
     }
 });
 
-test("__PHP_Incomplete_Class()  ", 3, function () {
-    var expected, result, obj;
+test("__PHP_Incomplete_Class", 3, function () {
+    var expected, obj;
 
     var defined = typeof __PHP_Incomplete_Class === 'function';
     ok(defined, 'class is defined');
@@ -42,47 +42,47 @@ test("php_user_filter()  ", function () {
 test("Directory()  ", function () {
     ok(false, "Not implemented yet.");
 });
-test("constant ($name) ", function () {
+test("constant", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("bin2hex ($str) ", function () {
+test("bin2hex", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("sleep ($seconds) ", function () {
+test("sleep", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("usleep ($micro_seconds) ", function () {
+test("usleep", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("time_nanosleep ($seconds, $nanoseconds) ", function () {
+test("time_nanosleep", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("time_sleep_until ($timestamp) ", function () {
+test("time_sleep_until", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("strptime ($date, $format) ", function () {
+test("strptime", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("flush () ", function () {
+test("flush", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("wordwrap ($str, $width, $break, $cut) ", function () {
+test("wordwrap", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("htmlspecialchars ($string, $quote_style, $charset, $double_encode) ", function () {
+test("htmlspecialchars", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("htmlentities ($string, $quote_style, $charset, $double_encode) ", function () {
+test("htmlentities", function () {
     var phrase;
     var result;
     var expected;
@@ -123,123 +123,123 @@ test("htmlentities ($string, $quote_style, $charset, $double_encode) ", function
 
 });
 
-test("html_entity_decode ($string, $quote_style, $charset) ", function () {
+test("html_entity_decode", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("htmlspecialchars_decode ($string, $quote_style) ", function () {
+test("htmlspecialchars_decode", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("get_html_translation_table ($table, $quote_style) ", function () {
+test("get_html_translation_table", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("sha1 ($str, $raw_output) ", function () {
+test("sha1", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("sha1_file ($filename, $raw_output) ", function () {
+test("sha1_file", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("md5 ($str, $raw_output) ", function () {
+test("md5", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("md5_file ($filename, $raw_output) ", function () {
+test("md5_file", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("crc32 ($str) ", function () {
+test("crc32", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("iptcparse ($iptcblock) ", function () {
+test("iptcparse", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("iptcembed ($iptcdata, $jpeg_file_name, $spool) ", function () {
+test("iptcembed", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("getimagesize ($filename, $imageinfo) ", function () {
+test("getimagesize", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("image_type_to_mime_type ($imagetype) ", function () {
+test("image_type_to_mime_type", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("image_type_to_extension ($imagetype, $include_dot) ", function () {
+test("image_type_to_extension", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("phpinfo ($what) ", function () {
+test("phpinfo", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("phpversion ($extension) ", function () {
+test("phpversion", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("phpcredits ($flag) ", function () {
+test("phpcredits", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("php_logo_guid () ", function () {
+test("php_logo_guid", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("php_real_logo_guid () ", function () {
+test("php_real_logo_guid", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("php_egg_logo_guid () ", function () {
+test("php_egg_logo_guid", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("zend_logo_guid () ", function () {
+test("zend_logo_guid", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("php_sapi_name () ", function () {
+test("php_sapi_name", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("php_uname ($mode) ", function () {
+test("php_uname", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("php_ini_scanned_files () ", function () {
+test("php_ini_scanned_files", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("php_ini_loaded_file () ", function () {
+test("php_ini_loaded_file", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("strnatcmp ($str1, $str2) ", function () {
+test("strnatcmp", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("strnatcasecmp ($str1, $str2) ", function () {
+test("strnatcasecmp", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("substr_count ($haystack, $needle, $offset, $length) ", function () {
+test("substr_count", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("strspn ($subject, $mask, $start, $length) ", function () {
+test("strspn", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("strcspn ($str1, $str2, $start, $length) ", function () {
+test("strcspn", function () {
     ok(false, "Not implemented yet.");
 });
 
-test("strtok ($str, $token) ", function () {
+test("strtok", function () {
     ok(false, "Not implemented yet.");
 });
 

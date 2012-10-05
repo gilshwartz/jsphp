@@ -2,7 +2,7 @@
  * standard_8.php - Unit Test (QUnit)
  */
 
-module("standard_8.php", {
+module("standard_8", {
     setup: function () {
 
     },
@@ -11,8 +11,11 @@ module("standard_8.php", {
     }
 });
 
+test("array_fill", function () {
+    runTestOnData();
+});
 
-test("array_pop ($array) ", function(){
+test("array_pop", function(){
     runTestOnData([], 2);
 
     var input = [1, 2, 3, 4, 5, 6, 7];
@@ -24,7 +27,7 @@ test("array_pop ($array) ", function(){
     equal(input.length, lenbefore - 1);
 });
 
-test("array_push ($array, $var, $_) ", function(){
+test("array_push", function(){
     runTestOnData([], 4);
     var input, lenbefore, element;
     input = [1, 2, 3, 4, 5, 6, 7];
@@ -44,7 +47,7 @@ test("array_push ($array, $var, $_) ", function(){
 
 });
 
-test("array_shift ($array) ", function(){
+test("array_shift", function(){
     runTestOnData([], 2);
 
     var input = [1, 2, 3, 4, 5, 6, 7];
@@ -56,7 +59,7 @@ test("array_shift ($array) ", function(){
     equal(input.length, lenbefore - 1);
 });
 
-test("array_unshift ($array, $var, $_) ", function(){
+test("array_unshift", function(){
     runTestOnData([], 4);
     var input, lenbefore, element;
     input = [1, 2, 3, 4, 5, 6, 7];
@@ -75,11 +78,7 @@ test("array_unshift ($array, $var, $_) ", function(){
     deepEqual(input[0], element);
 });
 
-test("array_fill ($start_index, $num, $value) ", function () {
-    runTestOnData();
-});
-
-test("shuffle ($array) ", function () {
+test("shuffle", function () {
     runTestOnData([], 3);
 
     var i;
@@ -96,205 +95,205 @@ test("shuffle ($array) ", function () {
 });
 
 /*
- test("syslog ($priority, $message) ", function(){
+ test("syslog", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("closelog () ", function(){
+ test("closelog", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("define_syslog_variables () ", function(){
+ test("define_syslog_variables", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("lcg_value () ", function(){
+ test("lcg_value", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("metaphone ($str, $phones) ", function(){
+ test("metaphone", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_start ($output_callback, $chunk_size, $erase) ", function(){
+ test("ob_start", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_flush () ", function(){
+ test("ob_flush", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_clean () ", function(){
+ test("ob_clean", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_end_flush () ", function(){
+ test("ob_end_flush", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_end_clean () ", function(){
+ test("ob_end_clean", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_get_flush () ", function(){
+ test("ob_get_flush", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_get_clean () ", function(){
+ test("ob_get_clean", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_get_length () ", function(){
+ test("ob_get_length", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_get_level () ", function(){
+ test("ob_get_level", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_get_status ($full_status) ", function(){
+ test("ob_get_status", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_get_contents () ", function(){
+ test("ob_get_contents", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_implicit_flush ($flag) ", function(){
+ test("ob_implicit_flush", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ob_list_handlers () ", function(){
+ test("ob_list_handlers", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("ksort ($array, $sort_flags) ", function(){
+ test("ksort", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("krsort ($array, $sort_flags) ", function(){
+ test("krsort", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("natsort ($array) ", function(){
+ test("natsort", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("natcasesort ($array) ", function(){
+ test("natcasesort", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("asort ($array, $sort_flags) ", function(){
+ test("asort", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("arsort ($array, $sort_flags) ", function(){
+ test("arsort", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("sort ($array, $sort_flags) ", function(){
+ test("sort", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("rsort ($array, $sort_flags) ", function(){
+ test("rsort", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("usort ($array, $cmp_function) ", function(){
+ test("usort", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("uasort ($array, $cmp_function) ", function(){
+ test("uasort", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("uksort ($array, $cmp_function) ", function(){
+ test("uksort", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("array_walk ($array, $funcname, $userdata) ", function(){
+ test("array_walk", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("array_walk_recursive ($input, $funcname, $userdata) ", function(){
+ test("array_walk_recursive", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("count ($var, $mode) ", function(){
+ test("count", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("end ($array) ", function(){
+ test("end", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("prev ($array) ", function(){
+ test("prev", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("next ($array) ", function(){
+ test("next", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("reset ($array) ", function(){
+ test("reset", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("current ($array) ", function(){
+ test("current", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("key ($array) ", function(){
+ test("key", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("min ($value1, $value2) ", function(){
+ test("min", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("max ($value1, $value2) ", function(){
+ test("max", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("in_array ($needle, $haystack, $strict) ", function(){
+ test("in_array", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("array_search ($needle, $haystack, $strict) ", function(){
+ test("array_search", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("extract ($var_array, $extract_type, $prefix) ", function(){
+ test("extract", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("compact ($varname, $_) ", function(){
- ok(false, "Not implemented yet.");
- });
-
-
- test("array_fill_keys ($keys, $value) ", function(){
- ok(false, "Not implemented yet.");
- });
-
- test("range ($low, $high, $step) ", function(){
- ok(false, "Not implemented yet.");
- });
-
- test("array_multisort ($arr, $arg, $arg, $_) ", function(){
+ test("compact", function(){
  ok(false, "Not implemented yet.");
  });
 
 
- test("array_splice ($input, $offset, $length, $replacement) ", function(){
+ test("array_fill_keys", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("array_slice ($array, $offset, $length, $preserve_keys) ", function(){
+ test("range", function(){
  ok(false, "Not implemented yet.");
  });
 
- test("array_merge ($array1, $array2, $_) ", function(){
+ test("array_multisort", function(){
+ ok(false, "Not implemented yet.");
+ });
+
+
+ test("array_splice", function(){
+ ok(false, "Not implemented yet.");
+ });
+
+ test("array_slice", function(){
+ ok(false, "Not implemented yet.");
+ });
+
+ test("array_merge", function(){
  ok(false, "Not implemented yet.");
  });
 

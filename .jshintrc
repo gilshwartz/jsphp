@@ -3,7 +3,7 @@
     "unused": true,
     "jquery": true,
     "browser": true,
-    "devel": false,
+    "devel": true,
     "evil": false,
     "curly": true,
     "forin": true,

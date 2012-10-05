@@ -2,7 +2,7 @@
  * Core_c.php - Unit Test (QUnit)
  */
 
-module("Core_c.php", {
+module("Core_c", {
     setup: function () {
 
     },
@@ -47,7 +47,7 @@ test("class Exception default", 8, function(){
     equal(getConstructorNameForTest(obj), 'Exception', 'constructor is implemented');
 
     expected = "Uncaught exception 'Exception' in Command line code on line 1";
-    equal(obj, expected, 'default toString()')
+    equal(obj, expected, 'default toString()');
 
     expected = "Uncaught exception 'Exception'";
     strictEqual(obj.getMessage(), expected, 'default getMessage()');

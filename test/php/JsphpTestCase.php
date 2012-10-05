@@ -23,49 +23,51 @@ class JsphpTestCase extends PHPUnit_Framework_TestCase
             $func     = $this->func;
 
             for ($i = 0; $i < count($a); $i++) {
-                if (gettype($a[$i]) === "string" and preg_match("/^[A-Z_]+$|^(new|function)/", strval($a[$i]))) {
-                    $a[$i] = eval("return " . strval($a[$i]) . ";");
+                $fnc = strval($a[$i]);
+                if (gettype($a[$i]) === "string" and preg_match("/^[A-Z_]+$|^(new|function|return\s+)/", $fnc)) {
+                    $cond  = preg_match("/^return\s+/", $fnc);
+                    $pref  = $cond ? "" : "return ";
+                    $call  = $pref . $fnc . ";";
+                    $a[$i] = eval($call);
                 }
             }
 
-            switch (count($a)) {
-                case 1:
-                    @$actual = $func($a[0]);
-                    break;
-                case 2:
-                    @$actual = $func($a[0], $a[1]);
-                    break;
-                case 3:
-                    @$actual = $func($a[0], $a[1], $a[2]);
-                    break;
-                case 4:
-                    @$actual = $func($a[0], $a[1], $a[2], $a[3]);
-                    break;
-                case 5:
-                    @$actual = $func($a[0], $a[1], $a[2], $a[3], $a[4]);
-                    break;
-                case 6:
-                    @$actual = $func($a[0], $a[1], $a[2], $a[3], $a[4], $a[5]);
-                    break;
-                case 7:
-                    // 7 is max number of arguments in standard PHP library
-                    @$actual = $func($a[0], $a[1], $a[2], $a[3], $a[4], $a[5], $a[6]);
-                    break;
-                default:
-                    @$actual = $func();
-                    break;
-            }
+            try {
 
-            if ($isok === false) {
-                try {
+                switch (count($a)) {
+                    case 1:
+                        @$actual = $func($a[0]);
+                        break;
+                    case 2:
+                        @$actual = $func($a[0], $a[1]);
+                        break;
+                    case 3:
+                        @$actual = $func($a[0], $a[1], $a[2]);
+                        break;
+                    case 4:
+                        @$actual = $func($a[0], $a[1], $a[2], $a[3]);
+                        break;
+                    case 5:
+                        @$actual = $func($a[0], $a[1], $a[2], $a[3], $a[4]);
+                        break;
+                    case 6:
+                        @$actual = $func($a[0], $a[1], $a[2], $a[3], $a[4], $a[5]);
+                        break;
+                    case 7:
+                        // 7 is max number of arguments in standard PHP library
+                        @$actual = $func($a[0], $a[1], $a[2], $a[3], $a[4], $a[5], $a[6]);
+                        break;
+                    default:
+                        @$actual = $func();
+                        break;
+                }
+
+                if ($isok === false) {
                     $actual = $php_errormsg;
                     $actual = preg_replace('/\s*\[<a.*?\]\s*/', '', $actual);
                 }
-                catch(Exception $e)
-                {
-                    $actual = $e->getMessage();
-
-                }
+            } catch (Exception $e) {
+                $actual = $e->getMessage();
             }
 
             try {

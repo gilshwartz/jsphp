@@ -9,10 +9,19 @@ class standard_9Test extends JsphpTestCase
     /**
      * @test
      */
+    function array_map()
+    {
+        $this->runTestOnData();
+    }
+
+    /**
+     * @test
+     */
     function array_rand()
     {
         $this->runTestOnData();
     }
+
     /**
      * @test
      */

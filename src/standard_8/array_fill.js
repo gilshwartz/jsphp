@@ -2,14 +2,14 @@
  * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
  * Fill an array with values
  * @link http://php.net/manual/en/function.array-fill.php
- * @param int $start_index <p>
+ * @param {number} $start_index <p>
  * The first index of the returned array.
  * Supports non-negative indexes only.
  * </p>
- * @param int $num <p>
+ * @param {number} $num <p>
  * Number of elements to insert
  * </p>
- * @param mixed $value <p>
+ * @param {array} $value <p>
  * Value to use for filling
  * </p>
  * @return array the filled array
@@ -33,7 +33,7 @@ function array_fill($start_index, $num, $value) {
     }
 
     if(vtype !== "integer") {
-        throw new Exception("array_fill() expects parameter 1 to be long, " + vtype + " given");
+        throw new Exception("array_fill() expects parameter 2 to be long, " + vtype + " given");
     }
 
     if($num <= 0) {
